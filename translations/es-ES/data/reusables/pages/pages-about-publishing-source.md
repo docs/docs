@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: f77827f645123477cf9ddc2f845c7da3a4929a72
-ms.sourcegitcommit: 505b84dc7227e8a5d518a71eb5c7eaa65b38ce0e
+ms.openlocfilehash: f46fcf5de23b55285d402b93bd89b0155e1224e7
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "147871941"
+ms.lasthandoff: 10/25/2022
+ms.locfileid: "148109933"
 ---
 {% ifversion pages-custom-workflow %}
 
-Puedes publicar el sitio cuando se inserten cambios en una rama específica o puedes escribir un flujo de trabajo de {% data variables.product.prodname_actions %} para publicar el sitio.
+Puedes publicar el sitio cuando se inserten cambios en una rama específica o puedes escribir un flujo de trabajo de {% data variables.product.prodname_actions %} para publicar el sitio. {% data reusables.actions.settings-ui.settings-actions-pages-custom-workflow %}
 
 Si no necesitas ningún control sobre el proceso de creación del sitio, se recomienda publicar el sitio cuando se inserten cambios en una rama específica. {% data reusables.pages.pages-about-branch-source %}
 

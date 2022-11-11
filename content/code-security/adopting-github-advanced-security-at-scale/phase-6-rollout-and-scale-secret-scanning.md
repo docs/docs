@@ -1,13 +1,13 @@
 ---
 title: 'Phase 6: Rollout and scale secret scanning'
-intro: "For the final phase, you will focus on the rollout of {% data variables.product.prodname_secret_scanning %}. {% data variables.product.prodname_secret_scanning_caps %} is a more straightforward tool to rollout than {% data variables.product.prodname_code_scanning %}, as it involves less configuration, but it's critical to have a strategy for handling new and old results."
+intro: 'For the final phase, you will focus on the rollout of {% data variables.product.prodname_secret_scanning %}. {% data variables.product.prodname_secret_scanning_caps %} is a more straightforward tool to rollout than {% data variables.product.prodname_code_scanning %}, as it involves less configuration, but it''s critical to have a strategy for handling new and old results.'
 versions:
   ghes: '*'
   ghae: '*'
   ghec: '*'
 topics:
   - Advanced Security
-shortTitle: '6. Rollout secret scanning'
+shortTitle: 6. Rollout secret scanning
 miniTocMaxHeadingLevel: 3
 ---
 
@@ -65,7 +65,7 @@ Once you have decided on the secret types, you can do the following:
   
   {% ifversion not ghae %}
   
-  You can use the security overview to collect this information. For more information about using the security overview, see "[Filtering alerts in the security overview](/code-security/security-overview/filtering-alerts-in-the-security-overview)."
+  You can use the security overview to collect this information. For more information about using the security overview, see "[Filtering alerts in security overviews](/code-security/security-overview/filtering-alerts-in-the-security-overview)."
   
   {% endif %}
   
