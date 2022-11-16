@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 79d36439e68cf64c8236911224bb7769a59aef6e
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: cd91a98e6cb0da73a24f7f6e682b67ec25b406d4
+ms.sourcegitcommit: 24427fe609677b2c58137b1d9d63869d0872daf4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2022
-ms.locfileid: "147558384"
+ms.lasthandoff: 11/04/2022
+ms.locfileid: "148134793"
 ---
 Partner | サポートされているシークレット
 --- | ---
@@ -18,19 +18,25 @@ Alibaba Cloud | Alibaba Cloud Access Key ID及びAccess Key Secret pair
 Atlassian | Atlassian API Token
 Atlassian | Atlassian JSON Web Token
 Azure | Azure Active Directory Application Secret
-Azure | Azure DevOps Personal Access Token
+Azure | Azure Batch キー識別可能
+Azure | Azure CosmosDB キー識別可能
+Azure | Azure DevOps {% data variables.product.pat_generic_title_case %}
+Azure | Azure ML Studio (クラシック) Web サービス キー
 Azure | Azure SAS Token
 Azure | Azure Service Management Certificate
 Azure | Azure SQL 接続文字列
 Azure | Azure Storage アカウント キー
 Checkout.com | Checkout.com 運用シークレット キー
 Checkout.com | Checkout.com テスト シークレット キー
+Chief | Chief Tools Token
 Clojars | Clojars Deploy Token
 CloudBees CodeShip | CloudBees CodeShip Credential
 Contributed Systems | Contributed Systems の資格情報
 Databricks | Databricks Access Token
 Datadog | Datadog API Key
-DigitalOcean | DigitalOcean 個人アクセストークン
+DevCycle | DevCycle クライアント API キー
+DevCycle | DevCycle サーバー API キー
+DigitalOcean | DigitalOcean {% data variables.product.pat_generic_title_case %}
 DigitalOcean | DigitalOcean OAuth トークン
 DigitalOcean | DigitalOcean 更新トークン
 DigitalOcean | DigitalOcean システムトークン
@@ -48,7 +54,7 @@ Finicity | Finicity App Key
 Frame.io | Frame.io JSON Web Token
 Frame.io| Frame.io Developer Token
 FullStory| FullStory API キー
-GitHub | GitHub個人アクセストークン
+GitHub | GitHub {% data variables.product.pat_generic_title_case %}
 GitHub | GitHub OAuthアクセストークン
 GitHub | GitHub Refreshトークン
 GitHub | GitHubアプリケーションインストールアクセストークン
@@ -59,7 +65,7 @@ Google Cloud | Google API Key
 Google Cloud | Google Cloud Private Key ID
 Hashicorp Terraform | Terraform Cloud / Enterprise API Token
 Hubspot | Hubspot API Key
-Ionic | Ionic Personal Access Token
+Ionic | Ionic {% data variables.product.pat_generic_title_case %}
 Ionic | Ionic Refresh Token
 JD Cloud | JD Cloud アクセスキー
 Linear | Linear API Key
@@ -112,7 +118,13 @@ Supabase | Supabase サービス キー
 Tencent Cloud | Tencent Cloud Secret ID
 Twilio | Twilio Account String Identifier
 Twilio | Twilio API Key
-Typeform | Typeform 個人用アクセス トークン
+Typeform | Typeform {% data variables.product.pat_generic_title_case %}
 Uniwise | WISEflow API キー 
 Valour | Valour Access Token
+Yandex | Yandex.Cloud API キー   
+Yandex | Yandex.Cloud IAM Cookie    
+Yandex | Yandex.Cloud IAM トークン 
+Yandex | Yandex.Dictionary API キー  
+Yandex | Yandex.Cloud アクセス シークレット 
+Yandex | Yandex.Passport OAuth トークン    
 Zuplo | Zuplo Consumer API
