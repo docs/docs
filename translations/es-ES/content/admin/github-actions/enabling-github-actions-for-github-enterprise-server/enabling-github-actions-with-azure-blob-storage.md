@@ -13,12 +13,12 @@ topics:
 redirect_from:
   - /admin/github-actions/enabling-github-actions-with-azure-blob-storage
 shortTitle: Azure Blob storage
-ms.openlocfilehash: bcd92b12ec8ecd807906a3b2f7c09971d6641b93
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: b6abccdfea0d33b387fc3ec6df563fcbaf57f861
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '145120450'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148110029'
 ---
 ## Prerrequisitos
 
@@ -39,8 +39,9 @@ Antes de que habilites las {% data variables.product.prodname_actions %}, asegú
 
 ## Habilitar las {% data variables.product.prodname_actions %} con el almacenamiento de Blobs de Azure
 
-{% data reusables.enterprise_installation.ssh-into-instance %} {% data reusables.actions.perform-blob-storage-precheck %} {% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
+{% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
 1. En "Artifact & Log Storage" (Almacenamiento de artefactos y registros), seleccione **Azure Blob Storage** y escriba la cadena de conexión de la cuenta de almacenamiento de Azure. Para más información sobre cómo obtener la cadena de conexión de la cuenta de almacenamiento, consulte la [documentación de Azure](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys).
-  ![El botón de radio para seleccionar Azure Blob Storage y el campo Connection string](/assets/images/enterprise/management-console/actions-azure-storage.png) {% data reusables.enterprise_management_console.save-settings %}
+
+   ![Botón de radio para seleccionar Azure Blob Storage y el campo Cadena de conexión](/assets/images/enterprise/management-console/actions-azure-storage.png) {% data reusables.enterprise_management_console.test-storage-button %} {% data reusables.enterprise_management_console.save-settings %}
 
 {% data reusables.actions.enterprise-postinstall-nextsteps %}
