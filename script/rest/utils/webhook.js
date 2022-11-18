@@ -28,7 +28,22 @@ export default class Webhook {
       `requestBody.content['application/json'].schema.properties.action.enum[0]`,
       null
     )
-    this.category = webhook['x-github'].subcategory
+
+    // for some webhook action types (like some pull-request webhook types) the
+    // schema properties are under a oneOf so we try and take the action from
+    // the first one (the action will be the same across oneOf items)
+    if (!this.action) {
+      this.action = get(
+        webhook,
+        `requestBody.content['application/json'].schema.oneOf[0].properties.action.enum[0]`,
+        null
+      )
+    }
+
+    // The OpenAPI uses hyphens for the webhook names, but the webhooks
+    // are sent using underscores (e.g. `branch_protection_rule` instead
+    // of `branch-protection-rule`)
+    this.category = webhook['x-github'].subcategory.replaceAll('-', '_')
     return this
   }
 
