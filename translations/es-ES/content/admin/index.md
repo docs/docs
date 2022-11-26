@@ -73,7 +73,7 @@ featuredLinks:
     - '{% ifversion ghae %}/admin/user-management/auditing-users-across-your-enterprise{% endif %}'
     - /admin/identity-and-access-management/managing-iam-for-your-enterprise/about-authentication-for-your-enterprise
     - /admin/policies/enforcing-policies-for-your-enterprise/about-enterprise-policies
-    - '{% ifversion ghae %}/admin/configuration/restricting-network-traffic-to-your-enterprise{% endif %}'
+    - '{% ifversion ghae %}/admin/configuration/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list{% endif %}'
     - '{% ifversion ghes %}/admin/configuration/configuring-backups-on-your-appliance{% endif %}'
     - '{% ifversion ghes %}/admin/enterprise-management/creating-a-high-availability-replica{% endif %}'
     - '{% ifversion ghes %}/admin/overview/about-upgrades-to-new-releases{% endif %}'
@@ -105,14 +105,6 @@ featuredLinks:
     - '{% ifversion ghec %}/admin/monitoring-activity-in-your-enterprise/exploring-user-activity/managing-global-webhooks{% endif %}'
     - /billing/managing-your-license-for-github-enterprise/using-visual-studio-subscription-with-github-enterprise/setting-up-visual-studio-subscription-with-github-enterprise
     - /admin/enterprise-support/about-github-enterprise-support
-  videos:
-    - title: GitHub in the Enterprise – Maya Ross
-      href: 'https://www.youtube-nocookie.com/embed/1-i39RqaxRs'
-    - title: What's new for GitHub Enterprise – Jarryd McCree
-      href: 'https://www.youtube-nocookie.com/embed/ZZviWZgrqhM'
-    - title: Enforcing information security policy through GitHub Enterprise – Thomas Worley
-      href: 'https://www.youtube-nocookie.com/embed/DCu-ZTT7WTI'
-  videosHeading: GitHub Universe 2021 videos
 layout: product-landing
 versions:
   ghec: '*'
@@ -133,11 +125,11 @@ children:
   - /guides
   - /release-notes
   - /all-releases
-ms.openlocfilehash: ebd1473538d42928ff3d9abb3c0e2bd9f12767f5
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 0a84555b92c4645807d082f0d7f9348dfd3fc4bf
+ms.sourcegitcommit: c562c85cc75ffe1eb4e9595d8adc09ec71697ab1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '147881159'
+ms.lasthandoff: 11/22/2022
+ms.locfileid: '148179985'
 ---
 

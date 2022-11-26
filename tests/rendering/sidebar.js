@@ -7,7 +7,6 @@ import frontmatter from '../../lib/read-frontmatter.js'
 import { getDOM } from '../helpers/e2etest.js'
 import { allVersions } from '../../lib/all-versions.js'
 import renderContent from '../../lib/render-content/index.js'
-import loadSiteData from '../../lib/site-data.js'
 import shortVersionsMiddleware from '../../middleware/contextualizers/short-versions.js'
 
 jest.useFakeTimers({ legacyFakeTimers: true })
@@ -16,11 +15,9 @@ describe('sidebar', () => {
   jest.setTimeout(3 * 60 * 1000)
   let $homePage, $githubPage, $enterprisePage, $restPage
   beforeAll(async () => {
-    const siteData = await loadSiteData()
     req.context = {
       allVersions,
       currentLanguage: 'en',
-      site: siteData.en.site,
     }
     ;[$homePage, $githubPage, $enterprisePage, $restPage] = await Promise.all([
       getDOM('/en'),
@@ -172,5 +169,17 @@ describe('sidebar', () => {
         }
       }
     }
+  })
+  test("test a page where there's known sidebar short titles that use Liquid and ampersands", async () => {
+    const url =
+      '/en/issues/organizing-your-work-with-project-boards/tracking-work-with-project-boards'
+    const $ = await getDOM(url)
+    const linkTexts = []
+    $('[data-testid=sidebar]  a').each((i, element) => {
+      linkTexts.push($(element).text())
+    })
+    // This makes sure that none of the texts in there has their final HTML
+    // to be HTML entity encoded.
+    expect(linkTexts.filter((text) => text.includes('&amp;')).length).toBe(0)
   })
 })

@@ -11,7 +11,7 @@ miniTocMaxHeadingLevel: 3
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: reference
 topics:
   - Dependabot
@@ -244,7 +244,7 @@ Supported options
 
 {% note %}
 
-**Note:** The `prefix` and the `prefix-development` options have a 15 character limit.
+**Note:** The `prefix` and the `prefix-development` options have a {% ifversion fpt or ghec or ghes > 3.7 or ghae > 3.7 %}50{% elsif ghes < 3.8 or ghae < 3.8 %}15{% endif %} character limit.
 
 {% endnote %}
 
@@ -686,8 +686,8 @@ Available update strategies
 | `lockfile-only` | `bundler`, `cargo`, `composer`, `mix`, `npm`, `pip` | Only create pull requests to update lockfiles. Ignore any new versions that would require package manifest changes. |
 | `auto` | `bundler`, `cargo`, `composer`, `mix`, `npm`, `pip` | Follow the default strategy described above.|
 | `widen`| `composer`, `npm` | Relax the version requirement to include both the new and old version, when possible. |
-| `increase`| `bundler`, `composer`, `npm` | Always increase the version requirement to match the new version. |
-| `increase-if-necessary` | `bundler`, `composer`, `npm` | Increase the version requirement only when required by the new version. |
+| `increase`| `bundler`, `composer`, `npm`{% ifversion dependabot-increase-version-pip-support %}, `pip`{% endif %}  | Always increase the version requirement to match the new version. |
+| `increase-if-necessary` | `bundler`, `composer`, `npm`{% ifversion dependabot-increase-version-pip-support %}, `pip`{% endif %} | Increase the version requirement only when required by the new version. |
 
 ```yaml
 # Customize the manifest version strategy
@@ -840,6 +840,27 @@ registries:
     key: ${{secrets.MY_HEX_ORGANIZATION_KEY}}
 ```
 {% endraw %}
+
+{% ifversion dependabot-hex-self-hosted-support %}
+### `hex-repository`
+
+The `hex-repository` type supports an authentication key.
+
+`repo` is a required field, which must match the name of the repository used in your dependency declaration.
+
+The `public-key-fingerprint` is an optional configuration field, representing the fingerprint of the public key for the Hex repository. `public-key-fingerprint` is used by Hex to establish trust with the private repository. The `public-key-fingerprint` field can be either listed in plaintext or stored as a {% data variables.product.prodname_dependabot %} secret.
+
+{% raw %}
+```yaml
+registries:
+   github-hex-repository:
+     type: hex-repository
+     repo: private-repo
+     url: https://private-repo.example.com
+     auth-key: ${{secrets.MY_AUTH_KEY}}
+     public-key-fingerprint: ${{secrets.MY_PUBLIC_KEY_FINGERPRINT}}
+```
+{% endraw %}{% endif %}
 
 ### `maven-repository`
 

@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: f77827f645123477cf9ddc2f845c7da3a4929a72
-ms.sourcegitcommit: 505b84dc7227e8a5d518a71eb5c7eaa65b38ce0e
+ms.openlocfilehash: f46fcf5de23b55285d402b93bd89b0155e1224e7
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "147871935"
+ms.lasthandoff: 10/25/2022
+ms.locfileid: "148108141"
 ---
 {% ifversion pages-custom-workflow %}
 
-可以在将更改推送到特定分支时发布站点，也可以编写 {% data variables.product.prodname_actions %} 工作流来发布站点。
+可以在将更改推送到特定分支时发布站点，也可以编写 {% data variables.product.prodname_actions %} 工作流来发布站点。 {% data reusables.actions.settings-ui.settings-actions-pages-custom-workflow %}
 
 如果不需要对站点的生成过程进行任何控制，则建议在将更改推送到特定分支时发布站点。 {% data reusables.pages.pages-about-branch-source %}
 
