@@ -11,31 +11,30 @@ versions:
   ghec: '*'
 topics:
   - API
-ms.openlocfilehash: 4fa9e97ca9fa3803cfbd0cf0e21d3d2253a7aa60
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: ab880cef09b936bb573d783373f048395d0a2f58
+ms.sourcegitcommit: 16548aa24259e37cc0ac4900ca8fefc46dc84cdb
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '146769161'
+ms.lasthandoff: 12/01/2022
+ms.locfileid: '148190065'
 ---
-<div class="jumbotron libraries-jumbotron">
-  <img src="/assets/images/gundamcat.png" class="gundamcat" alt="The Gundamcat" />
-  <h1>El Octokit tiene muchos sabores</h1>
-  <p class="lead">Utiliza la biblioteca oficial de Octokit, o elige entre cualquiera de las bibliotecas de terceros disponibles.</p>
-  <div class="octokit-links"><br/>
-     <div class="octokit-language"><span>Ruby → </span><a href="https://github.com/octokit/octokit.rb">octokit.rb</a></div><br/>
-     <div class="octokit-language"><span>.NET → </span> <a href="https://github.com/octokit/octokit.net">octokit.net</a></div><br/>
-     <div class="octokit-language"><span>JavaScript → </span> <a href="https://github.com/octokit/octokit.js">octokit/octokit.js</a></div><br/>
-  </div>
-</div>
+![El Gundamcat](/assets/images/gundamcat.png)
 
-# Bibliotecas de terceros
+## El Octokit tiene muchos sabores
+
+Utiliza la biblioteca oficial de Octokit, o elige entre cualquiera de las bibliotecas de terceros disponibles.
+
+- **Ruby** → [octokit.rb](https://github.com/octokit/octokit.rb)
+- **.NET** → [octokit.net](https://github.com/octokit/octokit.net)
+- **JavaScript** → [octokit/octokit.js](https://github.com/octokit/octokit.js)
+
+## Bibliotecas de terceros
 
 ### Clojure
 
 | Nombre de la biblioteca | Repositorio |
 |---|---|
-|**Tentacles**| [Raynes/tentacles](https://github.com/Raynes/tentacles)|
+|**Tentacles**| [Raynes/tentacles](https://github.com/clj-commons/tentacles)|
 
 ### Dart
 
@@ -130,6 +129,8 @@ ms.locfileid: '146769161'
 |**octohub**|[turnkeylinux/octohub](https://github.com/turnkeylinux/octohub)|
 |**github-flask**|[github-flask (sitio web oficial)](http://github-flask.readthedocs.org)|
 |**torngithub**|[jkeylu/torngithub](https://github.com/jkeylu/torngithub)|
+|**githubkit**|[yanyongyu/githubkit](https://github.com/yanyongyu/githubkit)|
+|**octokit.py**|[khornberg/octokit.py](https://github.com/khornberg/octokit.py)|
 
 ### Ruby
 
