@@ -2,22 +2,22 @@
 title: 编辑存储库安全通告
 intro: 如果需要更新详细信息或更正错误，可以编辑存储库安全公告的元数据和说明。
 redirect_from:
-  - /github/managing-security-vulnerabilities/editing-a-security-advisory
-  - /code-security/security-advisories/editing-a-security-advisory
+- /github/managing-security-vulnerabilities/editing-a-security-advisory
+- /code-security/security-advisories/editing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Edit repository advisories
 ms.openlocfilehash: 2ea2f588374d83be677589b4f3bf4e74a7fc6e91
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145099739'
+ms.locfileid: "145099739"
 ---
 对存储库安全通告具有管理员权限的人员可以编辑安全通告。
 

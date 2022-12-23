@@ -1,17 +1,17 @@
 ---
 title: リポジトリ キャッシュの構成
-intro: リポジトリ キャッシュを構成するには、新しいアプライアンスを作成し、リポジトリ キャッシュをプライマリ アプライアンスに接続し、リポジトリ キャッシュに対するリポジトリ ネットワークのレプリケーションを構成します。
+intro: '{% data variables.product.product_name %} 用のリポジトリ キャッシュを構成するには、新しいインスタンスを作成し、リポジトリ キャッシュをプライマリ インスタンスに接続し、リポジトリ キャッシュに対するリポジトリ ネットワークのレプリケーションを構成します。'
 versions:
-  ghes: '>=3.3'
+  ghes: '*'
 type: how_to
 topics:
   - Enterprise
-ms.openlocfilehash: dced49e1e6795407e2e41f12275a310c3a98aaf1
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 682e169c55ef7ded453934720bf47f8843bc4acc
+ms.sourcegitcommit: 1d757a4f3e1947fdd3868208b63041de30c9f60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '146332011'
+ms.lasthandoff: 11/03/2022
+ms.locfileid: '148132380'
 ---
 {% data reusables.enterprise.repository-caching-release-phase %}
 
@@ -38,19 +38,19 @@ CI マシンで、プライマリ インスタンスではなくリポジトリ 
 
 ## リポジトリ キャッシュの構成
 
-{% ifversion ghes = 3.3 %}
-1. プライマリ {% data variables.product.prodname_ghe_server %} アプライアンスで、リポジトリ キャッシュの機能フラグを有効にします。
+{% ifversion ghes = 3.3 %} {% data reusables.enterprise_installation.ssh-into-instance %}
+1. リポジトリのキャッシュを有効にするには、次のコマンドを実行します。
    
    ```
    $ ghe-config cluster.cache-enabled true
    ```
 {%- endif %}
-1. 新しい {% data variables.product.prodname_ghe_server %} アプライアンスを希望するプラットフォームにセットアップします。 このアプライアンスがリポジトリ キャッシュになります。 詳細については、「[{% data variables.product.prodname_ghe_server %} インスタンスをセットアップする](/admin/guides/installation/setting-up-a-github-enterprise-server-instance)」を参照してください。
+1. 新しい {% data variables.product.prodname_ghe_server %} インスタンスを希望するプラットフォームにセットアップします。 このインスタンスがリポジトリ キャッシュになります。 詳細については、「[{% data variables.product.prodname_ghe_server %} インスタンスをセットアップする](/admin/guides/installation/setting-up-a-github-enterprise-server-instance)」を参照してください。
 {% data reusables.enterprise_installation.replica-steps %}
 1. SSH を使用して、リポジトリ キャッシュの IP アドレスに接続します。
 
    ```shell
-   $ ssh -p 122 admin@<em>REPLICA IP</em>
+   $ ssh -p 122 admin@REPLICA-IP
    ```
 {%- ifversion ghes = 3.3 %}
 1. キャッシュ レプリカで、リポジトリ キャッシュの機能フラグを有効にします。
@@ -62,14 +62,25 @@ CI マシンで、プライマリ インスタンスではなくリポジトリ 
 1. プライマリへの接続を確認し、リポジトリ キャッシュに対してレプリカ モードを有効にするには、`ghe-repl-setup` をもう一度実行します。
 
    ```shell
-   $ ghe-repl-setup <em>PRIMARY IP</em>
+   $ ghe-repl-setup PRIMARY-IP
    ```
 
-1. *CACHE-LOCATION* を、キャッシュがデプロイされているリージョンなどの英数字識別子に置き換えて、リポジトリ キャッシュに対して `cache_location` を設定します。 また、このキャッシュのデータセンター名も設定します。新しいキャッシュでは、同じデータセンター内の別のキャッシュからシード処理を試みます。
+{% ifversion ghes < 3.6 %}
+1. *CACHE-LOCATION* を、キャッシュがデプロイされているリージョンなどの英数字識別子に置き換えて、リポジトリ キャッシュに対して `cache-location` を設定します。 また、このキャッシュのデータセンター名も設定します。新しいキャッシュでは、同じデータセンター内の別のキャッシュからシード処理を試みます。
 
    ```shell
-   $ ghe-repl-node --cache <em>CACHE-LOCATION</em> --datacenter <em>REPLICA-DC-NAME</em>
+   $ ghe-repl-node --cache CACHE-LOCATION --datacenter REPLICA-DC-NAME
    ```
+{% else %}
+1. リポジトリ キャッシュを構成するには、`ghe-repl-node` コマンドを使用し、必要なパラメーターを含めます。
+    - *CACHE-LOCATION* を、キャッシュがデプロイされているリージョンなどの英数字識別子に置き換えて、リポジトリ キャッシュに対して `cache-location` を設定します。  *CACHE-LOCATION* 値は、`assets` や `media` など、サブドメイン分離で使用するために予約されているサブドメインのいずれにもできません。  予約名の一覧については、「[サブドメイン分離の有効化](/enterprise/admin/guides/installation/enabling-subdomain-isolation#about-subdomain-isolation)」を参照してください。
+    - リポジトリ キャッシュに `cache-domain` を設定し、*EXTERNAL-CACHE-DOMAIN* を Git クライアントがリポジトリ キャッシュへのアクセスに使用するホスト名に置き換えます。 `cache-domain` を指定しない場合、{% data variables.product.product_name %} は、*CACHE-LOCATION* 値をサブドメインとして、インスタンス用に構成されたホスト名の前に付加します。 詳しくは、「[ホスト名の設定](/admin/configuration/configuring-network-settings/configuring-a-hostname)」をご覧ください。
+    - 新しいキャッシュでは、同じデータセンター内の別のキャッシュからシード処理を試みます。 リポジトリ キャッシュに `datacenter` を設定し、*REPLICA-DC-NAME* をノードをデプロイするデータセンターの名前に置き換えます。
+
+    ```shell
+    $ ghe-repl-node --cache CACHE-LOCATION --cache-domain EXTERNAL-CACHE-DOMAIN --datacenter REPLICA-DC-NAME
+    ```
+{% endif %}
 
 {% data reusables.enterprise_installation.replication-command %} {% data reusables.enterprise_installation.verify-replication-channel %}
 1. リポジトリ キャッシュへのリポジトリ ネットワークのレプリケーションを有効にするには、データの場所ポリシーを設定します。 詳細については、「[データの場所ポリシー](#data-location-policies)」を参照してください。

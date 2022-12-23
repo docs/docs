@@ -2,26 +2,26 @@
 title: Publicando uma consultoria de segurança do repositório
 intro: Você pode publicar uma consultoria de segurança para alertar a sua comunidade sobre uma vulnerabilidade de segurança no seu projeto.
 redirect_from:
-  - /articles/publishing-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/publishing-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/publishing-a-security-advisory
-  - /code-security/security-advisories/publishing-a-security-advisory
+- /articles/publishing-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/publishing-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/publishing-a-security-advisory
+- /code-security/security-advisories/publishing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
-  - Repositories
+- Security advisories
+- Vulnerabilities
+- CVEs
+- Repositories
 shortTitle: Publish repository advisories
 ms.openlocfilehash: f3e3bfdb6b44ec1c86bb903c66271b854f4fb041
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145095643'
+ms.locfileid: "145095643"
 ---
 <!--Marketing-LINK: From /features/security/software-supply-chain page "Publishing a security advisory".-->
 

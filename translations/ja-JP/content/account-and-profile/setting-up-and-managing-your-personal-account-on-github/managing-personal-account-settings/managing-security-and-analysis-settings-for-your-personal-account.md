@@ -4,7 +4,7 @@ intro: '{% data variables.product.prodname_dotcom %} 上のプロジェクトの
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 topics:
   - Accounts
 redirect_from:
@@ -12,12 +12,12 @@ redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
   - /account-and-profile/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
 shortTitle: Manage security & analysis
-ms.openlocfilehash: 61d1944219fd1b75f476c7aef8305018c85735c5
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 22ff867691f79360db54f0fe85f5e988c71536a3
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '145165351'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108953'
 ---
 ## セキュリティおよび分析設定の管理について
 
@@ -37,11 +37,11 @@ ms.locfileid: '145165351'
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. [Code security and analysis] の下で機能の右にある **[Disable all]** または **[Enable all]** をクリックします。
-  {% ifversion ghes > 3.2 %}!["Configure security and analysis" 機能の "Enable all" または "Disable all" ボタン](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% else %}!["Configure security and analysis" 機能の "Enable all" または "Disable all" ボタン](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
+  {% ifversion ghes %}![[セキュリティと分析の構成] 機能の [すべて有効にする] または [すべて無効にする] ボタン](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% else %}![[セキュリティと分析の構成] 機能の [すべて有効にする] または [すべて無効にする] ボタン](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
 6. オプションで、自分が所有する新しいリポジトリに対して機能を既定で有効にできます。
-  {% ifversion ghes > 3.2 %}![新しいリポジトリの "Enable by default" オプション](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![新しいリポジトリの "Enable by default" オプション](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
+  {% ifversion ghes %}![新しいリポジトリの [既定で有効化] オプション](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![新しいリポジトリの [既定で有効化] オプション](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
 7. **[Disable FEATURE]** または **[Enable FEATURE]** をクリックし、所有するすべてのリポジトリに対してこの機能を無効または有効にします。
-  {% ifversion ghes > 3.2 %}![機能を無効または有効にするボタン](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![機能を無効または有効にするボタン](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
+  {% ifversion ghes %}![機能を無効または有効にするボタン](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![機能を無効または有効にするボタン](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
 
 {% data reusables.security.displayed-information %}
 
@@ -49,7 +49,7 @@ ms.locfileid: '145165351'
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. 機能の右側にある [Code security and analysis] で、所有する新しいリポジトリに対して既定で機能を有効または無効にします
-  {% ifversion ghes > 3.2 %}![新しいリポジトリの機能を有効または無効にするチェックボックス](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![新しいリポジトリの機能を有効または無効にするチェックボックス](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
+  {% ifversion ghes %}![新しいリポジトリの機能を有効または無効にするチェックボックス](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![新しいリポジトリの機能を有効または無効にするチェックボックス](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
 
 ## 参考資料
 

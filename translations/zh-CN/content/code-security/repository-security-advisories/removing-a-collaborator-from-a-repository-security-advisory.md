@@ -2,23 +2,23 @@
 title: 删除存储库安全公告中的协作者
 intro: 协作者从存储库安全公告中删除后，将失去对安全公告的讨论和元数据的读取和写入权限。
 redirect_from:
-  - /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
-  - /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
+- /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
+- /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Collaboration
+- Security advisories
+- Vulnerabilities
+- Collaboration
 shortTitle: Remove collaborators
 ms.openlocfilehash: ced0edd0614304c0d33ddd40dce3c6a24a9ffcfd
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145099732'
+ms.locfileid: "145099732"
 ---
 对安全通告具有管理员权限的人员可从安全通告删除协作者。
 

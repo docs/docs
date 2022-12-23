@@ -5,21 +5,20 @@ intro: さまざまなカスタム フィールドの種類、プロジェクト
 versions:
   feature: projects-v2
 topics:
-  - Issues
-  - Projects
+- Issues
+- Projects
 children:
-  - /about-text-and-number-fields
-  - /about-date-fields
-  - /about-single-select-fields
-  - /about-iteration-fields
-  - /renaming-fields
-  - /deleting-fields
+- /about-text-and-number-fields
+- /about-date-fields
+- /about-single-select-fields
+- /about-iteration-fields
+- /renaming-fields
+- /deleting-fields
 allowTitleToDifferFromFilename: true
-ms.openlocfilehash: 8b4f48ba1d55d81c571256f48334c54ce3a7e71d
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: eaa9fe7d4dbd6b2c43d0ab2ad12faf173d6f571a
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147423999'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: "148109013"
 ---
-

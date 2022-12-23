@@ -13,18 +13,18 @@ redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-your-theme-settings
   - /account-and-profile/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-your-theme-settings
 shortTitle: Manage theme settings
-ms.openlocfilehash: 6251b265d99271f58a4ad02d2f6cb7fdf722cb6b
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 3f7d35978d3a80f7fb63cce1d054afd15b579f13
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147580448'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108952'
 ---
 {% data variables.product.product_name %} を使用時期と使用方法を選択して柔軟性を高めるために、テーマ設定をして {% data variables.product.product_name %} の外観を変更できます。 ライトとダークの 2 つのテーマから選択するか、システム設定に従うかを {% data variables.product.product_name %} で設定できます。
 
 ダーク テーマを使用して、特定のデバイスの電力消費量を削減したり、暗い場所で目の負担を減らしたり、テーマの外観を優先したりすることができます。
 
-{% ifversion fpt or ghes > 3.2 or ghae or ghec %}弱視の方は、前景と背景の要素のコントラストが強いハイ コントラスト テーマの使用をお勧めします。{% endif %}{% ifversion fpt or ghae or ghec %}色覚障碍がある方には、ライトとダークの色覚障碍向けテーマをお勧めします。
+弱視の方は、前景と背景の要素のコントラストが強いハイ コントラスト テーマの使用をお勧めします。{% ifversion fpt or ghae or ghec %}色覚障碍がある方には、ライトとダークの色覚障碍向けテーマをお勧めします。
 
 {% endif %}
 
@@ -43,10 +43,10 @@ ms.locfileid: '147580448'
       使用する {% data variables.product.product_name %} のバージョンの決定について詳しくは、「[{% data variables.product.prodname_docs %} のバージョンについて](/get-started/learning-about-github/about-versions-of-github-docs#github-enterprise-server)」を参照してください。
       {% endnote %} {%- endif %}
 
-      {% ifversion fpt or ghes > 3.2 or ghae or ghec %}![1 つのテーマを選択するためのラジオ ボタン](/assets/images/help/settings/theme-choose-a-single-theme-highcontrast.png){% else %}![1 つのテーマを選択するためのラジオ ボタン](/assets/images/help/settings/theme-choose-a-single-theme.png){% endif %}
+      ![1 つのテーマを選択するためのラジオ ボタン](/assets/images/help/settings/theme-choose-a-single-theme-highcontrast.png)
     - システム設定に従うことを選択した場合は、昼のテーマと夜のテーマをクリックします。
 
-      {% ifversion fpt or ghes > 3.2 or ghae or ghec %}![システム設定と同期するテーマを選択するためのボタン](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync-highcontrast.png){% else %}![システム設定と同期するテーマを選択するためのボタン](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync.png){% endif %} {% ifversion fpt or ghec %}
+      ![システム設定と同期するテーマを選択するためのボタン](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync-highcontrast.png){% ifversion fpt or ghec %}
     - 現在パブリック ベータ版のテーマを選択する場合は、まず機能プレビューでそれを有効にする必要があります。 詳細については、「[機能プレビューを使用した早期アクセス リリースを探索する](/get-started/using-github/exploring-early-access-releases-with-feature-preview)」を参照してください。{% endif %}
 
 {% ifversion command-palette %}

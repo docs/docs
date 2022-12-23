@@ -9,12 +9,12 @@ topics:
   - Advanced Security
 shortTitle: 6. Rollout secret scanning
 miniTocMaxHeadingLevel: 3
-ms.openlocfilehash: 791ce9924ac9f2cb918db4e1c416a8755b790bf5
-ms.sourcegitcommit: 74d6918dae0cf489c86eee049fb0f061a63df44c
+ms.openlocfilehash: 15254d9a4d490f6eeff566cd71d94da7c6e8c467
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/15/2022
-ms.locfileid: '147145381'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148158761'
 ---
 {% note %}
 
@@ -26,7 +26,7 @@ Puedes habilitar el análisis de secretos para repositorios individuales o para 
 
 En este artículo se explica un proceso de alto nivel centrado en habilitar {% data variables.product.prodname_secret_scanning %} para todos los repositorios de una organización. Los principios que se describen en este artículo se pueden seguir aplicando incluso si adoptas el enfoque más escalonado de habilitar {% data variables.product.prodname_secret_scanning %} para repositorios individuales. 
 
-### <a name="1-focus-on-newly-committed-secrets"></a>1. Céntrate en los secretos recién confirmados
+### 1. Céntrate en los secretos recién confirmados
 
 Al habilitar {% data variables.product.prodname_secret_scanning %}, debes centrarte en corregir las credenciales recién confirmadas detectadas por el análisis de secretos. Si te centras en limpiar las credenciales confirmadas, los desarrolladores podrían seguir insertando accidentalmente nuevas credenciales, lo que significa que el recuento total de secretos permanecerá aproximadamente al mismo nivel, no disminuirá como se prevé. Por este motivo, es esencial detener la filtración de nuevas credenciales antes de centrarse en revocar los secretos actuales.
 
@@ -37,7 +37,7 @@ Hay algunos enfoques para abordar las credenciales recién confirmadas, pero un 
 
   {% note %}
   
-  **Nota:** Este paso se puede automatizar. En el caso de grandes empresas y organizaciones con cientos de repositorios, el seguimiento manual es insostenible. Puedes incorporar la automatización en el proceso de webhook definido en el primer paso. La carga del webhook contiene información sobre el repositorio y la organización acerca del secreto filtrado. Con esta información, puedes ponerte en contacto con los mantenedores actuales del repositorio y crear un correo electrónico o mensaje para las personas responsables o bien abrir una incidencia.
+  **Nota:** Este paso se puede automatizar. En el caso de grandes empresas y organizaciones con cientos de repositorios, el seguimiento manual es insostenible. Puedes incorporar la automatización en el proceso de webhook definido en el primer paso. La carga del webhook contiene información sobre el repositorio y la organización acerca del secreto filtrado. Con esta información, puedes ponerte en contacto con los mantenedores actuales del repositorio y crear un correo electrónico o mensaje para las personas responsables, o bien abrir una incidencia.
   
   {% endnote %} 
 3. **Formación**: crea un documento de formación interno asignado al desarrollador que confirmó el secreto. En este documento de formación, puedes explicar los riesgos creados mediante la confirmación de secretos y dirigirlos a la información de procedimientos recomendados sobre el uso de secretos de forma segura en el desarrollo. Si un desarrollador no aprende de la experiencia y continúa confirmando secretos, podrías crear un proceso de escalación, pero la formación suele funcionar bien.
@@ -50,7 +50,7 @@ Repite los dos últimos pasos para cualquier secreto nuevo que se haya filtrado.
 
 {% endnote %}
 
-### <a name="2-remediate-previously-committed-secrets-starting-with-the-most-critical"></a>2. Corrige los secretos confirmados previamente, empezando por el más crítico
+### 2. Corrige los secretos confirmados previamente, empezando por el más crítico
 
 Después de haber establecido un proceso para supervisar, notificar y corregir los secretos recién publicados, puedes empezar a trabajar en los secretos confirmados antes de la introducción de {% data variables.product.prodname_GH_advanced_security %}.
 
@@ -70,7 +70,7 @@ Una vez que hayas decidido los tipos de secretos, puedes hacer lo siguiente:
   
   {% ifversion not ghae %}
   
-  Puedes usar la información general de seguridad para recopilar esta información. Para obtener más información sobre el uso de la información general de seguridad, consulta "[Filtrado de alertas en la información general de seguridad](/code-security/security-overview/filtering-alerts-in-the-security-overview)".
+  Puedes usar la información general de seguridad para recopilar esta información. Para obtener más información sobre el uso de la información general de seguridad, consulta "[Filtrado de alertas en los resúmenes de seguridad](/code-security/security-overview/filtering-alerts-in-the-security-overview)".
   
   {% endif %}
   
@@ -90,7 +90,7 @@ Una vez que hayas decidido los tipos de secretos, puedes hacer lo siguiente:
 
 3. Después de recopilar información sobre los secretos filtrados, crea un plan de comunicación dirigido para los usuarios que mantienen los repositorios afectados por cada tipo de secreto. Puedes usar el correo electrónico, la mensajería o incluso crear incidencias de GitHub en los repositorios afectados. Si puedes usar las API que proporcionan estas herramientas para enviar las comunicaciones de forma automatizada, esto te facilitará el escalado entre varios tipos de secretos.
 
-### <a name="3-expand-the-program-to-include-more-secret-types-and-custom-patterns"></a>3. Expande el programa para incluir más tipos de secretos y patrones personalizados
+### 3. Expande el programa para incluir más tipos de secretos y patrones personalizados
 
 Ahora puedes ir más allá de los cinco tipos de secretos más críticos y crear una lista más completa, con un enfoque adicional en la formación. Puedes repetir el paso anterior, corregir los secretos confirmados previamente, para los distintos tipos de secretos a los que te has dirigido.
 

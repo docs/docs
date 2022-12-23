@@ -17,12 +17,12 @@ topics:
   - Repositories
   - Health
 shortTitle: Add a security policy
-ms.openlocfilehash: f081d6e6bd99f604e7e86bc094f76de9041adf4b
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: ef4a256c06b9149bd9db8d7afdce974dd1d29f0d
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145083360'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148159266'
 ---
 ## Sobre políticas de segurança
 
@@ -39,7 +39,7 @@ Você pode criar uma política de segurança padrão para sua organização ou c
 
 {% endtip %}
 
-{% ifversion fpt or ghec %} Depois que alguém relatar uma vulnerabilidade de segurança no seu projeto, use as {% data variables.product.prodname_security_advisories %} para divulgar, corrigir e publicar informações sobre a vulnerabilidade. Para obter mais informações sobre o processo de relatório e divulgação de vulnerabilidades no {% data variables.product.prodname_dotcom %}, confira "[Sobre a divulgação coordenada de vulnerabilidades de segurança](/code-security/security-advisories/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)". Para obter mais informações sobre as {% data variables.product.prodname_security_advisories %}, confira "[Sobre as {% data variables.product.prodname_security_advisories %}](/github/managing-security-vulnerabilities/about-github-security-advisories)".
+{% ifversion fpt or ghec %} Depois que alguém relatar uma vulnerabilidade de segurança no seu projeto, use as {% data variables.product.prodname_security_advisories %} para divulgar, corrigir e publicar informações sobre a vulnerabilidade. Para obter mais informações sobre o processo de relatório e divulgação de vulnerabilidades no {% data variables.product.prodname_dotcom %}, confira "[Sobre a divulgação coordenada de vulnerabilidades de segurança](/code-security/security-advisories/guidance-on-reporting-and-writing/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)". Para obter mais informações sobre avisos de segurança do repositório, confira "[Sobre os avisos de segurança do repositório](/github/managing-security-vulnerabilities/about-github-security-advisories)".
 
 {% data reusables.repositories.github-security-lab %} {% endif %} {% ifversion ghes or ghae %}
 <!-- alternative to the content about GitHub Security Advisories in the dotcom article -->

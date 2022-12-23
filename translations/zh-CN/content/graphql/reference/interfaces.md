@@ -10,12 +10,12 @@ versions:
   ghae: '*'
 topics:
   - API
-ms.openlocfilehash: de0a12e638a7f98f34b1704e272b040a6178eaeb
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: a6fed36ccd70557b8d88904f83840a7afacdfacb
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147496610'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108138'
 ---
 ## 关于接口
 
@@ -24,5 +24,7 @@ ms.locfileid: '147496610'
 例如，[`Lockable`](/graphql/reference/interfaces#lockable) 是一个接口，因为 [`Issue`](/graphql/reference/objects#issue) 和 [`PullRequest`](/graphql/reference/objects#pullrequest) 对象都可以锁定。 接口拥有自己的指定字段列表，这些字段通过实现对象得以共享。
 
 有关详细信息，请参阅“[实现](/graphql/guides/introduction-to-graphql#implementation)”。
+
+{% data reusables.projects.graphql-ghes %}
 
 <!-- Content after this section is automatically generated -->

@@ -1,24 +1,24 @@
 ---
 title: Eliminación de un colaborador de un aviso de seguridad del repositorio
-intro: 'Cuando eliminas a un colaborador de una asesoría de seguridad de repositorio, este pierde el acceso de lectura y escritura en el debate y los metadatos de aquella.'
+intro: Cuando eliminas a un colaborador de una asesoría de seguridad de repositorio, este pierde el acceso de lectura y escritura en el debate y los metadatos de aquella.
 redirect_from:
-  - /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
-  - /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
+- /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
+- /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Collaboration
+- Security advisories
+- Vulnerabilities
+- Collaboration
 shortTitle: Remove collaborators
 ms.openlocfilehash: ced0edd0614304c0d33ddd40dce3c6a24a9ffcfd
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145119361'
+ms.locfileid: "145119361"
 ---
 Las personas con permisos administrativos en una asesoría de seguridad pueden eliminar a los colaboradores de la misma.
 

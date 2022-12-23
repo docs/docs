@@ -4,7 +4,7 @@ intro: 'Você pode controlar recursos que protegem e analisam o código nos seus
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 topics:
   - Accounts
 redirect_from:
@@ -12,12 +12,12 @@ redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
   - /account-and-profile/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
 shortTitle: Manage security & analysis
-ms.openlocfilehash: 61d1944219fd1b75f476c7aef8305018c85735c5
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 22ff867691f79360db54f0fe85f5e988c71536a3
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '145164652'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107819'
 ---
 ## Sobre a gestão de configurações de segurança e análise
 
@@ -37,11 +37,11 @@ Para ter uma visão geral da segurança no nível do repositório, confira "[Com
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. Em "Segurança e análise de código", à direita do recurso, clique em **Desabilitar tudo** ou **Habilitar tudo**.
-  {% ifversion ghes > 3.2 %}!["Habilitar tudo" ou "Desabilitar tudo" para os recursos de "Configurar segurança e análise"](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% else %}!["Habilitar tudo" ou "Desabilitar tudo" para os recursos de "Configurar segurança e análise"](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
+  {% ifversion ghes %}![Botão "Habilitar tudo" ou "Desabilitar tudo" dos recursos em "Configurar segurança e análise"](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% else %}![Botão "Habilitar tudo" ou "Desabilitar tudo" dos recursos em "Configurar segurança e análise"](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
 6. Opcionalmente, habilite o recurso por padrão para novos repositórios que você possui.
-  {% ifversion ghes > 3.2 %}![Opção "Habilitar por padrão" para novos repositórios](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![Opção "Habilitar por padrão" para novos repositórios](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
+  {% ifversion ghes %}![Opção "Habilitar por padrão" para novos repositórios](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![Opção "Habilitar por padrão" para novos repositórios](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
 7. Clique em **Desabilitar RECURSO** ou em **Habilitar RECURSO** para habilitar ou desabilitar o recurso em todos os repositórios dos quais você é o proprietário.
-  {% ifversion ghes > 3.2 %}![Botão usado para desabilitar ou habilitar um recurso](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![Botão usado para desabilitar ou habilitar um recurso](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
+  {% ifversion ghes %}![Botão usado para desabilitar ou habilitar um recurso](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![Botão usado para desabilitar ou habilitar um recurso](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
 
 {% data reusables.security.displayed-information %}
 
@@ -49,7 +49,7 @@ Para ter uma visão geral da segurança no nível do repositório, confira "[Com
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. Na opção "Código de segurança e análise", à direita do recurso, habilite ou desabilite o recurso por padrão para novos repositórios que você possui.
-  {% ifversion ghes > 3.2 %}![Caixa de seleção usada para habilitar ou desabilitar um recurso em novos repositórios](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![Caixa de seleção usada para habilitar ou desabilitar um recurso em novos repositórios](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
+  {% ifversion ghes %}![Caixa de seleção usada para habilitar ou desabilitar um recurso em novos repositórios](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![Caixa de seleção usada para habilitar ou desabilitar um recurso em novos repositórios](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
 
 ## Leitura adicional
 

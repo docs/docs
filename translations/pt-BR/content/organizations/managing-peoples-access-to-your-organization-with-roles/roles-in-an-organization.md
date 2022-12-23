@@ -15,12 +15,12 @@ topics:
   - Organizations
   - Teams
 shortTitle: Roles in an organization
-ms.openlocfilehash: d8d07ff40026de0d12fce2e11479c424b781680a
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: f9e5d411c7a7a16e22abcc660f2761f1bfd6cf7d
+ms.sourcegitcommit: c562c85cc75ffe1eb4e9595d8adc09ec71697ab1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147061735'
+ms.lasthandoff: 11/22/2022
+ms.locfileid: '148180074'
 ---
 ## Sobre as funções
 {% data reusables.organizations.about-roles %}
@@ -142,7 +142,7 @@ Para manter os dados da sua organização seguros e permitir acesso aos reposit�
 | Habilitar a sincronização da equipe (confira "[Como gerenciar a sincronização da equipe para sua organização](/organizations/managing-saml-single-sign-on-for-your-organization/managing-team-synchronization-for-your-organization)") | **X** |  |  |  |  |{% endif %}
 | Gerenciar revisões de solicitação de pull na organização (confira "[Como gerenciar revisões de solicitação de pull na sua organização](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)") | **X** |  |  |  |  |
 
-{% elsif ghes > 3.2 or ghae %}
+{% elsif ghes or ghae %}
 <!-- GHES 3.3+ and eventual GHAE release don't have the extra columns for Moderators and Billing managers. -->
 
 | Ação da organização | Proprietários | Membros | Gerentes de segurança |
@@ -167,7 +167,7 @@ Para manter os dados da sua organização seguros e permitir acesso aos reposit�
 | Pode se tornar um *mantenedor da equipe* | **X** | **X** | **X**  |
 | Transferir repósitórios | **X** | |  |
 | Gerenciar configurações de segurança e análise (confira "[Como gerenciar configurações de segurança e análise para sua organização](/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization)") | **X** | | **X** |{% ifversion ghes %}
-| Ter a visão geral de segurança da organização (confira "[Sobre a visão geral de segurança](/code-security/security-overview/about-the-security-overview)") | **X** | | **X** |{% endif %}{% ifversion ghes > 3.2 %}
+| Ter a visão geral de segurança da organização (confira "[Sobre a visão geral de segurança](/code-security/security-overview/about-the-security-overview)") | **X** | | **X** |{% endif %}{% ifversion ghes %}
 | Gerenciar {% data variables.product.prodname_dependabot_security_updates %} (confira "[Sobre as {% data variables.product.prodname_dependabot_security_updates %}](/github/managing-security-vulnerabilities/about-dependabot-security-updates)") | **X** | | **X** |{% endif %}
 | Gerenciar as autoridades de certificação SSH de uma organização (confira "[Como gerenciar as autoridades de certificação SSH da sua organização](/articles/managing-your-organizations-ssh-certificate-authorities)") | **X** |  |  |
 | Criar quadros de projetos (confira "[Permissões de quadros de projetos de uma organização](/articles/project-board-permissions-for-an-organization)") | **X** | **X** | **X** |
@@ -186,7 +186,7 @@ Para manter os dados da sua organização seguros e permitir acesso aos reposit�
 | [Exportar uma lista das pessoas com acesso a um repositório da organização](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |  |
 | Gerenciar rótulos padrão (confira "[Como gerenciar rótulos padrão para repositórios na sua organização](/articles/managing-default-labels-for-repositories-in-your-organization)") | **X** | |  |{% ifversion pull-request-approval-limit %}
 | Gerenciar revisões de solicitação de pull na organização (confira "[Como gerenciar revisões de solicitação de pull na sua organização](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)") | **X** |  | |  |{% endif %}
-{% ifversion ghae %}| Gerenciar listas de permissões de IP (confira "[Como restringir o tráfego de rede para sua empresa](/admin/configuration/restricting-network-traffic-to-your-enterprise)") | **X** | |  |{% endif %}
+{% ifversion ghae %}| Gerenciar listas de permissões de IP (confira "[Como restringir o tráfego de rede para sua empresa com uma lista de permissões de IP](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)") | **X** | |  |{% endif %}
 
 {% else %}
 <!-- GHES and GHAE older versions don't have columns for Moderators, Billing managers or Security managers. -->
@@ -227,7 +227,7 @@ Para manter os dados da sua organização seguros e permitir acesso aos reposit�
 | [Ver as pessoas com acesso a um repositório da organização](/articles/viewing-people-with-access-to-your-repository) | **X** | |
 | [Exportar uma lista das pessoas com acesso a um repositório da organização](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |
 | Gerenciar rótulos padrão (confira "[Como gerenciar rótulos padrão para repositórios na sua organização](/articles/managing-default-labels-for-repositories-in-your-organization)") | **X** | |
-{% ifversion ghae %}| Gerenciar listas de permissões de IP (confira "[Como restringir o tráfego de rede para sua empresa](/admin/configuration/restricting-network-traffic-to-your-enterprise)") | **X** | |{% endif %}
+{% ifversion ghae %}| Gerenciar listas de permissões de IP (confira "[Como restringir o tráfego de rede para sua empresa com uma lista de permissões de IP](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)") | **X** | |{% endif %}
 
 {% endif %}
 

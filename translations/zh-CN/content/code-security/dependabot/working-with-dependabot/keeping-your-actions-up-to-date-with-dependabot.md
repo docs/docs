@@ -9,7 +9,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Repositories
@@ -17,12 +17,12 @@ topics:
   - Version updates
   - Actions
 shortTitle: Auto-update actions
-ms.openlocfilehash: b7de2100ad191dbcb66f4853779e5f048ca33a84
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 804660684230d8a0fb716b69644aab851a4c247b
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '146027961'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107723'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %}
 
@@ -48,7 +48,7 @@ ms.locfileid: '146027961'
 
 ### 例如用于 {% data variables.product.prodname_actions %} 的 dependabot.yml 文件
 
-下面的示例 dependabot.yml 文件配置 {% data variables.product.prodname_actions %} 的版本更新。 `directory` 必须设置为 `"/"` 以检查 `.github/workflows` 中的工作流文件。 `schedule.interval` 设置为 `"daily"`。 在该文件被检入或更新后，{% data variables.product.prodname_dependabot %} 将检查您的操作的新版本。 {% data variables.product.prodname_dependabot %} 在发现任何过时的操作时，将会提出版本更新的拉取请求。 在初始版本更新后，{% data variables.product.prodname_dependabot %} 将继续每天检查一次过时的操作。
+下面的示例 dependabot.yml 文件配置 {% data variables.product.prodname_actions %} 的版本更新。 `directory` 必须设置为 `"/"` 以检查 `.github/workflows` 中的工作流文件。 `schedule.interval` 设置为 `"weekly"`。 在该文件被检入或更新后，{% data variables.product.prodname_dependabot %} 将检查您的操作的新版本。 {% data variables.product.prodname_dependabot %} 在发现任何过时的操作时，将会提出版本更新的拉取请求。 在初始版本更新后，{% data variables.product.prodname_dependabot %} 将继续每周检查一次过时的操作版本。
 
 ```yaml
 # Set update schedule for GitHub Actions
@@ -59,8 +59,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
-      interval: "daily"
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
 ```
 
 ## 为操作配置 {% data variables.product.prodname_dependabot_version_updates %}

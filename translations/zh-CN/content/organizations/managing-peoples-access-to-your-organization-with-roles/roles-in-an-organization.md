@@ -15,12 +15,12 @@ topics:
   - Organizations
   - Teams
 shortTitle: Roles in an organization
-ms.openlocfilehash: d8d07ff40026de0d12fce2e11479c424b781680a
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: f9e5d411c7a7a16e22abcc660f2761f1bfd6cf7d
+ms.sourcegitcommit: c562c85cc75ffe1eb4e9595d8adc09ec71697ab1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147061736'
+ms.lasthandoff: 11/22/2022
+ms.locfileid: '148180075'
 ---
 ## 关于角色
 {% data reusables.organizations.about-roles %}
@@ -142,7 +142,7 @@ ms.locfileid: '147061736'
 | 启用团队同步（请参阅“[管理组织的团队同步](/organizations/managing-saml-single-sign-on-for-your-organization/managing-team-synchronization-for-your-organization)”） | **X** |  |  |  |  |{% endif %}
 | 管理组织中的拉取请求审查（请参阅“[管理组织中的拉取请求审查](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)”） | **X** |  |  |  |  |
 
-{% elsif ghes > 3.2 or ghae %}
+{% elsif ghes or ghae %}
 <!-- GHES 3.3+ and eventual GHAE release don't have the extra columns for Moderators and Billing managers. -->
 
 | 组织操作 | 所有者 | 成员 | 安全管理员 |
@@ -167,7 +167,7 @@ ms.locfileid: '147061736'
 | 可设为团队维护员 | **X** | **X** | **X**  |
 | 转让仓库 | **X** | |  |
 | 管理安全和分析设置（请参阅“[管理组织的安全和分析设置](/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization)”） | **X** | | **X** |{% ifversion ghes %}
-| 查看组织的安全概述（请参阅“[关于安全概述](/code-security/security-overview/about-the-security-overview)”） | **X** | | **X** |{% endif %}{% ifversion ghes > 3.2 %}
+| 查看组织的安全概述（请参阅“[关于安全概述](/code-security/security-overview/about-the-security-overview)”） | **X** | | **X** |{% endif %}{% ifversion ghes %}
 | 管理 {% data variables.product.prodname_dependabot_security_updates %}（请参阅“[关于 {% data variables.product.prodname_dependabot_security_updates %}](/github/managing-security-vulnerabilities/about-dependabot-security-updates)”） | **X** | | **X** |{% endif %}
 | 管理组织的 SSH 证书颁发机构（请参阅“[管理组织的 SSH 证书颁发机构](/articles/managing-your-organizations-ssh-certificate-authorities)”） | **X** |  |  |
 | 创建项目板（请参阅“[组织的项目板权限](/articles/project-board-permissions-for-an-organization)”） | **X** | **X** | **X** |
@@ -186,7 +186,7 @@ ms.locfileid: '147061736'
 | [导出对组织存储库具有访问权限的人员列表](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |  |
 | 管理默认标签（请参阅“[管理组织中存储库的默认标签](/articles/managing-default-labels-for-repositories-in-your-organization)”） | **X** | |  |{% ifversion pull-request-approval-limit %}
 | 管理组织中的拉取请求审查（请参阅“[管理组织中的拉取请求审查](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)”） | **X** |  | |  |{% endif %}
-{% ifversion ghae %}| 管理 IP 允许列表（请参阅“[限制到企业的网络流量](/admin/configuration/restricting-network-traffic-to-your-enterprise)”） | **X** | |  |{% endif %}
+{% ifversion ghae %}| 管理 IP 允许列表（请参阅“[使用 IP 允许列表限制到企业的网络流量](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)”） | **X** | |  |{% endif %}
 
 {% else %}
 <!-- GHES and GHAE older versions don't have columns for Moderators, Billing managers or Security managers. -->
@@ -227,7 +227,7 @@ ms.locfileid: '147061736'
 | [查看对组织存储库具有访问权限的人员](/articles/viewing-people-with-access-to-your-repository) | **X** | |
 | [导出对组织存储库具有访问权限的人员列表](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |
 | 管理默认标签（请参阅“[管理组织中存储库的默认标签](/articles/managing-default-labels-for-repositories-in-your-organization)”） | **X** | |
-{% ifversion ghae %}| 管理 IP 允许列表（请参阅“[限制到企业的网络流量](/admin/configuration/restricting-network-traffic-to-your-enterprise)”） | **X** | |{% endif %}
+{% ifversion ghae %}| 管理 IP 允许列表（请参阅“[使用 IP 允许列表限制到企业的网络流量](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)”） | **X** | |{% endif %}
 
 {% endif %}
 

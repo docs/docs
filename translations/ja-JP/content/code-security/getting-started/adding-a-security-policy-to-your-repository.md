@@ -17,12 +17,12 @@ topics:
   - Repositories
   - Health
 shortTitle: Add a security policy
-ms.openlocfilehash: f081d6e6bd99f604e7e86bc094f76de9041adf4b
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: ef4a256c06b9149bd9db8d7afdce974dd1d29f0d
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145087630'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148159270'
 ---
 ## セキュリティポリシーについて
 
@@ -39,7 +39,7 @@ ms.locfileid: '145087630'
 
 {% endtip %}
 
-{% ifversion fpt or ghec %} プロジェクトのセキュリティの脆弱性が報告された後は、{% data variables.product.prodname_security_advisories %} を使用して、脆弱性に関する情報を開示、修正、公開できます。 {% data variables.product.prodname_dotcom %} での脆弱性の報告と開示のプロセスに関する詳細については、「[セキュリティ脆弱性の調整された開示について](/code-security/security-advisories/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)」を参照してください。 {% data variables.product.prodname_security_advisories %} の詳細については、「[{% data variables.product.prodname_security_advisories %} について](/github/managing-security-vulnerabilities/about-github-security-advisories)」を参照してください。
+{% ifversion fpt or ghec %} プロジェクトのセキュリティの脆弱性が報告された後は、{% data variables.product.prodname_security_advisories %} を使用して、脆弱性に関する情報を開示、修正、公開できます。 {% data variables.product.prodname_dotcom %} での脆弱性の報告と開示のプロセスに関する詳細については、「[セキュリティ脆弱性の調整された開示について](/code-security/security-advisories/guidance-on-reporting-and-writing/about-coordinated-disclosure-of-security-vulnerabilities#about-reporting-and-disclosing-vulnerabilities-in-projects-on-github)」を参照してください。 リポジトリ セキュリティ アドバイザリの詳細については、「[リポジトリ セキュリティ アドバイザリについて](/github/managing-security-vulnerabilities/about-github-security-advisories)」を参照してください。
 
 {% data reusables.repositories.github-security-lab %} {% endif %} {% ifversion ghes or ghae %}
 <!-- alternative to the content about GitHub Security Advisories in the dotcom article -->

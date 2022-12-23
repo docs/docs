@@ -1,24 +1,24 @@
 ---
 title: Removendo um colaborador de uma consultoria de segurança de repositório
-intro: 'Ao remover um colaborador de uma consultoria de segurança do repositório, ele perderá acesso de leitura e gravação às discussões e metadados da consultoria de segurança.'
+intro: Ao remover um colaborador de uma consultoria de segurança do repositório, ele perderá acesso de leitura e gravação às discussões e metadados da consultoria de segurança.
 redirect_from:
-  - /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
-  - /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
+- /github/managing-security-vulnerabilities/removing-a-collaborator-from-a-security-advisory
+- /code-security/security-advisories/removing-a-collaborator-from-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Collaboration
+- Security advisories
+- Vulnerabilities
+- Collaboration
 shortTitle: Remove collaborators
 ms.openlocfilehash: ced0edd0614304c0d33ddd40dce3c6a24a9ffcfd
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145095638'
+ms.locfileid: "145095638"
 ---
 As pessoas com permissões de administrador para uma consultoria de segurança podem remover colaboradores da consultoria de segurança.
 

@@ -11,7 +11,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Dependabot
@@ -22,12 +22,12 @@ topics:
   - Troubleshooting
   - Errors
   - Dependencies
-ms.openlocfilehash: ad3449768246ea8659ddffe4957fd3d6801edd2c
-ms.sourcegitcommit: 478f2931167988096ae6478a257f492ecaa11794
+ms.openlocfilehash: 21b7c2b2e6c613d4443b54404dfc120bd8ac00e2
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/09/2022
-ms.locfileid: '147861657'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108269'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %}
 

@@ -13,13 +13,15 @@ topics:
 redirect_from:
   - /admin/github-actions/enabling-github-actions-with-azure-blob-storage
 shortTitle: Azure Blob storage
-ms.openlocfilehash: bcd92b12ec8ecd807906a3b2f7c09971d6641b93
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: 856748a3219be7789f0339c43210ca204fe56d91
+ms.sourcegitcommit: 6185352bc563024d22dee0b257e2775cadd5b797
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145100005'
+ms.lasthandoff: 12/09/2022
+ms.locfileid: '148192975'
 ---
+{% data reusables.actions.enterprise-storage-about %}
+
 ## 先决条件
 
 在启用 {% data variables.product.prodname_actions %} 之前，请确保您已完成以下步骤：
@@ -39,8 +41,9 @@ ms.locfileid: '145100005'
 
 ## 使用 Azure Blob 存储启用 {% data variables.product.prodname_actions %}
 
-{% data reusables.enterprise_installation.ssh-into-instance %} {% data reusables.actions.perform-blob-storage-precheck %} {% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
+{% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
 1. 在“项目和日志存储”下，选择“Azure Blob 存储”，然后输入 Azure 存储帐户的连接字符串。 有关获取存储帐户连接字符串的详细信息，请参阅 [Azure 文档](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)。
-  ![用于选择 Azure Blob 存储和连接字符串字段的单选按钮](/assets/images/enterprise/management-console/actions-azure-storage.png) {% data reusables.enterprise_management_console.save-settings %}
+
+   ![用于选择 Azure Blob 存储和“连接字符串”字段的单选按钮](/assets/images/enterprise/management-console/actions-azure-storage.png){% data reusables.enterprise_management_console.test-storage-button %} {% data reusables.enterprise_management_console.save-settings %}
 
 {% data reusables.actions.enterprise-postinstall-nextsteps %}

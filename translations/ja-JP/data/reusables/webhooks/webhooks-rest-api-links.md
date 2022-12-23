@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 3e175aefd9a243a098b5c35ca6d4068a651d2f61
-ms.sourcegitcommit: 9a7b3a9ccb983af5df2cd94da7fecf7a8237529b
+ms.openlocfilehash: 6f756137f84b0451079811530d035b11f9764446
+ms.sourcegitcommit: 6185352bc563024d22dee0b257e2775cadd5b797
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "147878487"
+ms.lasthandoff: 12/09/2022
+ms.locfileid: "148192906"
 ---
-Webhook REST API を使用すれば、リポジトリ、組織、アプリ Webhook の管理ができます。{% ifversion fpt or ghes > 3.2 or ghae or ghec %}この API を使って Webhook の配信を一覧表示したり、Webhook の個々の配信を取得して再配信したりできます。これは、外部のアプリまたはサービスに統合できます。{% endif %}REST API を使用して、Webhook の構成を変更することもできます。 たとえば、ペイロードURL、コンテントタイプ、SSLの検証、シークレットを変更できます。 詳細については、次を参照してください。
+REST API を利用し、リポジトリ、組織、アプリ Webhook を管理できます。 Webhook の Webhook 配信を一覧表示したり、Webhook の個別の配信を取得して再配信したりできます。Webhook は、外部のアプリまたはサービスに統合できます。 REST API を使用して、Webhook の構成を変更することもできます。 たとえば、ペイロードURL、コンテントタイプ、SSLの検証、シークレットを変更できます。 詳細については、次を参照してください。
 
-- [リポジトリ Webhook REST API](/rest/reference/webhooks#repository-webhooks)
-- [組織の Webhook REST API](/rest/reference/orgs#webhooks)
-- [{% data variables.product.prodname_github_app %} Webhook REST API](/rest/reference/apps#webhooks)
+- [リポジトリ Webhook](/rest/reference/webhooks#repository-webhooks)
+- [Organization Webhook](/rest/reference/orgs#webhooks)
+- [{% data variables.product.prodname_github_app %} Webhook](/rest/reference/apps#webhooks)

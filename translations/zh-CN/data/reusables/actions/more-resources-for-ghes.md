@@ -1,18 +1,13 @@
 ---
-ms.openlocfilehash: 0a3393009a2dcd812f5b20e3cdd1b160aee69d5e
-ms.sourcegitcommit: 5f9527483381cfb1e41f2322f67c80554750a47d
+ms.openlocfilehash: f71857cc87be4d06d437b62b3cce3d44d3311857
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2022
-ms.locfileid: "147168304"
+ms.lasthandoff: 10/25/2022
+ms.locfileid: "148108751"
 ---
 如果计划为实例的用户启用 {% data variables.product.prodname_actions %}，则需要更多资源。
 
-{%- ifversion ghes = 3.2 %}
-
-{% data reusables.actions.hardware-requirements-3.2 %}
-
-{%- endif %}
 
 {%- ifversion ghes = 3.3 %}
 

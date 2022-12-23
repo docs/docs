@@ -1,26 +1,26 @@
 ---
 title: Acerca de los avisos de seguridad de GitHub para repositorios
-intro: 'Puedes usar {% data variables.product.prodname_security_advisories %} para discutir, corregir y publicar información sobre vulnerabilidades de seguridad en tu repositorio.'
+intro: Puedes usar {% data variables.product.prodname_security_advisories %} para discutir, corregir y publicar información sobre vulnerabilidades de seguridad en tu repositorio.
 redirect_from:
-  - /articles/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-github-security-advisories
-  - /code-security/security-advisories/about-github-security-advisories
+- /articles/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-github-security-advisories
+- /code-security/security-advisories/about-github-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: overview
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
+- Security advisories
+- Vulnerabilities
+- CVEs
 shortTitle: Repository security advisories
 ms.openlocfilehash: 5c8ad99a2bee30f52a185fa15421bc6b23429fbf
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145091532'
+ms.locfileid: "145091532"
 ---
 {% data reusables.repositories.security-advisory-admin-permissions %}
 

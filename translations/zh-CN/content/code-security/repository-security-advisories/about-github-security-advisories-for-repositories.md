@@ -1,26 +1,26 @@
 ---
 title: 关于存储库的 GitHub 安全公告
-intro: '您可以使用 {% data variables.product.prodname_security_advisories %} 来私下讨论、修复和发布有关仓库中安全漏洞的信息。'
+intro: 您可以使用 {% data variables.product.prodname_security_advisories %} 来私下讨论、修复和发布有关仓库中安全漏洞的信息。
 redirect_from:
-  - /articles/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-github-security-advisories
-  - /code-security/security-advisories/about-github-security-advisories
+- /articles/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-github-security-advisories
+- /code-security/security-advisories/about-github-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: overview
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
+- Security advisories
+- Vulnerabilities
+- CVEs
 shortTitle: Repository security advisories
 ms.openlocfilehash: 5c8ad99a2bee30f52a185fa15421bc6b23429fbf
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145084364'
+ms.locfileid: "145084364"
 ---
 {% data reusables.repositories.security-advisory-admin-permissions %}
 

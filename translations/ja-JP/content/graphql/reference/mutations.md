@@ -10,17 +10,19 @@ versions:
   ghae: '*'
 topics:
   - API
-ms.openlocfilehash: 3e223b16fd5ead59148fa8284a9540424d821b13
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 976789de9da21b81c0af12e1113d32f0d8608a63
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '147496690'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108946'
 ---
 ## ミューテーションについて
 
 すべてのGraphQLスキーマは、クエリとミューテーションの両方についてルート型を持っています。 [ミューテーションの種類](https://graphql.github.io/graphql-spec/June2018/#sec-Type-System)では、サーバー上のデータを変更する GraphQL 操作を定義します。 これは、`POST`、`PATCH`、`DELETE` などの HTTP 動詞を実行するのと似ています。
 
 詳細については、「[ミューテーションについて](/graphql/guides/forming-calls-with-graphql#about-mutations)」を参照してください。
+
+{% data reusables.projects.graphql-ghes %}
 
 <!-- Content after this section is automatically generated -->

@@ -1,17 +1,17 @@
 ---
 title: Configurar el caché de un repositorio
-intro: 'Puedes configurar el caché de un repositorio si creas un aplicativo nuevo, conectando el caché del repositorio a tu aplicativo primario y configurando la replicación de redes de repositorio al caché del repositorio.'
+intro: 'Puedes configurar la caché de un repositorio para {% data variables.product.product_name %} creando una instancia nueva, conectando la caché del repositorio a tu instancia primaria y configurando la replicación de redes del repositorio a la caché del repositorio.'
 versions:
-  ghes: '>=3.3'
+  ghes: '*'
 type: how_to
 topics:
   - Enterprise
-ms.openlocfilehash: dced49e1e6795407e2e41f12275a310c3a98aaf1
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 682e169c55ef7ded453934720bf47f8843bc4acc
+ms.sourcegitcommit: 1d757a4f3e1947fdd3868208b63041de30c9f60c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '146332024'
+ms.lasthandoff: 11/03/2022
+ms.locfileid: '148132383'
 ---
 {% data reusables.enterprise.repository-caching-release-phase %}
 
@@ -38,19 +38,19 @@ Después, cuando se le solicite que capture `https://github.example.com/myorg/my
 
 ## Configurar el caché de un repositorio
 
-{% ifversion ghes = 3.3 %}
-1. En el dispositivo principal {% data variables.product.prodname_ghe_server %}, habilita la marca de característica para el almacenamiento en caché del repositorio.
+{% ifversion ghes = 3.3 %} {% data reusables.enterprise_installation.ssh-into-instance %}
+1. Para habilitar el almacenamiento en caché del repositorio, ejecuta el siguiente comando.
    
    ```
    $ ghe-config cluster.cache-enabled true
    ```
 {%- endif %}
-1. Configurar un aparato {% data variables.product.prodname_ghe_server %} nuevo en la plataforma que desees. Este aplicativo será tu caché de repositorio. Para más información, vea "[Configuración de una instancia de {% data variables.product.prodname_ghe_server %}](/admin/guides/installation/setting-up-a-github-enterprise-server-instance)".
+1. Configura una instancia de {% data variables.product.prodname_ghe_server %} nueva en la plataforma que desees. Esta instancia será tu caché de repositorio. Para más información, vea "[Configuración de una instancia de {% data variables.product.prodname_ghe_server %}](/admin/guides/installation/setting-up-a-github-enterprise-server-instance)".
 {% data reusables.enterprise_installation.replica-steps %}
 1. Conéctate a la dirección IP del caché de tu repositorio utilizando SSH.
 
    ```shell
-   $ ssh -p 122 admin@<em>REPLICA IP</em>
+   $ ssh -p 122 admin@REPLICA-IP
    ```
 {%- ifversion ghes = 3.3 %}
 1. En la réplica de caché, habilita la marca de característica para el almacenamiento en caché del repositorio.
@@ -62,14 +62,25 @@ Después, cuando se le solicite que capture `https://github.example.com/myorg/my
 1. Para comprobar la conexión con el modo principal y habilitar el modo de réplica para la memoria caché del repositorio, vuelve a ejecutar `ghe-repl-setup`.
 
    ```shell
-   $ ghe-repl-setup <em>PRIMARY IP</em>
+   $ ghe-repl-setup PRIMARY-IP
    ```
 
-1. Establece `cache_location` para la caché del repositorio, reemplazando *CACHE-LOCATION* por un identificador alfanumérico, como la región donde se implementa la memoria caché. Establece también un nombre de centro de datos para esta memoria caché. Las cachés nuevas intentarán inicializarse desde otra caché del mismo centro de datos.
+{% ifversion ghes < 3.6 %}
+1. Establece `cache-location` para la caché del repositorio, reemplazando *CACHE-LOCATION* por un identificador alfanumérico, como la región donde se implementa la memoria caché. Establece también un nombre de centro de datos para esta memoria caché. Las cachés nuevas intentarán inicializarse desde otra caché del mismo centro de datos.
 
    ```shell
-   $ ghe-repl-node --cache <em>CACHE-LOCATION</em> --datacenter <em>REPLICA-DC-NAME</em>
+   $ ghe-repl-node --cache CACHE-LOCATION --datacenter REPLICA-DC-NAME
    ```
+{% else %}
+1. Para configurar la caché del repositorio, usa el comando `ghe-repl-node` e incluye los parámetros necesarios.
+    - Establece `cache-location` para la caché del repositorio, reemplazando *CACHE-LOCATION* por un identificador alfanumérico, como la región donde se implementa la memoria caché.  El valor *CACHE-LOCATION* no debe ser ninguno de los subdominios reservados para su uso con aislamiento de subdominio, como `assets` o `media`.  Para obtener una lista de nombres reservados, consulta "[Habilitación del aislamiento de subdominios](/enterprise/admin/guides/installation/enabling-subdomain-isolation#about-subdomain-isolation)".
+    - Establece un `cache-domain` para la memoria caché del repositorio, reemplazando *EXTERNAL-CACHE-DOMAIN* por el nombre de host que los clientes de Git usarán para acceder a la caché del repositorio. Si no especificas un valor `cache-domain`, {% data variables.product.product_name %} anteponerá el valor *CACHE-LOCATION* como subdominio al nombre de host configurado para la instancia. Para más información, vea "[Configuración de un nombre de host](/admin/configuration/configuring-network-settings/configuring-a-hostname)".
+    - Las cachés nuevas intentarán inicializarse desde otra caché del mismo centro de datos. Establece un valor `datacenter` para la memoria caché del repositorio, reemplazando *REPLICA-DC-NAME* por el nombre del centro de datos donde vas a implementar el nodo.
+
+    ```shell
+    $ ghe-repl-node --cache CACHE-LOCATION --cache-domain EXTERNAL-CACHE-DOMAIN --datacenter REPLICA-DC-NAME
+    ```
+{% endif %}
 
 {% data reusables.enterprise_installation.replication-command %} {% data reusables.enterprise_installation.verify-replication-channel %}
 1. Para habilitar la replicación de las redes de repositorio en el caché del mismo, configura una política de ubicación de datos. Para obtener más información, consulta «[Directivas de ubicación de datos](#data-location-policies)».

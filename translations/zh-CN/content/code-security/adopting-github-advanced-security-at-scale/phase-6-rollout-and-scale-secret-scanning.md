@@ -9,12 +9,12 @@ topics:
   - Advanced Security
 shortTitle: 6. Rollout secret scanning
 miniTocMaxHeadingLevel: 3
-ms.openlocfilehash: 791ce9924ac9f2cb918db4e1c416a8755b790bf5
-ms.sourcegitcommit: 74d6918dae0cf489c86eee049fb0f061a63df44c
+ms.openlocfilehash: 15254d9a4d490f6eeff566cd71d94da7c6e8c467
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2022
-ms.locfileid: '147145330'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148158755'
 ---
 {% note %}
 
@@ -26,7 +26,7 @@ ms.locfileid: '147145330'
 
 本文介绍了一个修正流程，该流程重点阐述为组织中的所有存储库启用 {% data variables.product.prodname_secret_scanning %}。 即使采用更加交错的方法来为各个存储库启用 {% data variables.product.prodname_secret_scanning %}，仍然可以应用本文中描述的原则。 
 
-### <a name="1-focus-on-newly-committed-secrets"></a>1. 重点关注新提交的机密
+### 1. 重点关注新提交的机密
 
 启用 {% data variables.product.prodname_secret_scanning %} 时，应重点关注修复机密扫描检测到的所有新提交的凭据。 如果注重清理已提交的凭据，开发人员可能会继续意外推送新的凭据，这意味着总机密数将保持在同一水平，而不是按预期减少。 因此，必须在专注于撤销任何当前机密之前阻止泄露新凭据。
 
@@ -50,7 +50,7 @@ ms.locfileid: '147145330'
 
 {% endnote %}
 
-### <a name="2-remediate-previously-committed-secrets-starting-with-the-most-critical"></a>2. 修复之前提交的机密，从最关键的机密开始
+### 2. 修复之前提交的机密，从最关键的机密开始
 
 建立监视、通知和修复新发布机密的流程后，可以开始处理引入 {% data variables.product.prodname_GH_advanced_security %} 之前提交的机密。
 
@@ -90,7 +90,7 @@ ms.locfileid: '147145330'
 
 3. 收集有关所泄露机密的信息后，为维护受每种机密类型影响的存储库的用户创建有针对性的沟通计划。 可以使用电子邮件、消息，甚至在受影响的存储库中创建 GitHub 问题。 如果可以使用这些工具提供的 API 以自动方式发送通信，你可以轻松地跨多种机密类型进行缩放。
 
-### <a name="3-expand-the-program-to-include-more-secret-types-and-custom-patterns"></a>3. 扩展程序以包含更多机密类型和自定义模式
+### 3. 扩展程序以包含更多机密类型和自定义模式
 
 现在，你可以将五种最关键的机密类型扩展为更全面的列表，并重点关注培训。 你可以针对指定为目标的各种机密类型重复上一步，以修复先前提交的机密。
 

@@ -2,25 +2,25 @@
 title: 将协作者添加到存储库安全通告
 intro: 您可以添加其他用户或团队与您协作处理安全通告。
 redirect_from:
-  - /articles/adding-a-collaborator-to-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-security-advisory
-  - /code-security/security-advisories/adding-a-collaborator-to-a-security-advisory
+- /articles/adding-a-collaborator-to-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-security-advisory
+- /code-security/security-advisories/adding-a-collaborator-to-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Collaboration
+- Security advisories
+- Vulnerabilities
+- Collaboration
 shortTitle: Add collaborators
 ms.openlocfilehash: 6fa4062fab8e4ffc59724ceb0ba3b6b536871df9
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '147877165'
+ms.locfileid: "147877165"
 ---
 对安全通告具有管理员权限的人员可向安全通告添加协作者。
 

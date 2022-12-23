@@ -11,12 +11,12 @@ product: '{% data reusables.gated-features.historical-insights-for-projects %}'
 topics:
   - Projects
 allowTitleToDifferFromFilename: true
-ms.openlocfilehash: a90ec5dfb6aa983b8ffe26c84c4ec6ad01b0471d
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 809d8492bb1ec7c8cd4eb051b1eaefb00d29097e
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147424014'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148158574'
 ---
 {% ifversion fpt %}
 
@@ -29,6 +29,8 @@ ms.locfileid: '147424014'
 {% endif %}
 
  {% data variables.product.prodname_projects_v2 %} の分析情報を使って、プロジェクトにソースデータとして追加された項目を使うグラフを表示、作成、カスタマイズすることができます。 既定のグラフにフィルターを適用し、独自のグラフを作成することもできます。 グラフを作成するときは、フィルター、グラフの種類、表示される情報を設定します。グラフは、プロジェクトを表示できるすべてのユーザーが使用できます。 現在のグラフと履歴グラフの 2 種類のグラフを生成できます。
+
+ Insights では、アーカイブまたは削除した項目は追跡されません。
 
  ### 現在のグラフについて
 

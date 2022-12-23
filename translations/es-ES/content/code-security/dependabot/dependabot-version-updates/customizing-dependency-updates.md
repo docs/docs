@@ -9,7 +9,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Dependabot
@@ -20,12 +20,12 @@ topics:
   - Pull requests
   - Vulnerabilities
 shortTitle: Customize updates
-ms.openlocfilehash: 6cb6db974fe880bccc76c89447dc077e0617df9a
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 99a3869313598733493d21f8b15d46db98b1a53c
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '145125962'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107745'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %} {% data reusables.dependabot.enterprise-enable-dependabot %}
 
@@ -88,7 +88,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     # Raise all npm pull requests with reviewers
     reviewers:
       - "my-org/team-name"
@@ -122,7 +122,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     # Raise all npm pull requests with custom labels
     labels:
       - "npm dependencies"
@@ -132,7 +132,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     # Raise pull requests for Docker version updates
     # against the "develop" branch. The Docker configuration
     # no longer affects security update pull requests.

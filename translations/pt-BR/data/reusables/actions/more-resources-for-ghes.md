@@ -1,18 +1,13 @@
 ---
-ms.openlocfilehash: 0a3393009a2dcd812f5b20e3cdd1b160aee69d5e
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: f71857cc87be4d06d437b62b3cce3d44d3311857
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2022
-ms.locfileid: "147168302"
+ms.lasthandoff: 10/25/2022
+ms.locfileid: "148108256"
 ---
 Se você pretende habilitar o {% data variables.product.prodname_actions %} para os usuários da sua instância, mais recursos são necessários.
 
-{%- ifversion ghes = 3.2 %}
-
-{% data reusables.actions.hardware-requirements-3.2 %}
-
-{%- endif %}
 
 {%- ifversion ghes = 3.3 %}
 

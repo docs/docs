@@ -9,7 +9,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Repositories
@@ -17,12 +17,12 @@ topics:
   - Version updates
   - Actions
 shortTitle: Auto-update actions
-ms.openlocfilehash: b7de2100ad191dbcb66f4853779e5f048ca33a84
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 804660684230d8a0fb716b69644aab851a4c247b
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '146027967'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107729'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %}
 
@@ -48,7 +48,7 @@ También puedes habilitar las {% data variables.product.prodname_dependabot_vers
 
 ### Ejemplo de archivo *dependabot.yml* de {% data variables.product.prodname_actions %}
 
-El siguiente ejemplo de archivo *dependabot.yml* configura las actualizaciones de versión para {% data variables.product.prodname_actions %}. `directory` debe establecerse `"/"` en para comprobar si hay archivos de flujo de trabajo en `.github/workflows`. La propiedad `schedule.interval` se establece como `"daily"`. Después de que se verifique o actualice este archivo, el {% data variables.product.prodname_dependabot %} revisará si hay versiones nuevas de tus acciones. {% data variables.product.prodname_dependabot %} enviará solicitudes de incorporación de cambios de actualizaciones de versión para cualquier acción obsoleta que detecte. Después de las actualizaciones de versión iniciales, {% data variables.product.prodname_dependabot %} seguirá buscando versiones desactualizadas en las acciones una vez al día.
+El siguiente ejemplo de archivo *dependabot.yml* configura las actualizaciones de versión para {% data variables.product.prodname_actions %}. `directory` debe establecerse `"/"` en para comprobar si hay archivos de flujo de trabajo en `.github/workflows`. La propiedad `schedule.interval` se establece como `"weekly"`. Después de que se verifique o actualice este archivo, el {% data variables.product.prodname_dependabot %} revisará si hay versiones nuevas de tus acciones. {% data variables.product.prodname_dependabot %} enviará solicitudes de incorporación de cambios de actualizaciones de versión para cualquier acción obsoleta que detecte. Después de las actualizaciones de versión iniciales, {% data variables.product.prodname_dependabot %} seguirá buscando versiones desactualizadas en las acciones una vez a la semana.
 
 ```yaml
 # Set update schedule for GitHub Actions
@@ -59,8 +59,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
-      interval: "daily"
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
 ```
 
 ## Configurar las {% data variables.product.prodname_dependabot_version_updates %} para las acciones

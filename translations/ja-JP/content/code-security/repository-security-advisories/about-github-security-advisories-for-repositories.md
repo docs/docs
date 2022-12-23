@@ -2,25 +2,25 @@
 title: リポジトリの GitHub セキュリティ アドバイザリについて
 intro: '{% data variables.product.prodname_security_advisories %} を使用して、リポジトリにおけるセキュリティの脆弱性に関する情報を非公開で議論、修正、公開できます。'
 redirect_from:
-  - /articles/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-github-security-advisories
-  - /code-security/security-advisories/about-github-security-advisories
+- /articles/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-github-security-advisories
+- /code-security/security-advisories/about-github-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: overview
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
+- Security advisories
+- Vulnerabilities
+- CVEs
 shortTitle: Repository security advisories
 ms.openlocfilehash: 5c8ad99a2bee30f52a185fa15421bc6b23429fbf
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145087576'
+ms.locfileid: "145087576"
 ---
 {% data reusables.repositories.security-advisory-admin-permissions %}
 

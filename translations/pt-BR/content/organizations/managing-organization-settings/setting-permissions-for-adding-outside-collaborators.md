@@ -13,12 +13,12 @@ topics:
   - Organizations
   - Teams
 shortTitle: Set collaborator policy
-ms.openlocfilehash: eadf4f805775a99f763ec4df211fe6ea9735dabc
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: ec9133f5a4be38999d1b2051d538dadff4923abf
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145095609'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107883'
 ---
 Por padrão, qualquer pessoa com acesso de administrador a um repositório pode convidar colaboradores externos para trabalhar no repositório. Você pode optar por restringir a capacidade de adicionar colaboradores externos apenas para os proprietários da organização.
 
@@ -32,9 +32,7 @@ Por padrão, qualquer pessoa com acesso de administrador a um repositório pode 
 
 {% data reusables.organizations.outside-collaborators-use-seats %}
 
-{% data reusables.profile.access_org %} {% data reusables.profile.org_settings %} {% data reusables.organizations.member-privileges %}{% ifversion ghes < 3.3 %}
-5. Em "Convites para o repositório", selecione **Permitir que os membros convidem colaboradores externos para os repositórios desta organização**.
-   ![Caixa de seleção usada para permitir que os membros convidem colaboradores externos para os repositórios da organização](/assets/images/help/organizations/repo-invitations-checkbox-old.png){% else %}
+{% data reusables.profile.access_org %} {% data reusables.profile.org_settings %} {% data reusables.organizations.member-privileges %}
 5. Em "Colaboradores de fora do repositório", desmarque **Permitir que administradores de repositório convidem colaboradores externos para repositórios desta organização**.
-  ![Caixa de seleção para permitir que administradores de repositório convidem colaboradores externos para repositórios da organização](/assets/images/help/organizations/repo-invitations-checkbox-updated.png){% endif %}
+  ![Caixa de seleção para permitir que os administradores de repositório convidem colaboradores externos para repositórios da organização](/assets/images/help/organizations/repo-invitations-checkbox-updated.png)
 6. Clique em **Save** (Salvar).

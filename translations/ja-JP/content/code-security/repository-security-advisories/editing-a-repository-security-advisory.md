@@ -2,22 +2,22 @@
 title: リポジトリ セキュリティ アドバイザリの編集
 intro: 詳細を更新したりエラーを修正したりする必要がある場合は、リポジトリ セキュリティ アドバイザリのメタデータと説明を編集できます。
 redirect_from:
-  - /github/managing-security-vulnerabilities/editing-a-security-advisory
-  - /code-security/security-advisories/editing-a-security-advisory
+- /github/managing-security-vulnerabilities/editing-a-security-advisory
+- /code-security/security-advisories/editing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Edit repository advisories
 ms.openlocfilehash: 2ea2f588374d83be677589b4f3bf4e74a7fc6e91
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145119389'
+ms.locfileid: "145119389"
 ---
 リポジトリ セキュリティ アドバイザリの管理者権限を持つユーザーは、セキュリティ アドバイザリを編集することができます。
 

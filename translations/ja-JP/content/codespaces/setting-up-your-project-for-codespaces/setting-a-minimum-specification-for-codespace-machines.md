@@ -10,19 +10,20 @@ type: how_to
 topics:
   - Codespaces
   - Set up
-product: '{% data reusables.gated-features.codespaces %}'
-ms.openlocfilehash: 368b7c73d13bb0624c9d838ac2d7bb18a2b050e3
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: b7eeaac84721ff1d9ceab663957b1615952b0623
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '147880807'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148159166'
 ---
 ## 概要
 
-作成する各 codespace は個別の仮想マシンでホストされ、通常はさまざまな種類の仮想マシンから選択できます。 マシンの種類ごとにリソース (CPU、メモリ、ストレージ) が異なり、既定では、リソースが最も少ないコンピューターの種類が使用されます。 詳細については、「[codespace に合わせたコンピューターの種類の変更](/codespaces/customizing-your-codespace/changing-the-machine-type-for-your-codespace#about-machine-types)」を参照してください。
+作成した codespace は、それぞれ別の仮想マシンにホストされます。 リポジトリから codespace を作成すると、通常はさまざまな種類の仮想マシンから選べます。 マシンの種類ごとにリソース (プロセッサ コア、メモリ、ストレージ) が異なり、既定では、リソースが最も少ないコンピューターの種類が使用されます。 詳細については、「[codespace に合わせたコンピューターの種類の変更](/codespaces/customizing-your-codespace/changing-the-machine-type-for-your-codespace#about-machine-types)」を参照してください。
 
 プロジェクトで特定のレベルのコンピューティング能力が必要な場合は、それらの要件を満たすコンピューターの種類のみを、既定で使用、またはユーザーが選択できるように、{% data variables.product.prodname_github_codespaces %} を構成することができます。 `devcontainer.json` ファイル内でこれを構成します。
+
+{% data reusables.codespaces.machine-types-for-unpublished-codespaces %}
 
 {% note %}
 
@@ -32,8 +33,8 @@ ms.locfileid: '147880807'
 
 ## コンピューターの最小仕様の設定
 
-1. ご利用のリポジトリの {% data variables.product.prodname_github_codespaces %} は、`devcontainer.json` ファイル内で構成されます。 リポジトリに `devcontainer.json` ファイルがまだ含まれていない場合は、今すぐ追加します。 「[開発コンテナー構成をリポジトリに追加する](/free-pro-team@latest/codespaces/setting-up-your-project-for-codespaces/setting-up-your-project-for-codespaces)」を参照してください。
-1. `devcontainer.json` ファイルを編集し、次のような `hostRequirements` プロパティを追加します。
+{% data reusables.codespaces.edit-devcontainer-json %}
+1. `devcontainer.json` ファイルを編集し、ファイルの最上位レベルにある JSON オブジェクト内に `hostRequirements` プロパティを追加します。 次に例を示します。
 
    ```json{:copy}
    "hostRequirements": {
@@ -45,7 +46,7 @@ ms.locfileid: '147880807'
 
    次のいずれかの、またはすべてのオプションを指定できます: `cpus`、`memory`、`storage`。
    
-   リポジトリで現在使用可能な、{% data variables.product.prodname_github_codespaces %} のコンピューターの種類の仕様を確認するには、コンピューターの種類の選択肢が表示されるまで、codespace の作成プロセスをステップ実行します。 詳細については、「[codespace を作成する](/codespaces/developing-in-codespaces/creating-a-codespace#creating-a-codespace)」を参照してください。
+   リポジトリで現在使用可能な、{% data variables.product.prodname_github_codespaces %} のコンピューターの種類の仕様を確認するには、コンピューターの種類の選択肢が表示されるまで、codespace の作成プロセスをステップ実行します。 詳しくは、「[リポジトリの codespace を作成する](/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository)」を参照してください。
    
 1. ファイルを保存し、リポジトリの必要なブランチに加えた変更をコミットします。
 

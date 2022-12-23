@@ -13,12 +13,12 @@ topics:
   - Organizations
   - Teams
 shortTitle: Set collaborator policy
-ms.openlocfilehash: eadf4f805775a99f763ec4df211fe6ea9735dabc
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: ec9133f5a4be38999d1b2051d538dadff4923abf
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '145119245'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109145'
 ---
 デフォルトでは、リポジトリへの管理アクセスを持つ人は、そのリポジトリで作業してもらうために外部のコラボレータを招待できます。 外部のコラボレータを追加する機能は、Organizationのオーナーのみに制限することもできます。
 
@@ -32,9 +32,7 @@ ms.locfileid: '145119245'
 
 {% data reusables.organizations.outside-collaborators-use-seats %}
 
-{% data reusables.profile.access_org %} {% data reusables.profile.org_settings %} {% data reusables.organizations.member-privileges %}{% ifversion ghes < 3.3 %}
-5. [リポジトリ招待] の下で、 **[この Organization のリポジトリに外部コラボレータを招待することをメンバーに許可する]** を選択します。
-   ![外部コラボレータを Organization リポジトリに招待することをメンバーに許可するためのチェックボックス](/assets/images/help/organizations/repo-invitations-checkbox-old.png){% else %}
+{% data reusables.profile.access_org %} {% data reusables.profile.org_settings %} {% data reusables.organizations.member-privileges %}
 5. [リポジトリの外部コラボレータ] で **[この Organization のリポジトリに外部コラボレータを招待することをリポジトリ管理者に許可する]** の選択を解除します。
-  ![外部コラボレータを Organization リポジトリに招待することをリポジトリ管理者に許可するためのチェックボックス](/assets/images/help/organizations/repo-invitations-checkbox-updated.png){% endif %}
+  ![外部コラボレーターを Organization リポジトリに招待することをリポジトリ管理者に許可するためのチェックボックス](/assets/images/help/organizations/repo-invitations-checkbox-updated.png)
 6. **[保存]** をクリックします。

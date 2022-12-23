@@ -1,23 +1,23 @@
 ---
 title: Editando uma consultoria de segurança do repositório
-intro: 'Você pode editar os metadados e a descrição de uma consultoria de segurança do repositório, se precisar atualizar detalhes ou corrigir erros.'
+intro: Você pode editar os metadados e a descrição de uma consultoria de segurança do repositório, se precisar atualizar detalhes ou corrigir erros.
 redirect_from:
-  - /github/managing-security-vulnerabilities/editing-a-security-advisory
-  - /code-security/security-advisories/editing-a-security-advisory
+- /github/managing-security-vulnerabilities/editing-a-security-advisory
+- /code-security/security-advisories/editing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Edit repository advisories
 ms.openlocfilehash: 2ea2f588374d83be677589b4f3bf4e74a7fc6e91
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145095645'
+ms.locfileid: "145095645"
 ---
 As pessoas com permissões de administrador para uma consultoria de segurança de repositório podem editar a consultoria de segurança.
 

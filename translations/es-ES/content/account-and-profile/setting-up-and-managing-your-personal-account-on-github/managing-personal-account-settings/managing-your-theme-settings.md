@@ -13,18 +13,18 @@ redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-your-theme-settings
   - /account-and-profile/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-your-theme-settings
 shortTitle: Manage theme settings
-ms.openlocfilehash: 6251b265d99271f58a4ad02d2f6cb7fdf722cb6b
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 3f7d35978d3a80f7fb63cce1d054afd15b579f13
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147580451'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109864'
 ---
 Para obtener elecciones y flexibilidad en la forma y momento de utilizar {% data variables.product.product_name %}, puedes configurar los ajustes de tema para cambiar la forma en la que ves a {% data variables.product.product_name %}. Puedes elegir de entre los temas claros u oscuros o puedes configurar a {% data variables.product.product_name %} para que siga la configuración de tu sistema.
 
 Puede que quieras utilizar un tema oscuro para reducir el consumo de energía en algunos dispositivos, para reducir la fatiga ocular en condiciones de luz baja o porque te gusta más cómo se ve.
 
-{% ifversion fpt or ghes > 3.2 or ghae or ghec %}Si tu visión es limitada, puedes beneficiarse de un tema de contraste alto, con mayor contraste entre los elementos en primer y segundo plano.{% endif %}{% ifversion fpt or ghae or ghec %} Si padeces daltonismo, puedes beneficiarse de nuestros temas claro y oscuro para daltónicos.
+Si tu visión es limitada, puede ayudarte un tema de contraste alto, con mayor contraste entre los elementos en primer y segundo plano.{% ifversion fpt or ghae or ghec %} Si padeces daltonismo, nuestros temas claro y oscuro para daltonismo pueden ayudarte.
 
 {% endif %}
 
@@ -43,10 +43,10 @@ Puede que quieras utilizar un tema oscuro para reducir el consumo de energía en
       Para obtener más información sobre cómo determinar la versión de {% data variables.product.product_name %} que usas, consulta "[Acerca de las versiones de {% data variables.product.prodname_docs %}](/get-started/learning-about-github/about-versions-of-github-docs#github-enterprise-server)".
       {% endnote %} {%- endif %}
 
-      {% ifversion fpt or ghes > 3.2 or ghae or ghec %}![Botones radiales para elegir un tema simple](/assets/images/help/settings/theme-choose-a-single-theme-highcontrast.png){% else %}![Botones radiales para elegir un tema simple](/assets/images/help/settings/theme-choose-a-single-theme.png){% endif %}
+      ![Botones radiales para elegir un tema simple](/assets/images/help/settings/theme-choose-a-single-theme-highcontrast.png)
     - Si eliges seguir tu configuración de sistema, haz clic en un tema de día y de noche.
 
-      {% ifversion fpt or ghes > 3.2 or ghae or ghec %}![Botones para la elección de un tema a fin de sincronizar con la configuración del sistema](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync-highcontrast.png){% else %}![Botones para la elección de un tema a fin de sincronizar con la configuración del sistema](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync.png){% endif %} {% ifversion fpt or ghec %}
+      ![Botones para elegir un tema para que se sincronice con la configuración del sistema](/assets/images/help/settings/theme-choose-a-day-and-night-theme-to-sync-highcontrast.png) {% ifversion fpt or ghec %}
     - Si te gustaría elegir un tema que se encuentre actualmente en beta público, primero necesitas habilitarlo con la vista previa de características. Para obtener más información, vea "[Explorar versiones de acceso anticipado con la vista previa de la característica](/get-started/using-github/exploring-early-access-releases-with-feature-preview)".{% endif %}
 
 {% ifversion command-palette %}

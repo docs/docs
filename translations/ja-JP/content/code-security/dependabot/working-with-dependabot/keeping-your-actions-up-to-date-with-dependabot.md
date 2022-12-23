@@ -9,7 +9,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Repositories
@@ -17,12 +17,12 @@ topics:
   - Version updates
   - Actions
 shortTitle: Auto-update actions
-ms.openlocfilehash: b7de2100ad191dbcb66f4853779e5f048ca33a84
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 804660684230d8a0fb716b69644aab851a4c247b
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '146027964'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148107726'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %}
 
@@ -48,7 +48,7 @@ ms.locfileid: '146027964'
 
 ### {% data variables.product.prodname_actions %} の *dependabot.yml* ファイルの例
 
-次の *dependabot.yml* ファイルの例では、{% data variables.product.prodname_actions %} のバージョン更新を設定しています。 `.github/workflows` でワークフロー ファイルを確認するために、`directory` は `"/"` に設定する必要があります。 `schedule.interval` に `"daily"` が設定されています。 このファイルがチェックインまたは更新されると、{% data variables.product.prodname_dependabot %} はアクションの新しいバージョンをチェックします。 {% data variables.product.prodname_dependabot %} では、検出した期限切れのアクションに対してバージョン更新の pull request が生成されます。 初期バージョンの更新後、{% data variables.product.prodname_dependabot %} では 1 日 1 回、期限切れのバージョンのアクションを引き続き確認します。
+次の *dependabot.yml* ファイルの例では、{% data variables.product.prodname_actions %} のバージョン更新を設定しています。 `.github/workflows` でワークフロー ファイルを確認するために、`directory` は `"/"` に設定する必要があります。 `schedule.interval` に `"weekly"` が設定されています。 このファイルがチェックインまたは更新されると、{% data variables.product.prodname_dependabot %} はアクションの新しいバージョンをチェックします。 {% data variables.product.prodname_dependabot %} では、検出した期限切れのアクションに対してバージョン更新の pull request が生成されます。 初期バージョンの更新後、{% data variables.product.prodname_dependabot %} では 1 週間に 1 回、期限切れのバージョンのアクションを引き続き確認します。
 
 ```yaml
 # Set update schedule for GitHub Actions
@@ -59,8 +59,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
-      interval: "daily"
+      # Check for updates to GitHub Actions every week
+      interval: "weekly"
 ```
 
 ## {% data variables.product.prodname_dependabot_version_updates %} のアクションを設定する

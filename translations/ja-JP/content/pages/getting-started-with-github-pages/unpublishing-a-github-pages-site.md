@@ -18,12 +18,12 @@ versions:
 topics:
   - Pages
 shortTitle: Unpublish Pages site
-ms.openlocfilehash: fbfec49ec44c250e5f6cb2da85fda59261c1d0d9
-ms.sourcegitcommit: 76b840f45ba85fb79a7f0c1eb43bc663b3eadf2b
+ms.openlocfilehash: bfb22638b51560cb0006cca49a55b9842d8b807d
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2022
-ms.locfileid: '147428349'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109548'
 ---
 {% ifversion pages-custom-workflow %}
 

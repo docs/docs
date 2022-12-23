@@ -2,25 +2,25 @@
 title: Níveis de permissão para consultorias de segurança do repositório
 intro: As ações que você pode tomar em uma consultoria de segurança dependem do fato de você ter permissões de administrador ou de gravação na consultoria de segurança.
 redirect_from:
-  - /articles/permission-levels-for-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/permission-levels-for-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/permission-levels-for-security-advisories
-  - /code-security/security-advisories/permission-levels-for-security-advisories
+- /articles/permission-levels-for-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/permission-levels-for-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/permission-levels-for-security-advisories
+- /code-security/security-advisories/permission-levels-for-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: reference
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Permissions
+- Security advisories
+- Vulnerabilities
+- Permissions
 shortTitle: Permission levels
 ms.openlocfilehash: 9c2ad0d30b98b79786df09a224766bd826cb84f6
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145095646'
+ms.locfileid: "145095646"
 ---
 Este artigo aplica-se apenas às consultorias de segurança a nível de repositório. Qualquer pessoa pode contribuir com avisos de segurança global no {% data variables.product.prodname_advisory_database %} em [github.com/advisories](https://github.com/advisories). As edições nas consultorias globais não mudarão ou afetarão a forma como a consultoria aparece no repositório.  Para obter mais informações, confira "[Como editar avisos de segurança no {% data variables.product.prodname_advisory_database %}](/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/editing-security-advisories-in-the-github-advisory-database)".
 

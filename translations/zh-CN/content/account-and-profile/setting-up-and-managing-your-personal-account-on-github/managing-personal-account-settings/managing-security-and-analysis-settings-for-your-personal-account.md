@@ -4,7 +4,7 @@ intro: '您可以控制功能以保护 {% data variables.product.prodname_dotcom
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 topics:
   - Accounts
 redirect_from:
@@ -12,12 +12,12 @@ redirect_from:
   - /github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
   - /account-and-profile/setting-up-and-managing-your-github-user-account/managing-user-account-settings/managing-security-and-analysis-settings-for-your-user-account
 shortTitle: Manage security & analysis
-ms.openlocfilehash: 61d1944219fd1b75f476c7aef8305018c85735c5
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: 22ff867691f79360db54f0fe85f5e988c71536a3
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '145164780'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108073'
 ---
 ## 关于安全性和分析设置的管理
 
@@ -37,11 +37,11 @@ ms.locfileid: '145164780'
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. 在“代码安全和分析”下，单击功能右侧的“全部禁用”或“全部启用” 。
-  {% ifversion ghes > 3.2 %}![用于“配置安全和分析”功能的“全部启用”或“全部禁用”按钮](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% else %}![用于“配置安全和分析”功能的“全部启用”或“全部禁用”按钮](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
+  {% ifversion ghes %}![“配置安全和分析”功能的“全部启用”或“全部禁用”按钮](/assets/images/enterprise/3.3/settings/security-and-analysis-disable-or-enable-all.png){% else %}![“配置安全和分析”功能的“全部启用”或“全部禁用”按钮](/assets/images/help/settings/security-and-analysis-disable-or-enable-all.png){% endif %}
 6. （可选）默认情况下为您拥有的新存储库启用该功能。
-  {% ifversion ghes > 3.2 %}![用于新建存储库的“默认启用”选项](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![用于新建存储库的“默认启用”选项](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
+  {% ifversion ghes %}![新存储库的“默认启用”选项](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-by-default-in-modal.png){% else %}![新存储库的“默认启用”选项](/assets/images/help/settings/security-and-analysis-enable-by-default-in-modal.png){% endif %}
 7. 单击“禁用功能”或“启用功能”，以为所拥有的所有存储库禁用或启用该功能 。
-  {% ifversion ghes > 3.2 %}![用于禁用或启用功能的按钮](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![用于禁用或启用功能的按钮](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
+  {% ifversion ghes %}![用于禁用或启用功能的按钮](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-dependency-graph.png){% else %}![用于禁用或启用功能的按钮](/assets/images/help/settings/security-and-analysis-enable-dependency-graph.png){% endif %}
 
 {% data reusables.security.displayed-information %}
 
@@ -49,7 +49,7 @@ ms.locfileid: '145164780'
 
 {% data reusables.user-settings.access_settings %} {% data reusables.user-settings.security-analysis %}
 3. 在“Code security and analysis（代码安全和分析）”下，在功能右侧，默认为您拥有的新存储库启用或禁用该功能。
-  {% ifversion ghes > 3.2 %}![用于启用或禁用新建存储库功能的复选框](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![用于启用或禁用新建存储库功能的复选框](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
+  {% ifversion ghes %}![用于启用或禁用新存储库功能的复选框](/assets/images/enterprise/3.3/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% else %}![用于启用或禁用新存储库功能的复选框](/assets/images/help/settings/security-and-analysis-enable-or-disable-feature-checkbox.png){% endif %}
 
 ## 延伸阅读
 

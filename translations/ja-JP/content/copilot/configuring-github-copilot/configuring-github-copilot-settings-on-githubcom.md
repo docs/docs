@@ -2,6 +2,7 @@
 title: GitHub.com での GitHub Copilot 設定の構成
 intro: '{% data variables.product.prodname_dotcom_the_website %} で {% data variables.product.prodname_copilot %} の動作を構成できます。これは、使用する任意の IDE で {% data variables.product.prodname_copilot %} がどのように機能するかに影響します。'
 product: '{% data reusables.gated-features.copilot %}'
+permissions: 'People with individual {% data variables.product.prodname_copilot %} subscriptions can configure their settings on {% data variables.product.prodname_dotcom_the_website %}.'
 miniTocMaxHeadingLevel: 3
 topics:
   - Copilot
@@ -11,12 +12,12 @@ redirect_from:
   - /github/copilot/about-github-copilot-telemetry
   - /github/copilot/github-copilot-telemetry-terms
 shortTitle: GitHub.com
-ms.openlocfilehash: 139a2c93c76155eff092ca168129f8ef52ce69ae
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 627fb72f0f8f7003a2343a7b1d2c1fe8d88e98ba
+ms.sourcegitcommit: 6185352bc563024d22dee0b257e2775cadd5b797
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147080107'
+ms.lasthandoff: 12/09/2022
+ms.locfileid: '148192794'
 ---
 ## {% data variables.product.prodname_dotcom_the_website %} での {% data variables.product.prodname_copilot %} の設定について
 

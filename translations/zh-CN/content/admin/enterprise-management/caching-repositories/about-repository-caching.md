@@ -2,16 +2,16 @@
 title: 关于存储库缓存
 intro: 您可以使用存储库缓存提高分散的团队和 CI 服务器场的 Git 读取操作性能。
 versions:
-  ghes: '>=3.3'
+  ghes: '*'
 type: overview
 topics:
   - Enterprise
-ms.openlocfilehash: 06a0dd3ba202c73f1ee035d61f7865fadd13b415
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: e32df9becd6142f581d45784e4758cf19a8d1af0
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '145100053'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108041'
 ---
 {% data reusables.enterprise.repository-caching-release-phase %}
 

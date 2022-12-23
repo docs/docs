@@ -13,13 +13,15 @@ topics:
 redirect_from:
   - /admin/github-actions/enabling-github-actions-with-azure-blob-storage
 shortTitle: Azure Blob storage
-ms.openlocfilehash: bcd92b12ec8ecd807906a3b2f7c09971d6641b93
-ms.sourcegitcommit: 76b840f45ba85fb79a7f0c1eb43bc663b3eadf2b
+ms.openlocfilehash: 856748a3219be7789f0339c43210ca204fe56d91
+ms.sourcegitcommit: 6185352bc563024d22dee0b257e2775cadd5b797
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2022
-ms.locfileid: '145120453'
+ms.lasthandoff: 12/09/2022
+ms.locfileid: '148192978'
 ---
+{% data reusables.actions.enterprise-storage-about %}
+
 ## 前提条件
 
 {% data variables.product.prodname_actions %} を有効化する前に、次のステップを完了していることを確認してください。
@@ -39,8 +41,9 @@ ms.locfileid: '145120453'
 
 ## Azure Blob ストレージで {% data variables.product.prodname_actions %} を有効化する
 
-{% data reusables.enterprise_installation.ssh-into-instance %} {% data reusables.actions.perform-blob-storage-precheck %} {% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
+{% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
 1. [成果物とログストレージ] で、 **[Azure Blob Storage]** を選択し、Azure ストレージアカウントの接続文字列型を入力します。 ストレージアカウントの接続文字列の取得について詳しくは、[Azure ドキュメント](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)を参照してください。
-  ![Azure Blob Storage と接続文字列フィールドを選ぶためのラジオボタン](/assets/images/enterprise/management-console/actions-azure-storage.png) {% data reusables.enterprise_management_console.save-settings %}
+
+   ![Azure Blob Storage と接続文字列フィールドを選ぶためのラジオ ボタン](/assets/images/enterprise/management-console/actions-azure-storage.png) {% data reusables.enterprise_management_console.test-storage-button %} {% data reusables.enterprise_management_console.save-settings %}
 
 {% data reusables.actions.enterprise-postinstall-nextsteps %}

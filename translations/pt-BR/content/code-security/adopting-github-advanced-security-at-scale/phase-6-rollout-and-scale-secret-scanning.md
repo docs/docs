@@ -9,12 +9,12 @@ topics:
   - Advanced Security
 shortTitle: 6. Rollout secret scanning
 miniTocMaxHeadingLevel: 3
-ms.openlocfilehash: 791ce9924ac9f2cb918db4e1c416a8755b790bf5
-ms.sourcegitcommit: 74d6918dae0cf489c86eee049fb0f061a63df44c
+ms.openlocfilehash: 15254d9a4d490f6eeff566cd71d94da7c6e8c467
+ms.sourcegitcommit: e8c012864f13f9146e53fcb0699e2928c949ffa8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: '147145316'
+ms.lasthandoff: 11/09/2022
+ms.locfileid: '148158754'
 ---
 {% note %}
 
@@ -26,7 +26,7 @@ Este artigo faz parte de uma série sobre a adoção do {% data variables.produc
 
 Este artigo oferece um processo resumido com foco na habilitação do {% data variables.product.prodname_secret_scanning %} para todos os repositórios em uma organização. Os princípios descritos neste artigo ainda poderão ser aplicados mesmo se você adotar uma abordagem mais escalonada para a habilitação do {% data variables.product.prodname_secret_scanning %} em repositórios individuais. 
 
-### <a name="1-focus-on-newly-committed-secrets"></a>1. Concentrar-se em segredos recém-confirmados
+### 1. Concentrar-se em segredos recém-confirmados
 
 Ao habilitar o {% data variables.product.prodname_secret_scanning %}, concentre-se na correção de quaisquer credenciais recém-confirmadas que tenham sido detectadas pelo exame de segredos. Se você se concentrar na limpeza de credenciais confirmadas, os desenvolvedores poderão continuar a enviar acidentalmente novas credenciais, o que significa que sua contagem total de segredos permanecerá no mesmo nível, e não diminuirá conforme o esperado. Por isso, é essencial impedir o vazamento de novas credenciais antes de se concentrar em revogar quaisquer segredos atuais.
 
@@ -50,7 +50,7 @@ Repita as duas últimas etapas para quaisquer novos segredos vazados. Esse proce
 
 {% endnote %}
 
-### <a name="2-remediate-previously-committed-secrets-starting-with-the-most-critical"></a>2. Corrija os segredos confirmados, começando pelos mais críticos
+### 2. Corrija os segredos confirmados, começando pelos mais críticos
 
 Depois de estabelecer um processo para monitorar, notificar e corrigir os segredos recém-publicados, comece a trabalhar nos segredos confirmados antes da introdução do {% data variables.product.prodname_GH_advanced_security %}.
 
@@ -70,7 +70,7 @@ Depois de decidir os tipos secretos, faça o seguinte:
   
   {% ifversion not ghae %}
   
-  É possível usar a visão geral de segurança para coletar essas informações. Para saber como usar a visão geral de segurança, confira "[Filtrando alertas na visão geral de segurança](/code-security/security-overview/filtering-alerts-in-the-security-overview)".
+  É possível usar a visão geral de segurança para coletar essas informações. Para obter mais informações sobre como usar a visão geral de segurança, confira "[Filtrando alertas nas visões gerais de segurança](/code-security/security-overview/filtering-alerts-in-the-security-overview)".
   
   {% endif %}
   
@@ -90,7 +90,7 @@ Depois de decidir os tipos secretos, faça o seguinte:
 
 3. Depois de coletar informações sobre segredos vazados, crie um plano de comunicação direcionado para os usuários que mantêm os repositórios afetados por cada tipo de segredo. É possível usar email, mensagens ou até mesmo criar problemas do GitHub nos repositórios afetados. Se for possível usar as APIs fornecidas por essas ferramentas para enviar as comunicações de maneira automatizada, isso facilitará o escalonamento em vários tipos de segredo.
 
-### <a name="3-expand-the-program-to-include-more-secret-types-and-custom-patterns"></a>3. Expanda o programa para incluir mais tipos de segredos e padrões personalizados
+### 3. Expanda o programa para incluir mais tipos de segredos e padrões personalizados
 
 Agora é possível expandir os cinco tipos de segredos mais críticos para uma lista mais abrangente, com foco adicional na educação. É possível repetir a etapa anterior, corrigindo os segredos anteriormente confirmados, para os diferentes tipos de segredo visados.
 

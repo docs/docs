@@ -10,12 +10,12 @@ versions:
   ghae: '*'
 topics:
   - API
-ms.openlocfilehash: de0a12e638a7f98f34b1704e272b040a6178eaeb
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: a6fed36ccd70557b8d88904f83840a7afacdfacb
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147496616'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109930'
 ---
 ## Acerca de las interfaces
 
@@ -24,5 +24,7 @@ ms.locfileid: '147496616'
 Por ejemplo, [`Lockable`](/graphql/reference/interfaces#lockable) es una interfaz porque los objetos [`Issue`](/graphql/reference/objects#issue) y [`PullRequest`](/graphql/reference/objects#pullrequest) se pueden bloquear. Una interface tiene su propia lista de campos nombrados que se comparte mediante objetos de implementación.
 
 Para más información, vea "[Implementación](/graphql/guides/introduction-to-graphql#implementation)".
+
+{% data reusables.projects.graphql-ghes %}
 
 <!-- Content after this section is automatically generated -->

@@ -11,12 +11,12 @@ topics:
   - Pull requests
 shortTitle: Change visibility
 allowTitleToDifferFromFilename: true
-ms.openlocfilehash: c288e72dccb5c1212e6e01d24197289cc77c18ce
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 445675ee14c1d1fb47ded4321ae6ac8816fa6d6f
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147614480'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109102'
 ---
 {% data reusables.projects.project_boards_old %}
 

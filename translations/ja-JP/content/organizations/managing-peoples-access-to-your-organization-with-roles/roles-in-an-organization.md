@@ -15,12 +15,12 @@ topics:
   - Organizations
   - Teams
 shortTitle: Roles in an organization
-ms.openlocfilehash: d8d07ff40026de0d12fce2e11479c424b781680a
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: f9e5d411c7a7a16e22abcc660f2761f1bfd6cf7d
+ms.sourcegitcommit: c562c85cc75ffe1eb4e9595d8adc09ec71697ab1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147061739'
+ms.lasthandoff: 11/22/2022
+ms.locfileid: '148180078'
 ---
 ## ロールについて
 {% data reusables.organizations.about-roles %}
@@ -142,7 +142,7 @@ Organizationでの{% data variables.product.prodname_github_app %}マネージ�
 | Team 同期を有効にする (「[Organization の Team 同期を管理する](/organizations/managing-saml-single-sign-on-for-your-organization/managing-team-synchronization-for-your-organization)」を参照) | **X** |  |  |  |  |{% endif %}
 | Organization での Pull Request のレビューを管理する (「[Organization での Pull Request のレビューの管理](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)」を参照) | **X** |  |  |  |  |
 
-{% elsif ghes > 3.2 or ghae %}
+{% elsif ghes or ghae %}
 <!-- GHES 3.3+ and eventual GHAE release don't have the extra columns for Moderators and Billing managers. -->
 
 | Organization のアクション | 所有者 | メンバー | セキュリティマネージャー |
@@ -167,7 +167,7 @@ Organizationでの{% data variables.product.prodname_github_app %}マネージ�
 | "*チーム メンテナ*" に指定できる | **X** | **X** | **X**  |
 | リポジトリを移譲する | **X** | |  |
 | セキュリティと分析の設定を管理する (「[Organization のセキュリティと分析設定を管理する](/organizations/keeping-your-organization-secure/managing-security-and-analysis-settings-for-your-organization)」を参照) | **X** | | **X** |{% ifversion ghes %}
-| Organization のセキュリティの概要を表示する (「[セキュリティの概要について](/code-security/security-overview/about-the-security-overview)」を参照) | **X** | | **X** |{% endif %}{% ifversion ghes > 3.2 %}
+| Organization のセキュリティの概要を表示する (「[セキュリティの概要について](/code-security/security-overview/about-the-security-overview)」を参照) | **X** | | **X** |{% endif %}{% ifversion ghes %}
 | {% data variables.product.prodname_dependabot_security_updates %} を管理する (「[{% data variables.product.prodname_dependabot_security_updates %} について](/github/managing-security-vulnerabilities/about-dependabot-security-updates)」を参照) | **X** | | **X** |{% endif %}
 | Organization の SSH 認証局を管理する (「[Organization の SSH 認証局を管理する](/articles/managing-your-organizations-ssh-certificate-authorities)」を参照) | **X** |  |  |
 | プロジェクト ボードを作成する (「[Organization のプロジェクト ボード権限](/articles/project-board-permissions-for-an-organization)」を参照) | **X** | **X** | **X** |
@@ -186,7 +186,7 @@ Organizationでの{% data variables.product.prodname_github_app %}マネージ�
 | [Organization リポジトリへのアクセス権がある人のリストをエクスポートする](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |  |
 | 既定のラベルを管理する (「[Organization 内のリポジトリのためのデフォルト ラベルを管理する](/articles/managing-default-labels-for-repositories-in-your-organization)」を参照) | **X** | |  |{% ifversion pull-request-approval-limit %}
 | Organization での Pull Request のレビューを管理する (「[Organization での Pull Request のレビューの管理](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)」を参照) | **X** |  | |  |{% endif %}
-{% ifversion ghae %}| IP 許可リストの管理 (「[Enterprise へのネットワーク トラフィックを制限する](/admin/configuration/restricting-network-traffic-to-your-enterprise)」を参照) | **X** | |  |{% endif %}
+{% ifversion ghae %}| IP 許可リストを管理する (「[許可リストを使用して Enterprise へのネットワーク トラフィックを制限する](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)」を参照) | **X** | |  |{% endif %}
 
 {% else %}
 <!-- GHES and GHAE older versions don't have columns for Moderators, Billing managers or Security managers. -->
@@ -227,7 +227,7 @@ Organizationでの{% data variables.product.prodname_github_app %}マネージ�
 | [Organization リポジトリへのアクセス権がある人を表示する](/articles/viewing-people-with-access-to-your-repository) | **X** | |
 | [Organization リポジトリへのアクセス権がある人のリストをエクスポートする](/articles/viewing-people-with-access-to-your-repository/#exporting-a-list-of-people-with-access-to-your-repository) | **X** | |
 | 既定のラベルを管理する (「[Organization 内のリポジトリのためのデフォルト ラベルを管理する](/articles/managing-default-labels-for-repositories-in-your-organization)」を参照) | **X** | |
-{% ifversion ghae %}| IP 許可リストの管理 (「[Enterprise へのネットワーク トラフィックを制限する](/admin/configuration/restricting-network-traffic-to-your-enterprise)」を参照) | **X** | |{% endif %}
+{% ifversion ghae %}| IP 許可リストを管理する (「[許可リストを使用して Enterprise へのネットワーク トラフィックを制限する](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)」を参照) | **X** | |{% endif %}
 
 {% endif %}
 

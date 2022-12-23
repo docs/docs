@@ -2,22 +2,22 @@
 title: Edición de un aviso de seguridad de repositorio
 intro: Puedes editar los metadatos y la descripción de una asesoría de seguridad de repositorio si necesitas actualizar los detalles o corregir los errores en esta.
 redirect_from:
-  - /github/managing-security-vulnerabilities/editing-a-security-advisory
-  - /code-security/security-advisories/editing-a-security-advisory
+- /github/managing-security-vulnerabilities/editing-a-security-advisory
+- /code-security/security-advisories/editing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Edit repository advisories
 ms.openlocfilehash: 2ea2f588374d83be677589b4f3bf4e74a7fc6e91
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145119386'
+ms.locfileid: "145119386"
 ---
 Los usuarios con permisos de administrador para aviso de seguridad pueden editarlo.
 

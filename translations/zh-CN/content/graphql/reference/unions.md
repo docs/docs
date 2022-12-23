@@ -10,12 +10,12 @@ versions:
   ghae: '*'
 topics:
   - API
-ms.openlocfilehash: 550085d5cf8d9e3f9918b0e8e9c837a2ff85d9d1
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: 13c5fdf292a58d73b93ff13a9de8840456d16d75
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147496483'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108083'
 ---
 ## 关于并集
 
@@ -24,5 +24,7 @@ ms.locfileid: '147496483'
 例如，标记为 [`ProjectCardItem`](/graphql/reference/unions#projectcarditem) 的字段可以是 [`Issue`](/graphql/reference/objects#issue) 或 [`PullRequest`](/graphql/reference/objects#pullrequest)，因为所有这些对象都可以位于一个项目卡中。 使用并集代替对象可以带来灵活性。
 
 有关详细信息，请参阅“[GraphQL 简介](/graphql/guides/introduction-to-graphql)”。
+
+{% data reusables.projects.graphql-ghes %}
 
 <!-- Content after this section is automatically generated -->

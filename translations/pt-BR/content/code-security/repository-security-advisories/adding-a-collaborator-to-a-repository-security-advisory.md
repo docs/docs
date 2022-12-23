@@ -2,25 +2,25 @@
 title: Adicionando um colaborador a uma consultoria de segurança de repositório
 intro: É possível adicionar outros usuários ou equipes para colaborar em uma consultoria de segurança com você.
 redirect_from:
-  - /articles/adding-a-collaborator-to-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-security-advisory
-  - /code-security/security-advisories/adding-a-collaborator-to-a-security-advisory
+- /articles/adding-a-collaborator-to-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/adding-a-collaborator-to-a-security-advisory
+- /code-security/security-advisories/adding-a-collaborator-to-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Collaboration
+- Security advisories
+- Vulnerabilities
+- Collaboration
 shortTitle: Add collaborators
 ms.openlocfilehash: 6fa4062fab8e4ffc59724ceb0ba3b6b536871df9
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '147875690'
+ms.locfileid: "147875690"
 ---
 Todas as pessoas com permissões de administrador para uma consultora de segurança podem adicionar colaboradores à consultora de segurança.
 

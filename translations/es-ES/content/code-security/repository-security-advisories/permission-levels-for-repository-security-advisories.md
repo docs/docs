@@ -2,25 +2,25 @@
 title: Niveles de permiso para avisos de seguridad de repositorios
 intro: Las acciones que puedes tomar en una asesoría de seguridad de repositorio dependen de si tienes permisos de administrador o de escritura en esta.
 redirect_from:
-  - /articles/permission-levels-for-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/permission-levels-for-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/permission-levels-for-security-advisories
-  - /code-security/security-advisories/permission-levels-for-security-advisories
+- /articles/permission-levels-for-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/permission-levels-for-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/permission-levels-for-security-advisories
+- /code-security/security-advisories/permission-levels-for-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: reference
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - Permissions
+- Security advisories
+- Vulnerabilities
+- Permissions
 shortTitle: Permission levels
 ms.openlocfilehash: 9c2ad0d30b98b79786df09a224766bd826cb84f6
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145119393'
+ms.locfileid: "145119393"
 ---
 Este artículo solo se aplica a los avisos de seguridad de nivel de repositorio. Cualquiera puede contribuir a los avisos de seguridad globales en {% data variables.product.prodname_advisory_database %} en [github.com/advisories](https://github.com/advisories). Las ediciones a las asesorías globales no cambiarán ni afectarán la forma en la que se muestra la asesoría en el repositorio.  Para más información, vea "[Edición de avisos de seguridad en {% data variables.product.prodname_advisory_database %}](/code-security/supply-chain-security/managing-vulnerabilities-in-your-projects-dependencies/editing-security-advisories-in-the-github-advisory-database)".
 

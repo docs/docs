@@ -2,16 +2,16 @@
 title: Acerca del almacenamiento de repositorios en caché
 intro: Puedes incrementar el rendimiento de las operaciones de lectura de Git para los equipos distribuidos y las granjas de IC con el almacenamiento de repositorios en caché.
 versions:
-  ghes: '>=3.3'
+  ghes: '*'
 type: overview
 topics:
   - Enterprise
-ms.openlocfilehash: 06a0dd3ba202c73f1ee035d61f7865fadd13b415
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: e32df9becd6142f581d45784e4758cf19a8d1af0
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/11/2022
-ms.locfileid: '145120642'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148109833'
 ---
 {% data reusables.enterprise.repository-caching-release-phase %}
 

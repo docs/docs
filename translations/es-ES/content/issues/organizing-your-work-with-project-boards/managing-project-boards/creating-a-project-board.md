@@ -15,12 +15,12 @@ topics:
   - Project management
 type: how_to
 allowTitleToDifferFromFilename: true
-ms.openlocfilehash: 9c55be9ea212cf9a09147267fc62da8f6f89fbbc
-ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
+ms.openlocfilehash: e4f47a007c18b07142040a0a18ad7f45b73d5273
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/05/2022
-ms.locfileid: '147614259'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148110144'
 ---
 {% data reusables.projects.project_boards_old %}
 

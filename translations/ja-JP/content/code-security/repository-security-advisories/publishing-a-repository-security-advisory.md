@@ -2,26 +2,26 @@
 title: リポジトリ セキュリティ アドバイザリの公開
 intro: プロジェクト内のセキュリティ脆弱性についてコミュニティにアラートするため、セキュリティアドバイザリを公開できます。
 redirect_from:
-  - /articles/publishing-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/publishing-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/publishing-a-security-advisory
-  - /code-security/security-advisories/publishing-a-security-advisory
+- /articles/publishing-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/publishing-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/publishing-a-security-advisory
+- /code-security/security-advisories/publishing-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
-  - Repositories
+- Security advisories
+- Vulnerabilities
+- CVEs
+- Repositories
 shortTitle: Publish repository advisories
 ms.openlocfilehash: f3e3bfdb6b44ec1c86bb903c66271b854f4fb041
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145119381'
+ms.locfileid: "145119381"
 ---
 <!--Marketing-LINK: From /features/security/software-supply-chain page "Publishing a security advisory".-->
 

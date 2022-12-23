@@ -8,7 +8,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Repositories
@@ -16,12 +16,12 @@ topics:
   - Version updates
   - Dependencies
 shortTitle: List configured dependencies
-ms.openlocfilehash: 8028c10c39d4b045206954fc38ed805b5432e553
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: 6da514616c7091fb3ac4f874f68b5951ca23412b
+ms.sourcegitcommit: f638d569cd4f0dd6d0fb967818267992c0499110
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145101102'
+ms.lasthandoff: 10/25/2022
+ms.locfileid: '148108779'
 ---
 {% data reusables.dependabot.beta-security-and-version-updates %} {% data reusables.dependabot.enterprise-enable-dependabot %}
 

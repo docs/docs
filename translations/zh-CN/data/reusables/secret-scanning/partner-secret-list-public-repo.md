@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 79d36439e68cf64c8236911224bb7769a59aef6e
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 59e78cbf492110a8949c27e867bf195ae5605307
+ms.sourcegitcommit: bddda0c0814770ee64e378692891931c618247ec
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2022
-ms.locfileid: "147558381"
+ms.lasthandoff: 11/24/2022
+ms.locfileid: "148181761"
 ---
 Partner | 支持的密钥
 --- | ---
@@ -18,19 +18,27 @@ Amazon Web Services (AWS) | Amazon AWS 访问密钥 ID 和秘密访问密钥对
 Atlassian | Atlassian API 令牌
 Atlassian | Atlassian JSON Web 令牌
 Azure | Azure Active Directory 应用程序密钥
-Azure | Azure DevOps 个人访问令牌
+Azure | Azure Batch 可识别密钥
+Azure | Azure CosmosDB 可识别密钥
+Azure | Azure DevOps {% data variables.product.pat_generic_title_case %}
+Azure | Azure ML 工作室（经典）Web 服务密钥
 Azure | Azure SAS 令牌
+Azure | Azure 搜索管理密钥
+Azure | Azure 搜索查询密钥
 Azure | Azure 服务管理证书
 Azure | Azure SQL 连接字符串
 Azure | Azure 存储帐户密钥
 Checkout.com | Checkout.com 生产密钥
 Checkout.com | Checkout.com 测试密钥
+Chief | Chief 工具令牌
 Clojars | Clojars 部署令牌
 CloudBees CodeShip | CloudBees CodeShip 凭据
 参与的系统 | 参与的系统凭据
 Databricks | Databricks 访问令牌
 Datadog | Datadog API 密钥
-DigitalOcean | DigitalOcean 个人访问令牌
+DevCycle | DevCycle 客户端 API 密钥
+DevCycle | DevCycle 服务器 API 密钥
+DigitalOcean | DigitalOcean {% data variables.product.pat_generic_title_case %}
 DigitalOcean | DigitalOcean OAuth 令牌
 DigitalOcean | DigitalOcean 刷新令牌
 DigitalOcean | DigitalOcean 系统令牌
@@ -44,11 +52,12 @@ Dropbox | Dropbox 访问令牌
 Dropbox | Dropbox 短暂访问令牌
 Dynatrace | Dynatrace 访问令牌
 Dynatrace | Dynatrace 内部令牌
+Figma | Figma {% data variables.product.pat_generic_title_case %}
 Finicity | Finicity App 密钥
 Frame.io | Frame.io JSON Web 令牌
 Frame.io| Frame.io Developer 令牌
 FullStory| FullStory API 密钥
-GitHub | GitHub 个人访问令牌
+GitHub | GitHub {% data variables.product.pat_generic_title_case %}
 GitHub | GitHub OAuth 访问令牌
 GitHub | GitHub 刷新令牌
 GitHub | GitHub App 安装访问令牌
@@ -59,7 +68,8 @@ Google Cloud | Google API 密钥
 Google Cloud | Google Cloud 私钥 ID
 Hashicorp Terraform | Terraform Cloud / Enterprise API 令牌
 Hubspot | Hubspot API 密钥
-Ionic | Ionic 个人访问令牌
+Hubspot | Hubspot API 个人访问密钥
+Ionic | Ionic {% data variables.product.pat_generic_title_case %}
 Ionic | Ionic 刷新令牌
 JD Cloud | JD Cloud 访问密钥
 线性 | 线性 API 密钥
@@ -110,9 +120,16 @@ Stripe | Stripe Live API 限制密钥
 Stripe | Stripe 测试 API 限制密钥
 Supabase | Supabase 服务密钥
 Tencent Cloud | 腾讯云密钥 ID
+腾讯微信 | 腾讯微信 API 应用 ID
 Twilio | Twilio 帐户字符串标识符
 Twilio | Twilio API 密钥
-Typeform | Typeform 个人访问令牌
+Typeform | Typeform {% data variables.product.pat_generic_title_case %}
 Uniwise | WISEflow API 密钥 
 Valour | Valour 访问令牌
+Yandex | Yandex.Cloud API 密钥   
+Yandex | Yandex.Cloud IAM Cookie    
+Yandex | Yandex.Cloud IAM 令牌 
+Yandex | Yandex.Dictionary API 密钥  
+Yandex | Yandex.Cloud 访问机密 
+Yandex | Yandex.Passport OAuth 令牌    
 Zuplo | Zuplo 使用者 API

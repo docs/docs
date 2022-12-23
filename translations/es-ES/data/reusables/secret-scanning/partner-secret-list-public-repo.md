@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 79d36439e68cf64c8236911224bb7769a59aef6e
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 59e78cbf492110a8949c27e867bf195ae5605307
+ms.sourcegitcommit: bddda0c0814770ee64e378692891931c618247ec
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2022
-ms.locfileid: "147558387"
+ms.lasthandoff: 11/24/2022
+ms.locfileid: "148181767"
 ---
 Asociado | Secreto compatible
 --- | ---
@@ -18,19 +18,27 @@ Amazon Web Services (AWS) | Par de ID y Secreto de Clave de Acceso a AWS de Amaz
 Atlassian | Token de API de Atlassian
 Atlassian | Token Web de JSON de Atlassian
 Azure | Secreto de aplicación de Azure Active Directory
-Azure | Token de Acceso Personal de Azure DevOps
+Azure | Objeto de identificación de clave de Azure Batch
+Azure | Objeto de identificación de clave de Azure CosmosDB
+Azure | Azure DevOps {% data variables.product.pat_generic_title_case %}
+Azure | Clave de servicio web de Azure ML Studio (clásico)
 Azure | Token de Azure SAS
+Azure | Clave de administrador de Azure Search
+Azure | Clave de consulta de Azure Search
 Azure | Certificado de Administración de Servicios de Azure
 Azure | Cadena de conexión de Azure SQL
 Azure | Clave de la cuenta de Azure Storage
 Checkout.com | Clave secreta de productión de Checkout.com
 Checkout.com | Clave secreta de pruebas de Checkout.com
+Chief | Token de herramientas de Chief
 Clojars | Token de Despliegue de Clojars
 CloudBees CodeShip | Credencial de Codeship de CloudBees
 Sistemas Contribuidos | Credenciales de los sistemas contribuidos
 Databricks | Token de Acceso de Databricks
 Datadog | Clave de API de Datadog
-DigitalOcean | Token de acceso personal de DigitalOcean
+DevCycle | Clave de API de cliente de DevCycle
+DevCycle | Clave de API de servidor de DevCycle
+DigitalOcean | DigitalOcean {% data variables.product.pat_generic_title_case %}
 DigitalOcean | DigitalOcean OAuth Token
 DigitalOcean | DigitalOcean Refresh Token
 DigitalOcean | Token del sistema de DigitalOcean
@@ -44,11 +52,12 @@ Dropbox | Token de Acceso de Dropbox
 Dropbox | Token de Acceso de Vida Corta de Dropbox
 Dynatrace | Token de Acceso de Dynatrace
 Dynatrace | Token Interno de Dynatrace
+Figma | Figma {% data variables.product.pat_generic_title_case %}
 Finicity | Clave de App de Finicity
 Frame.io | Token Web de JSON de Frame.io
 Frame.io| Token de Desarrollador de Frame.io
 FullStory| Llave de la API de FullStory
-GitHub | Token de Acceso Personal de GitHub
+GitHub | GitHub {% data variables.product.pat_generic_title_case %}
 GitHub | Token de Acceso de OAuth para GitHub
 GitHub | Token de Actualización de GitHub
 GitHub | Token de Acceso a la Instalación de GitHub App
@@ -59,7 +68,8 @@ Google Cloud | Clave de API de Google
 Google Cloud | ID de Clave Privada de Google Cloud
 Hashicorp Terraform | Token de API de Terraform Cloud / Enterprise
 Hubspot | Clave de API de Hubspot
-Ionic | Token de Acceso Personal de Ionic
+Hubspot | Clave de acceso personal de API de Hubspot
+Ionic | Ionic {% data variables.product.pat_generic_title_case %}
 Ionic | Token de Actualización de Ionic
 JD Cloud | Clave de acceso de JD Cloud
 Lineal | Llave de la API de Linear
@@ -110,9 +120,16 @@ Stripe | Clave Restringida de API de Stripe Live
 Stripe | Clave Restringida de API de Pruebas de Stripe
 Supabase | Clave de servicio de Supabase
 Tencent Cloud | ID de Secreto de Tencent Cloud
+Tencent WeChat | Id. de aplicación de API de Tencent WeChat
 Twilio | Identificador de Secuencia de Cuenta de Twilio
 Twilio | Clave de API de Twilio
-Typeform | Token de acceso personal a Typeform
+Typeform | Typeform {% data variables.product.pat_generic_title_case %}
 Uniwise | Clave de API de WISEflow 
 Valour | Token de acceso a Valour
+Yandex | Clave de API de Yandex.Cloud   
+Yandex | Cookie de IAM de Yandex.Cloud    
+Yandex | Token de IAM de Yandex.Cloud 
+Yandex | Clave de API de Yandex.Dictionary  
+Yandex | Secreto de acceso de Yandex.Cloud 
+Yandex | Token de OAuth de Yandex.Passport    
 Zuplo | API de consumidor de Zuplo

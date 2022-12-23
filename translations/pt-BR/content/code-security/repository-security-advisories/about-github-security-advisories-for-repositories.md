@@ -1,26 +1,26 @@
 ---
 title: Sobre as Consultorias de Segurança do GitHub para repositórios
-intro: 'Você pode usar o {% data variables.product.prodname_security_advisories %} para discutir, corrigir e publicar informações sobre vulnerabilidades de segurança no seu repositório.'
+intro: Você pode usar o {% data variables.product.prodname_security_advisories %} para discutir, corrigir e publicar informações sobre vulnerabilidades de segurança no seu repositório.
 redirect_from:
-  - /articles/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-maintainer-security-advisories
-  - /github/managing-security-vulnerabilities/about-github-security-advisories
-  - /code-security/security-advisories/about-github-security-advisories
+- /articles/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-maintainer-security-advisories
+- /github/managing-security-vulnerabilities/about-github-security-advisories
+- /code-security/security-advisories/about-github-security-advisories
 versions:
   fpt: '*'
   ghec: '*'
 type: overview
 topics:
-  - Security advisories
-  - Vulnerabilities
-  - CVEs
+- Security advisories
+- Vulnerabilities
+- CVEs
 shortTitle: Repository security advisories
 ms.openlocfilehash: 5c8ad99a2bee30f52a185fa15421bc6b23429fbf
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145083342'
+ms.locfileid: "145083342"
 ---
 {% data reusables.repositories.security-advisory-admin-permissions %}
 

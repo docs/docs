@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 79d36439e68cf64c8236911224bb7769a59aef6e
-ms.sourcegitcommit: fb047f9450b41b24afc43d9512a5db2a2b750a2a
+ms.openlocfilehash: 59e78cbf492110a8949c27e867bf195ae5605307
+ms.sourcegitcommit: bddda0c0814770ee64e378692891931c618247ec
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2022
-ms.locfileid: "147558380"
+ms.lasthandoff: 11/24/2022
+ms.locfileid: "148181760"
 ---
 Partner (parceiro) | Segredo compatível
 --- | ---
@@ -18,19 +18,27 @@ AWS (Amazon Web Services) | Par do ID de segredo da chave de acesso ao AWS da Am
 Atlassian | Token da API de Atlassian
 Atlassian | Token web de JSON de Atlassian
 Azure | Segredo do aplicativo do Azure Active Directory
-Azure | Token de acesso pessoal do Azure DevOps
+Azure | Chave identificável do Lote do Azure
+Azure | Chave identificável do Azure Cosmos DB
+Azure | Azure DevOps {% data variables.product.pat_generic_title_case %}
+Azure | Chave de serviço Web do Azure ML Studio (clássico)
 Azure | Token do Azure SAS
+Azure | Chave de administração do Azure Search
+Azure | Chave de consulta do Azure Search
 Azure | Certificado de Gerenciamento de Serviços do Azure
 Azure | Cadeia de conexão do SQL do Azure
 Azure | Chave de conta de armazenamento do Azure
 Checkout.com | Chave secreta de produção do Checkout.com
 Checkout.com | Chave secreta de teste do Checkout.com
+Chief | Token de ferramentas principais
 Clojars | Token de implantação de Clojars
 CloudBees CodeShip | Credencial de Coadship de CloudBees
 Sistemas de contribuição | Credenciais de sistemas de contribuição
 Databricks | Token de acesso de Databricks
 Datadog | Chave de API de Datadog
-DigitalOcean | DigitalOcean Personal Access Token
+DevCycle | Chave de API do cliente do DevCycle
+DevCycle | Chave de API do servidor do DevCycle
+DigitalOcean | DigitalOcean {% data variables.product.pat_generic_title_case %}
 DigitalOcean | DigitalOcean OAuth Token
 DigitalOcean | DigitalOcean Refresh Token
 DigitalOcean | DigitalOcean System Token
@@ -44,11 +52,12 @@ Dropbox | Token de Acesso de Dropbox
 Dropbox | Token de acesso à vida curta do Dropbox
 Dynatrace | Token de acesso de Dynatrace
 Dynatrace | Token interno de Dynatrace
+Figma | Figma {% data variables.product.pat_generic_title_case %}
 Finicity | Chave do aplicativo de Finicity
 Frame.io | Token web do JSON de Frame.io
 Frame.io| Token do desenvolvedor de Frame.io
 FullStory| Chave de API do FullStory
-GitHub | Token de acesso pessoal do GitHub
+GitHub | GitHub {% data variables.product.pat_generic_title_case %}
 GitHub | Token de acesso OAuth do GitHub
 GitHub | Token de atualização do GitHub
 GitHub | Token de acesso à instalação do aplicativo GitHub
@@ -59,7 +68,8 @@ Google Cloud | Chave da API do GOogle
 Google Cloud | ID da chave privada do Google Cloud
 Hashicorp Terraform | Token da API de Terraform Cloud / Enterprise
 Hubspot | Chave da API de Hubspot
-Ionic | Token de acesso pessoal do Ionic
+Hubspot | Chave de acesso pessoal da API do Hubspot
+Ionic | Ionic {% data variables.product.pat_generic_title_case %}
 Ionic | Token de atualização do Ionic
 JD Cloud | JD Cloud Access Key
 Linear | Chave de API do Linear
@@ -110,9 +120,16 @@ Stripe | Chave restrita da API de Stripe Live
 Stripe | Chave restrita da API de testes de Stripe
 Supabase | Chave de serviço do Supabase
 Tencent Cloud | ID de segredot de Tencent Cloud
+Tencent WeChat | ID do aplicativo da API do Tencent WeChat
 Twilio | Identificador de string de conta de Twilio
 Twilio | Chave da API de Twilio
-Typeform | Token de acesso pessoal do Typeform
+Typeform | Typeform {% data variables.product.pat_generic_title_case %}
 Uniwise | Chave da API do WISEflow 
 Valour | Token de acesso do Valour
+Yandex | Chave de API do Yandex.Cloud   
+Yandex | Cookie de IAM do Yandex.Cloud    
+Yandex | Token de IAM do Yandex.Cloud 
+Yandex | Chave de API do Yandex.Dictionary  
+Yandex | Segredo de acesso do Yandex.Cloud 
+Yandex | Token OAuth do Yandex.Passport    
 Zuplo | API do Consumidor Zuplo

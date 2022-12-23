@@ -12,12 +12,12 @@ versions:
 topics:
   - Organizations
   - Teams
-ms.openlocfilehash: 3780e309aa149de90a6871fbe236aac752c67d0b
-ms.sourcegitcommit: 5b1461b419dbef60ae9dbdf8e905a4df30fc91b7
+ms.openlocfilehash: 0269554568c8781706a8d79600f5b6191d0b9598
+ms.sourcegitcommit: 1529de77bfcbe45519131b5f5fb3ab319758c2d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '147876103'
+ms.lasthandoff: 11/14/2022
+ms.locfileid: '148164329'
 ---
 ## 关于组织
 
@@ -33,7 +33,7 @@ ms.locfileid: '147876103'
 
 若要强化组织的安全性，可以强制实施安全要求并查看组织的审核日志。 有关详细信息，请参阅“[确保组织安全](/organizations/keeping-your-organization-secure)”。
 
-{% data reusables.organizations.org-ownership-recommendation %}有关详细信息，请参阅“[维护组织的所有权连续性](/organizations/managing-peoples-access-to-your-organization-with-roles/maintaining-ownership-continuity-for-your-organization)”。
+若要了解如何最有效地使用组织，请参阅“[组织最佳做法](/organizations/collaborating-with-groups-in-organizations/best-practices-for-organizations)”。
 
 {% ifversion fpt or ghec %}
 ## 关于功能可用性
@@ -47,7 +47,9 @@ ms.locfileid: '147876103'
 
 {% ifversion ghec %} {% data reusables.enterprise.create-an-enterprise-account %}有关详细信息，请参阅“[创建企业帐户](/admin/overview/creating-an-enterprise-account)”。
 
-{% data reusables.enterprise-accounts.invite-organization %} {% endif %} {% endif %}
+{% data reusables.enterprise-accounts.invite-organization %}
+
+{% endif %} {% endif %}
 
 {% ifversion fpt or ghec %}
 ## 组织的服务条款和数据保护

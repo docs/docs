@@ -1,25 +1,25 @@
 ---
 title: Instalar el servidor de GitHub Enterprise en XenServer
-intro: 'Para instalar {% data variables.product.prodname_ghe_server %} en XenServer, debes implementar la imagen de disco {% data variables.product.prodname_ghe_server %} a un servidor XenServer.'
+intro: Para instalar {% data variables.product.prodname_ghe_server %} en XenServer, debes implementar la imagen de disco {% data variables.product.prodname_ghe_server %} a un servidor XenServer.
 redirect_from:
-  - /enterprise/admin/guides/installation/installing-github-enterprise-on-xenserver
-  - /enterprise/admin/installation/installing-github-enterprise-server-on-xenserver
-  - /admin/installation/installing-github-enterprise-server-on-xenserver
+- /enterprise/admin/guides/installation/installing-github-enterprise-on-xenserver
+- /enterprise/admin/installation/installing-github-enterprise-server-on-xenserver
+- /admin/installation/installing-github-enterprise-server-on-xenserver
 versions:
   ghes: <=3.2
 type: tutorial
 topics:
-  - Administrator
-  - Enterprise
-  - Infrastructure
-  - Set up
+- Administrator
+- Enterprise
+- Infrastructure
+- Set up
 shortTitle: Install on XenServer
 ms.openlocfilehash: f4991244e74c9a61d953ecba08cc5c4985906fb6
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145116522'
+ms.locfileid: "145116522"
 ---
 {% note %}
 

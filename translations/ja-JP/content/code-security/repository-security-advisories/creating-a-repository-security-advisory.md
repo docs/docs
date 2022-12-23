@@ -2,24 +2,24 @@
 title: リポジトリ セキュリティ アドバイザリの作成
 intro: セキュリティアドバイザリのドラフトを作成して、オープンソースプロジェクトのセキュリティ脆弱性について非公開で議論して修正することができます。
 redirect_from:
-  - /articles/creating-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/creating-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/creating-a-security-advisory
-  - /code-security/security-advisories/creating-a-security-advisory
+- /articles/creating-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/creating-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/creating-a-security-advisory
+- /code-security/security-advisories/creating-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Create repository advisories
 ms.openlocfilehash: d4b47f84b20873e97b18106448b768288fff3039
 ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/10/2022
-ms.locfileid: '145119397'
+ms.locfileid: "145119397"
 ---
 リポジトリに対する管理者権限があるユーザなら誰でも、セキュリティアドバイザリを作成できます。
 

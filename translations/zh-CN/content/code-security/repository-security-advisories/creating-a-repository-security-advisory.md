@@ -2,24 +2,24 @@
 title: 创建存储库安全公告
 intro: 您可以创建安全通告草稿，以私下讨论和修复开源项目中的安全漏洞。
 redirect_from:
-  - /articles/creating-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/creating-a-maintainer-security-advisory
-  - /github/managing-security-vulnerabilities/creating-a-security-advisory
-  - /code-security/security-advisories/creating-a-security-advisory
+- /articles/creating-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/creating-a-maintainer-security-advisory
+- /github/managing-security-vulnerabilities/creating-a-security-advisory
+- /code-security/security-advisories/creating-a-security-advisory
 versions:
   fpt: '*'
   ghec: '*'
 type: how_to
 topics:
-  - Security advisories
-  - Vulnerabilities
+- Security advisories
+- Vulnerabilities
 shortTitle: Create repository advisories
 ms.openlocfilehash: d4b47f84b20873e97b18106448b768288fff3039
 ms.sourcegitcommit: 47bd0e48c7dba1dde49baff60bc1eddc91ab10c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
 ms.lasthandoff: 09/05/2022
-ms.locfileid: '145099741'
+ms.locfileid: "145099741"
 ---
 任何对仓库有管理员权限的人都可以创建安全通告。
 
