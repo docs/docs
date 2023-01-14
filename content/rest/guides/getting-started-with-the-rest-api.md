@@ -52,7 +52,7 @@ gh api /octocat --method GET
 
 {% endnote %}
 
-To make a request using JavaScript, you can use Octokit.js. For more information, see [the Octokit.js README](https://github.com/octokit/octokit.js/#readme).
+To make a request using JavaScript, you can use Octokit.js. For more information, see "[Scripting with the REST API and JavaScript](/rest/guides/scripting-with-the-rest-api-and-javascript)."
 
 First, create an instance of `Octokit`.{% ifversion ghes or ghae %} Set the base URL to `{% data variables.product.api_url_code %}`. Replace `[hostname]` with the name of {% data variables.location.product_location %}.{% endif %}
 
@@ -299,7 +299,7 @@ Most operations specify that you should pass an `Accept` header with a value of 
 To send a header with {% data variables.product.prodname_cli %}, use the `--header` or `-H` flag followed by the header in `key: value` format.
 
 ```shell
-gh api --header 'Accept: application/vnd.github+json' --method GET /octocat
+gh api --header 'Accept: application/vnd.github+json'{% ifversion api-date-versioning %} --header 'X-GitHub-Api-Version:{{ allVersions[currentVersion].latestApiVersion }}'{% endif %} --method GET /octocat
 ```
 
 {% endcli %}
@@ -311,7 +311,8 @@ The Octokit.js library automatically passes the `Accept: application/vnd.github+
 ```javascript
 await octokit.request("GET /octocat", {
   headers: {
-    "content-type": "text/plain",
+    "content-type": "text/plain",{% ifversion api-date-versioning %}
+    "X-GitHub-Api-Version": "{{ allVersions[currentVersion].latestApiVersion }}",{% endif %}
   },
 });
 ```
@@ -326,7 +327,8 @@ To send a header with cURL, use the `--header` or `-H` flag followed by the head
 curl --request GET \
 --url "https://api.github.com/octocat" \
 --header "Accept: application/vnd.github+json" \
---header "Authorization: Bearer YOUR-TOKEN"
+--header "Authorization: Bearer <em>YOUR-TOKEN</em>"{% ifversion api-date-versioning %}\
+--header "X-GitHub-Api-Version: {{ allVersions[currentVersion].latestApiVersion }}"{% endif %}
 ```
 
 {% endcurl %}
