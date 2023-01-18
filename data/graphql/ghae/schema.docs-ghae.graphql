@@ -1665,6 +1665,17 @@ type BranchProtectionRule implements Node {
   isAdminEnforced: Boolean!
 
   """
+  Whether users can pull changes from upstream when the branch is locked. Set to
+  `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+  """
+  lockAllowsFetchAndMerge: Boolean!
+
+  """
+  Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+  """
+  lockBranch: Boolean!
+
+  """
   Repository refs that are protected by this rule
   """
   matchingRefs(
@@ -1728,6 +1739,11 @@ type BranchProtectionRule implements Node {
   The repository associated with this branch protection rule.
   """
   repository: Repository
+
+  """
+  Whether the most recent push must be approved by someone other than the person who pushed it
+  """
+  requireLastPushApproval: Boolean!
 
   """
   Number of approving reviews required to update matching branches.
@@ -5602,6 +5618,17 @@ input CreateBranchProtectionRuleInput {
   isAdminEnforced: Boolean
 
   """
+  Whether users can pull changes from upstream when the branch is locked. Set to
+  `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+  """
+  lockAllowsFetchAndMerge: Boolean
+
+  """
+  Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+  """
+  lockBranch: Boolean
+
+  """
   The glob-like pattern used to determine matching branches.
   """
   pattern: String!
@@ -5615,6 +5642,11 @@ input CreateBranchProtectionRuleInput {
   The global relay id of the repository in which a new branch protection rule should be created in.
   """
   repositoryId: ID! @possibleTypes(concreteTypes: ["Repository"])
+
+  """
+  Whether the most recent push must be approved by someone other than the person who pushed it
+  """
+  requireLastPushApproval: Boolean
 
   """
   Number of approving reviews required to update matching branches.
@@ -14856,6 +14888,11 @@ type IssueTemplate {
   The suggested issue body.
   """
   body: String
+
+  """
+  The template filename.
+  """
+  filename: String!
 
   """
   The template name.
@@ -32708,6 +32745,11 @@ type Repository implements Node & ProjectOwner & RepositoryInfo & Starrable & Su
   hasAnonymousAccessEnabled: Boolean!
 
   """
+  Indicates if the repository has the Discussions feature enabled.
+  """
+  hasDiscussionsEnabled: Boolean!
+
+  """
   Indicates if the repository has issues feature enabled.
   """
   hasIssuesEnabled: Boolean!
@@ -33438,6 +33480,9 @@ type Repository implements Node & ProjectOwner & RepositoryInfo & Starrable & Su
   Whether a squash merge commit can use the pull request title as default.
   """
   squashPrTitleUsedAsDefault: Boolean!
+    @deprecated(
+      reason: "`squashPrTitleUsedAsDefault` will be removed. Use `Repository.squashMergeCommitTitle` instead. Removal on 2023-04-01 UTC."
+    )
 
   """
   The SSH URL to clone this repository
@@ -34002,6 +34047,11 @@ interface RepositoryInfo {
   Indicates if the repository has anonymous Git read access feature enabled.
   """
   hasAnonymousAccessEnabled: Boolean!
+
+  """
+  Indicates if the repository has the Discussions feature enabled.
+  """
+  hasDiscussionsEnabled: Boolean!
 
   """
   Indicates if the repository has issues feature enabled.
@@ -37059,9 +37109,19 @@ type Submodule {
   name: String!
 
   """
+  The name of the submodule in .gitmodules (Base64-encoded)
+  """
+  nameRaw: Base64String!
+
+  """
   The path in the superproject that this submodule is located in
   """
   path: String!
+
+  """
+  The path in the superproject that this submodule is located in (Base64-encoded)
+  """
+  pathRaw: Base64String!
 
   """
   The commit revision of the subproject repository being tracked by the submodule
@@ -39542,6 +39602,11 @@ type TreeEntry {
   name: String!
 
   """
+  Entry file name. (Base64-encoded)
+  """
+  nameRaw: Base64String!
+
+  """
   Entry file object.
   """
   object: GitObject
@@ -39555,6 +39620,11 @@ type TreeEntry {
   The full path of the file.
   """
   path: String
+
+  """
+  The full path of the file. (Base64-encoded)
+  """
+  pathRaw: Base64String
 
   """
   The Repository the tree entry belongs to
@@ -40219,6 +40289,17 @@ input UpdateBranchProtectionRuleInput {
   isAdminEnforced: Boolean
 
   """
+  Whether users can pull changes from upstream when the branch is locked. Set to
+  `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+  """
+  lockAllowsFetchAndMerge: Boolean
+
+  """
+  Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+  """
+  lockBranch: Boolean
+
+  """
   The glob-like pattern used to determine matching branches.
   """
   pattern: String
@@ -40227,6 +40308,11 @@ input UpdateBranchProtectionRuleInput {
   A list of User, Team, or App IDs allowed to push to matching branches.
   """
   pushActorIds: [ID!]
+
+  """
+  Whether the most recent push must be approved by someone other than the person who pushed it
+  """
+  requireLastPushApproval: Boolean
 
   """
   Number of approving reviews required to update matching branches.
@@ -41959,6 +42045,11 @@ input UpdateRepositoryInput {
   A new description for the repository. Pass an empty string to erase the existing description.
   """
   description: String
+
+  """
+  Indicates if the repository should have the discussions feature enabled.
+  """
+  hasDiscussionsEnabled: Boolean
 
   """
   Indicates if the repository should have the issues feature enabled.

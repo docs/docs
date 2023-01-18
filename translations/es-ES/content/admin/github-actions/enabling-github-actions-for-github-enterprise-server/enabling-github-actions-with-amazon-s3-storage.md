@@ -13,16 +13,22 @@ topics:
 redirect_from:
   - /admin/github-actions/enabling-github-actions-with-amazon-s3-storage
 shortTitle: Amazon S3 storage
-ms.openlocfilehash: cb71a379f139bf264fa4a40786434d5cfeed8366
-ms.sourcegitcommit: fcf3546b7cc208155fb8acdf68b81be28afc3d2d
+ms.openlocfilehash: 23fd8eabe502a6a29610de451cae72542ceca53f
+ms.sourcegitcommit: 8f7c8d52755cc3af0f366cc74c6db9e9be4d2ecd
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2022
-ms.locfileid: '145116746'
+ms.lasthandoff: 11/04/2022
+ms.locfileid: '148132652'
 ---
 ## Prerrequisitos
 
-{% data reusables.actions.enterprise-s3-support-warning %}
+{% note %}
+
+**Advertencia:** Los únicos proveedores de almacenamiento de S3 compatibles con {% data variables.product.prodname_dotcom %} son Amazon S3 y MinIO Gateway for NAS.
+
+{% data reusables.actions.enterprise-s3-tech-partners %}
+
+{% endnote %}
 
 Antes de que habilites las {% data variables.product.prodname_actions %}, asegúrate de que has completado los siguientes pasos:
 
@@ -32,7 +38,7 @@ Antes de que habilites las {% data variables.product.prodname_actions %}, asegú
 
 ## Habilitar {% data variables.product.prodname_actions %} con almacenamiento de Amazon S3
 
-{% data reusables.enterprise_installation.ssh-into-instance %} {% data reusables.actions.perform-blob-storage-precheck %} {% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
+{% data reusables.enterprise_site_admin_settings.access-settings %} {% data reusables.enterprise_site_admin_settings.management-console %} {% data reusables.enterprise_management_console.actions %} {% data reusables.actions.enterprise-enable-checkbox %}
 1. En "Artifact & Log Storage" (Almacenamiento de artefactos y registros), seleccione **Amazon S3** y escriba los detalles del cubo de almacenamiento:
 
    * **URL del servicio de AWS**: la dirección URL del servicio del cubo. Por ejemplo, si el cubo de S3 se ha creado en la región `us-west-2`, este valor debe ser `https://s3.us-west-2.amazonaws.com`.
@@ -41,6 +47,6 @@ Antes de que habilites las {% data variables.product.prodname_actions %}, asegú
    * **AWS S3 Bucket** (Cubo de AWS S3): nombre del cubo de S3.
    * **AWS S3 Access Key** y **AWS S3 Secret Key**: el identificador de clave de acceso de AWS y la clave secreta para el cubo. Para más información sobre cómo administrar las claves de acceso de AWS,vea la "[documentación sobre administración de identidades y accesos de AWS](https://docs.aws.amazon.com/iam/index.html)".
 
-   ![Botón de radio para seleccionar Amazon S3 Storage y campos para la configuración de S3](/assets/images/enterprise/management-console/actions-aws-s3-storage.png) {% data reusables.enterprise_management_console.save-settings %}
+   ![Botón de radio para seleccionar Amazon S3 Storage y campos para la configuración de S3](/assets/images/enterprise/management-console/actions-aws-s3-storage.png) {% data reusables.enterprise_management_console.test-storage-button %} {% data reusables.enterprise_management_console.save-settings %}
 
 {% data reusables.actions.enterprise-postinstall-nextsteps %}
