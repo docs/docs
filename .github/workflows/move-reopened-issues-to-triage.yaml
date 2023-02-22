@@ -25,13 +25,13 @@ jobs:
             const triageColumnId = 11007039;
 
             try {
-              const cards = await github.projects.listCards({
+              const cards = await github.rest.projects.listCards({
                 column_id: doneColumnId
               });
 
               for (const card of cards) {
                 if (card.content_url.endsWith(`/${issueNumber}`)) {
-                  await github.projects.moveCard({
+                  await github.rest.projects.moveCard({
                     card_id: card.id,
                     position: 'position',
                     column_id: triageColumnId

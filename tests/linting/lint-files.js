@@ -8,7 +8,7 @@ import revalidator from 'revalidator'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { visit } from 'unist-util-visit'
 import fs from 'fs/promises'
-import frontmatter from '../../lib/frontmatter.js'
+import { frontmatter, deprecatedProperties } from '../../lib/frontmatter.js'
 import languages from '../../lib/languages.js'
 import { tags } from '../../lib/liquid-tags/extended-markdown.js'
 import releaseNotesSchema from '../helpers/schemas/release-notes-schema.js'
@@ -357,6 +357,8 @@ describe('lint markdown content', () => {
       isEarlyAccess,
       isSitePolicy,
       isSearch,
+      isTranscript,
+      isTranscriptLanding,
       hasExperimentalAlternative,
       frontmatterData,
       rawContent
@@ -374,6 +376,8 @@ describe('lint markdown content', () => {
       isEarlyAccess = split.includes('early-access')
       isSitePolicy = split.includes('site-policy-deprecated')
       isSearch = split.includes('search') && !split.includes('reusables')
+      isTranscript = split.includes('video-transcripts')
+      isTranscriptLanding = isTranscript && split.includes('index.md')
       hasExperimentalAlternative = data.hasExperimentalAlternative === true
 
       links = []
@@ -420,12 +424,45 @@ describe('lint markdown content', () => {
       expect(matches.length, errorMessage).toBe(0)
     })
 
-    test('hidden docs must be Early Access, Site Policy, Search, or Experimental', async () => {
+    test('hidden docs must be Early Access, Site Policy, Search, Experimental, or Transcript', async () => {
       // We need to support some non-Early Access hidden docs in Site Policy
       if (isHidden) {
-        expect(isEarlyAccess || isSitePolicy || isSearch || hasExperimentalAlternative).toBe(true)
+        expect(
+          isEarlyAccess || isSitePolicy || isSearch || hasExperimentalAlternative || isTranscript
+        ).toBe(true)
       }
     })
+
+    //   TODO 47F50CA3 unskip the following tests (3 in total) when all the required videos are transcribed
+    //     'content/actions/index.md',
+    //     'content/codespaces/index.md',
+    //     'content/discussions/index.md',
+    //     'content/issues/index.md',
+
+    // ---- START SKIPPED TRANSCRIPTION TESTS ----
+
+    // see contributing/videos.md
+    test.skip('transcripts must contain intro link to video being transcribed', async () => {
+      if (isTranscript && !isTranscriptLanding) {
+        expect(frontmatterData.product_video).toBeDefined()
+      }
+    })
+
+    // see contributing/videos.md
+    test.skip('transcripts must be prepended with "Transcript - "', async () => {
+      if (isTranscript && !isTranscriptLanding) {
+        expect(frontmatterData.title.startsWith('Transcript - ')).toBe(true)
+      }
+    })
+
+    // see contributing/videos.md
+    test.skip('videos on product landing pages must contain transcript', async () => {
+      if (frontmatterData.layout === 'product-landing' && frontmatterData.product_video) {
+        expect(frontmatterData.product_video_transcript).toMatch(/^\/video-transcripts\/.+/)
+      }
+    })
+
+    // ---- END SKIPPED TRANSCRIPTION TESTS ----
 
     test('relative URLs must start with "/"', async () => {
       const matches = links.filter((link) => {
@@ -560,6 +597,18 @@ describe('lint markdown content', () => {
 
       const errorMessage = formatLinkError(domainLinkErrorText, matches)
       expect(matches.length, errorMessage).toBe(0)
+    })
+
+    test('contains no deprecated frontmatter properties', async () => {
+      if (!isEarlyAccess) {
+        const usedDeprecateProps = deprecatedProperties.filter((prop) => {
+          return Object.keys(frontmatterData).includes(prop)
+        })
+        expect(
+          usedDeprecateProps,
+          `The following frontmatter properties are deprecated: ${usedDeprecateProps}. Please remove the property from your article's frontmatter.`
+        ).toEqual([])
+      }
     })
 
     test('contains valid Liquid', async () => {

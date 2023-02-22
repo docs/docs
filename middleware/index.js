@@ -16,7 +16,6 @@ import {
   setLanguageFastlySurrogateKey,
 } from './set-fastly-surrogate-key.js'
 import reqUtils from './req-utils.js'
-import recordRedirect from './record-redirect.js'
 import handleErrors from './handle-errors.js'
 import handleInvalidPaths from './handle-invalid-paths.js'
 import handleNextDataPath from './handle-next-data-path.js'
@@ -61,6 +60,7 @@ import fastHead from './fast-head.js'
 import fastlyCacheTest from './fastly-cache-test.js'
 import trailingSlashes from './trailing-slashes.js'
 import fastlyBehavior from './fastly-behavior.js'
+import dynamicAssets from './dynamic-assets.js'
 
 const { DEPLOYMENT_ENV, NODE_ENV } = process.env
 const isTest = NODE_ENV === 'test' || process.env.GITHUB_ACTIONS === 'true'
@@ -155,12 +155,11 @@ export default function (app) {
       // URLs with a cache busting prefix.
       maxAge: '7 days',
       immutable: process.env.NODE_ENV !== 'development',
-      // This means, that if you request a file that starts with /assets/
-      // any file doesn't exist, don't bother (NextJS) rendering a
-      // pretty HTML error page.
-      fallthrough: false,
+      // The next middleware will try its luck and send the 404 if must.
+      fallthrough: true,
     })
   )
+  app.use(asyncMiddleware(instrument(dynamicAssets, './dynamic-assets')))
   app.use(
     '/public/',
     express.static('data/graphql', {
@@ -210,8 +209,7 @@ export default function (app) {
   app.set('etag', false) // We will manage our own ETags if desired
 
   // *** Config and context for redirects ***
-  app.use(reqUtils) // Must come before record-redirect and events
-  app.use(recordRedirect)
+  app.use(reqUtils) // Must come before events
   app.use(instrument(detectLanguage, './detect-language')) // Must come before context, breadcrumbs, find-page, handle-errors, homepages
   app.use(asyncMiddleware(instrument(context, './context'))) // Must come before early-access-*, handle-redirects
   app.use(instrument(shortVersions, './contextualizers/short-versions')) // Support version shorthands

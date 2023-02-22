@@ -25,7 +25,7 @@ jobs:
             const owner = context.repo.owner
             const repo = context.repo.repo
             try {
-              pulls = await github.pulls.list({
+              pulls = await github.rest.pulls.list({
                 owner: owner,
                 repo: repo,
                 head: `${owner}:repo-sync`,

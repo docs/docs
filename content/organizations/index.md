@@ -9,7 +9,7 @@ redirect_from:
 introLinks:
   overview: /organizations/collaborating-with-groups-in-organizations/about-organizations
 featuredLinks:
-  guides:
+  startHere:
     - /get-started/learning-about-github/types-of-github-accounts
     - /organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization
     - /organizations/organizing-members-into-teams/about-teams
@@ -42,12 +42,11 @@ children:
   - /managing-user-access-to-your-organizations-repositories
   - /managing-access-to-your-organizations-project-boards
   - /managing-programmatic-access-to-your-organization
-  - /managing-organization-settings
   - /managing-oauth-access-to-your-organizations-data
+  - /managing-organization-settings
   - /keeping-your-organization-secure
   - /managing-saml-single-sign-on-for-your-organization
   - /granting-access-to-your-organization-with-saml-single-sign-on
   - /managing-git-access-to-your-organizations-repositories
   - /migrating-to-improved-organization-permissions
 ---
-

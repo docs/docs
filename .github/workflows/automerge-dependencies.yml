@@ -74,7 +74,7 @@ jobs:
         with:
           script: |
             try {
-              await github.issues.lock({
+              await github.rest.issues.lock({
                 ...context.repo,
                 issue_number: parseInt(process.env.PR_NUMBER, 10),
                 lock_reason: 'resolved'

@@ -47,7 +47,7 @@ jobs:
           script: |
             const { owner, repo } = context.repo
 
-            const { data: pr } = await github.pulls.get({
+            const { data: pr } = await github.rest.pulls.get({
               owner,
               repo,
               pull_number: parseInt(${{ steps.find-pull-request.outputs.number }})
@@ -61,7 +61,7 @@ jobs:
             }
 
             try {
-              await github.teams.getMembershipForUserInOrg({
+              await github.rest.teams.getMembershipForUserInOrg({
                 org: 'github',
                 team_slug: 'employees',
                 username: prCreator
@@ -75,7 +75,7 @@ jobs:
             }
 
             // Close the PR and add the invalid label
-            await github.issues.update({
+            await github.rest.issues.update({
               owner,
               repo,
               issue_number: pr.number,
@@ -84,7 +84,7 @@ jobs:
             })
 
             // Comment on the PR
-            await github.issues.createComment({
+            await github.rest.issues.createComment({
               owner,
               repo,
               issue_number: pr.number,
@@ -154,7 +154,7 @@ jobs:
         with:
           script: |
             try {
-              await github.issues.lock({
+              await github.rest.issues.lock({
                 ...context.repo,
                 issue_number: parseInt(${{ steps.find-pull-request.outputs.number }}),
                 lock_reason: 'spam'
@@ -172,13 +172,13 @@ jobs:
         with:
           github-token: ${{ secrets.OCTOMERGER_PAT_WITH_REPO_AND_WORKFLOW_SCOPE }}
           script: |
-            const mainHeadSha = await github.git.getRef({
+            const mainHeadSha = await github.rest.git.getRef({
               ...context.repo,
               ref: 'heads/main'
             })
             console.log(`heads/main sha: ${mainHeadSha.data.object.sha}`)
 
-            const pull = await github.pulls.get({
+            const pull = await github.rest.pulls.get({
               ...context.repo,
               pull_number: parseInt(${{ steps.find-pull-request.outputs.number }})
             })
@@ -186,7 +186,7 @@ jobs:
 
             if (mainHeadSha.data.object.sha !== pull.data.base.sha || pull.data.mergeable_state === 'behind') {
               try {
-                const updateBranch = await github.pulls.updateBranch({
+                const updateBranch = await github.rest.pulls.updateBranch({
                   ...context.repo,
                   pull_number: parseInt(${{ steps.find-pull-request.outputs.number }})
                 })
@@ -196,7 +196,7 @@ jobs:
                 // We should retry one more time to update the branch
                 if (error.status === 422) {
                   try {
-                    const updateBranch = await github.pulls.updateBranch({
+                    const updateBranch = await github.rest.pulls.updateBranch({
                       ...context.repo,
                       pull_number: parseInt(${{ steps.find-pull-request.outputs.number }})
                     })
@@ -225,7 +225,7 @@ jobs:
           github-token: ${{ secrets.OCTOMERGER_PAT_WITH_REPO_AND_WORKFLOW_SCOPE }}
           result-encoding: string
           script: |
-            const { data: prFiles } = await github.pulls.listFiles({
+            const { data: prFiles } = await github.rest.pulls.listFiles({
               ...context.repo,
               pull_number: process.env.PR_NUMBER,
             })
