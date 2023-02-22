@@ -9,7 +9,6 @@ versions:
 redirect_from:
   - /github/setting-up-and-managing-your-enterprise/configuring-identity-and-access-management-for-your-enterprise-account
   - /admin/authentication/managing-identity-and-access-for-your-enterprise
-  - /admin/identity-and-access-management/managing-iam-for-your-enterprise
   - /admin/authentication/configuring-authentication-and-provisioning-with-your-identity-provider
   - /enterprise/admin/articles/configuring-saml-authentication
   - /enterprise/admin/articles/about-saml-authentication
@@ -22,7 +21,7 @@ children:
   - /about-saml-for-enterprise-iam
   - /saml-configuration-reference
   - /configuring-saml-single-sign-on-for-your-enterprise
-  - /configuring-user-provisioning-for-your-enterprise
+  - /configuring-user-provisioning-with-scim-for-your-enterprise
   - /managing-team-synchronization-for-organizations-in-your-enterprise
   - /configuring-saml-single-sign-on-for-your-enterprise-using-okta
   - /configuring-authentication-and-provisioning-for-your-enterprise-using-azure-ad

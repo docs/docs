@@ -8,7 +8,7 @@ shortTitle: Register an LMS
 ---
 ## About registering an LMS to your classroom
 
-Before you can connect your LMS to a classroom, an administrator for your LMS instance needs to configure your LMS to allow {% data variables.product.prodname_classroom %} and then register your LMS with {% data variables.product.prodname_classroom %} to initiate the OAuth handshake. An admin only needs to do this registration process once, then any teacher who uses their LMS instance may sync their LMS courses to classrooms. For more information on connecting an LMS course to a classroom, see "[Connect a learning management system course to a classroom](/education/manage-coursework-with-github-classroom/teach-with-github-classroom/connect-a-learning-management-system-course-to-a-classroom)."
+Before you can connect your LMS to a classroom, an administrator for your LMS instance needs to configure your LMS to allow {% data variables.product.prodname_classroom %} and then register your LMS with {% data variables.product.prodname_classroom %} to initiate the OAuth handshake. An admin only needs to do this registration process once, then any teacher who uses their LMS instance may sync their LMS courses to classrooms. For more information on connecting an LMS course to a classroom, see "[AUTOTITLE](/education/manage-coursework-with-github-classroom/teach-with-github-classroom/connect-a-learning-management-system-course-to-a-classroom)."
 
 {% note %}
 
@@ -57,8 +57,8 @@ You can register your Canvas installation with {% data variables.product.prodnam
    - "Issuer Identifier": `https://canvas.instructure.com`
    - "Domain": The base URL to your Canvas instance
    - "Client ID": The "Client ID" under "Details" from the developer key you created
-   - "OIDC Authorization end-point": The base URL to your Canvas instance with `/login/oauth2/token` appended at the end.
-   - "OAuth 2.0 Token Retrieval URL": The base URL to your Canvas instance with `/api/lti/authorize_redirect` appended at the end.
+   - "OIDC Authorization end-point": The base URL to your Canvas instance with `/api/lti/authorize_redirect` appended at the end.
+   - "OAuth 2.0 Token Retrieval URL": The base URL to your Canvas instance with `/login/oauth2/token` appended at the end.
    - "Key Set URL": The base URL to your Canvas instance with `/api/lti/security/jwks` appended at the end.
 
   ![Register Canvas instance with GitHub Classroom](/assets/images/help/classroom/register-canvas-with-github-classroom.png)
@@ -140,9 +140,9 @@ You must be using Moodle version 3.0 or greater.
     | **Send User Names to External Tool** | Select this checkbox. |
     | **Provide Roster to External Tool** | Select this checkbox. |
     | **Tool supports LTI 1.3** | Select this checkbox. |
-    | **LTI 1.3 Tool Keyset URL** | https://classroom.github.com/.well-known/jwks.json |
-    | **LTI 1.3 Tool OpenID Connect/Initialization Endpoint** | https://classroom.github.com/lti1p3/openid-connect/auth |
-    | **LTI 1.3 Tool Redirect Endpoint** | https://classroom.github.com/lti1p3/openid-connect/redirect |
+    | **LTI 1.3 Tool Keyset URL** | `https://classroom.github.com/.well-known/jwks.json` |
+    | **LTI 1.3 Tool OpenID Connect/Initialization Endpoint** | `https://classroom.github.com/lti1p3/openid-connect/auth` |
+    | **LTI 1.3 Tool Redirect Endpoint** | `https://classroom.github.com/lti1p3/openid-connect/redirect` |
 5. Upon submitting, Sakai will show you the information you need to register your Sakai instance with {% data variables.product.prodname_classroom %}.
 
 ### 2. Registering your Sakai instance with {% data variables.product.prodname_classroom %}

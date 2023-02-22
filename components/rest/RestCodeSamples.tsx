@@ -15,6 +15,7 @@ import { getShellExample, getGHExample, getJSExample } from 'components/lib/get-
 import styles from './RestCodeSamples.module.scss'
 import { RestMethod } from './RestMethod'
 import type { Operation, ExampleT, LanguageOptionT } from './types'
+import { useVersion } from 'components/hooks/useVersion'
 
 type Props = {
   slug: string
@@ -42,6 +43,7 @@ function getLanguageHighlight(selectedLanguage: string) {
 
 export function RestCodeSamples({ operation, slug }: Props) {
   const { t } = useTranslation('products')
+  const { isEnterpriseServer } = useVersion()
 
   // Refs to track the request example, response example
   // and the first render
@@ -74,8 +76,20 @@ export function RestCodeSamples({ operation, slug }: Props) {
   }
 
   // Menu options for the example selector
+
+  // We show the media type in the examples menu items for each example if
+  // there's more than one example and if the media types aren't all the same
+  // for the examples (e.g. if all examples have content type `application/json`,
+  // we won't show that information in the menu items).
+  const showExampleOptionMediaType =
+    languageExamples.length > 1 &&
+    !languageExamples.every(
+      (example) => example.response.contentType === languageExamples[0].response.contentType
+    )
   const exampleSelectOptions = languageExamples.map((example, index) => ({
-    text: example.description,
+    text: showExampleOptionMediaType
+      ? `${example.description} (${example.response.contentType})`
+      : example.description,
     // maps to the index of the example in the languageExamples array
     languageIndex: index,
   }))
@@ -201,6 +215,16 @@ export function RestCodeSamples({ operation, slug }: Props) {
     successDuration: 1400,
   })
 
+  let displayedExampleResponse = JSON.stringify(displayedExample.response.example, null, 2)
+  let displayedExampleSchema = JSON.stringify(displayedExample.response.schema, null, 2)
+
+  if (isEnterpriseServer) {
+    displayedExampleResponse =
+      displayedExampleResponse && displayedExampleResponse.replaceAll('api.github.com', 'HOSTNAME')
+    displayedExampleSchema =
+      displayedExampleSchema && displayedExampleSchema.replaceAll('api.github.com', 'HOSTNAME')
+  }
+
   return (
     <>
       <h3 className="mt-0 pt-0 h4" id={`${slug}--code-samples`}>
@@ -325,9 +349,7 @@ export function RestCodeSamples({ operation, slug }: Props) {
               style={{ maxHeight: responseMaxHeight }}
             >
               <code ref={responseCodeExample}>
-                {selectedResponse === 'example'
-                  ? JSON.stringify(displayedExample.response.example, null, 2)
-                  : JSON.stringify(displayedExample.response.schema, null, 2)}
+                {selectedResponse === 'example' ? displayedExampleResponse : displayedExampleSchema}
               </code>
             </div>
           )}

@@ -15,6 +15,10 @@ type: tutorial
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
 
+{% ifversion target-runner-groups %}
+For information on how to route jobs to runners in a specific group, see "[AUTOTITLE](/actions/using-jobs/choosing-the-runner-for-a-job#choosing-runners-in-a-group)."
+{% endif %}
+
 ## About runner groups
 
 {% data reusables.actions.about-runner-groups %} {% ifversion fpt %}For more information, see the [{% data variables.product.prodname_ghe_cloud %} documentation](/enterprise-cloud@latest/actions/hosting-your-own-runners/managing-access-to-self-hosted-runners-using-groups).{% endif %}
@@ -71,3 +75,5 @@ type: tutorial
 {% data reusables.actions.removing-a-runner-group %}
 
 {% endif %}
+
+{% data reusables.actions.section-using-unique-names-for-runner-groups %}

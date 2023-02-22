@@ -1,11 +1,10 @@
 ---
 title: Using larger runners
-shortTitle: 'Larger runners'
+shortTitle: Larger runners
 intro: '{% data variables.product.prodname_dotcom %} offers larger runners with more RAM and CPU.'
-miniTocMaxHeadingLevel: 3
 product: '{% data reusables.gated-features.hosted-runners %}'
 versions:
-  feature: 'actions-hosted-runners'
+  feature: actions-hosted-runners
 ---
 
 ## Overview of {% data variables.actions.hosted_runner %}s
@@ -28,13 +27,13 @@ When you add a {% data variables.actions.hosted_runner %} to an organization, yo
 
 ## Architectural overview of {% data variables.actions.hosted_runner %}s
 
-The {% data variables.actions.hosted_runner %}s are managed at the organization level, where they are arranged into groups that can contain multiple instances of the runner. They can also be created at the enterprise level and shared with organizations in the hierarchy. Once you've created a group, you can then add a runner to the group and update your workflows to target the label assigned to the {% data variables.actions.hosted_runner %}. You can also control which repositories are permitted to send jobs to the group for processing. For more information about groups, see "[Controlling access to {% data variables.actions.hosted_runner %}s](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
+The {% data variables.actions.hosted_runner %}s are managed at the organization level, where they are arranged into groups that can contain multiple instances of the runner. They can also be created at the enterprise level and shared with organizations in the hierarchy. Once you've created a group, you can then add a runner to the group and update your workflows to target either the group name or the label assigned to the {% data variables.actions.hosted_runner %}. You can also control which repositories are permitted to send jobs to the group for processing. For more information about groups, see "[AUTOTITLE](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
 
 In the following diagram, a class of hosted runner named `ubuntu-20.04-16core` has been defined with customized hardware and operating system configuration.
 
 ![Diagram explaining {% data variables.actions.hosted_runner %}](/assets/images/hosted-runner.png)
 
-1. Instances of this runner are automatically created and added to a group called `ubuntu-20.04-16core`. 
+1. Instances of this runner are automatically created and added to a group called `grp-ubuntu-20.04-16core`. 
 2. The runners have been assigned the label `ubuntu-20.04-16core`. 
 3. Workflow jobs use the `ubuntu-20.04-16core` label in their `runs-on` key to indicate the type of runner they need to execute the job.
 4. {% data variables.product.prodname_actions %} checks the runner group to see if your repository is authorized to send jobs to the runner.
@@ -60,7 +59,7 @@ By default, {% data variables.actions.hosted_runner %}s receive a dynamic IP add
 
 ### Create a runner group
 
-Runner groups are used to collect sets of virtual machines and create a security boundary around them. You can then decide which organizations or repositories are permitted to run jobs on those sets of machines. During the {% data variables.actions.hosted_runner %} deployment process, the runner can be added to an existing group, or otherwise it will join a default group. You can create a group by following the steps in "[Controlling access to {% data variables.actions.hosted_runner %}s](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
+Runner groups are used to collect sets of virtual machines and create a security boundary around them. You can then decide which organizations or repositories are permitted to run jobs on those sets of machines. During the {% data variables.actions.hosted_runner %} deployment process, the runner can be added to an existing group, or otherwise it will join a default group. You can create a group by following the steps in "[AUTOTITLE](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
 
 ### Understanding billing
 
@@ -70,7 +69,7 @@ Runner groups are used to collect sets of virtual machines and create a security
 
 {% endnote %}
 
-Compared to standard {% data variables.product.prodname_dotcom %}-hosted runners, {% data variables.actions.hosted_runner %}s are billed differently. For more information, see "[Per-minute rates](/billing/managing-billing-for-github-actions/about-billing-for-github-actions#per-minute-rates)".
+Compared to standard {% data variables.product.prodname_dotcom %}-hosted runners, {% data variables.actions.hosted_runner %}s are billed differently. For more information, see "[AUTOTITLE](/billing/managing-billing-for-github-actions/about-billing-for-github-actions#per-minute-rates)".
 
 ## Adding a {% data variables.actions.hosted_runner %} to an enterprise
 
@@ -99,14 +98,31 @@ You can add a {% data variables.actions.hosted_runner %} to an organization, whe
 
 ## Running jobs on your runner
 
-Once your runner type has been defined, you can update your workflow YAML files to send jobs to your newly created runner instances for processing. In this example, a runner group is populated with Ubuntu 16-core runners, which have been assigned the label `ubuntu-20.04-16core`. If you have a runner matching this label, the `check-bats-version` job then uses the `runs-on` key to target that runner whenever the job is run:
+Once your runner type has been defined, you can update your workflow YAML files to send jobs to your newly created runner instances for processing. You can use runner groups or labels to define where your jobs run.
+
+{% note %}
+
+**Note:** When you add a {% data variables.actions.hosted_runner %}, it is automatically assigned default labels that correspond to the runner name and its operating system. You cannot add custom labels to {% data variables.actions.hosted_runner %}s, but you can use the default labels or the runner's group to send jobs to specific types of runners.
+
+{% endnote %}
+
+Only owner or administrator accounts can see the runner settings. Non-administrative users can contact the organization administrator to find out which runners are enabled. Your organization administrator can create new runners and runner groups, as well as configure permissions to specify which repositories can access a runner group.
+
+### Using groups to control where jobs are run
+
+{% data reusables.actions.jobs.example-runs-on-groups %}
+
+### Using labels to control where jobs are run
+
+In this example, a runner group is populated with Ubuntu 16-core runners, which have also been assigned the label `ubuntu-20.04-16core`. The `runs-on` key sends the job to any available runner with a matching label:
 
 ```yaml
 name: learn-github-actions
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: ubuntu-20.04-16core
+    runs-on:
+      labels: ubuntu-20.04-16core
     steps:
       - uses: {% data reusables.actions.action-checkout %}
       - uses: {% data reusables.actions.action-setup-node %}
@@ -116,7 +132,11 @@ jobs:
       - run: bats -v
 ```
 
-To find out which runners are enabled for your repository and organization, you must contact your organization admin. Your organization admin can create new runners and runner groups, as well as configure permissions to specify which repositories can access a runner group.
+### Using labels and groups to control where jobs are run
+
+{% data reusables.actions.jobs.example-runs-on-labels-and-groups %}
+
+{% data reusables.actions.section-using-unique-names-for-runner-groups %}
 
 ## Managing access to your runners
 
@@ -150,6 +170,6 @@ This procedure demonstrates how to configure group permissions at the enterprise
 
 {% data reusables.actions.hosted-runner-security %}
 
-For more information, see "[Controlling access to {% data variables.actions.hosted_runner %}s](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
+For more information, see "[AUTOTITLE](/actions/using-github-hosted-runners/controlling-access-to-larger-runners)."
 
 {% endwarning %}
