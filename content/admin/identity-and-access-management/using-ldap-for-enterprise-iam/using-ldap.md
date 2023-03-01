@@ -131,10 +131,10 @@ After you enable LDAP sync, a synchronization job will run at the specified time
 - If one or more restricted user groups are configured on the instance, the corresponding LDAP entry is in one of these groups, and _Reactivate suspended users_ is enabled in the Admin Center, unsuspend the user.
 - If the corresponding LDAP entry includes a `name` attribute, update the user's profile name.
 - If the corresponding LDAP entry is in the Administrators group, promote the user to site administrator.
-- If the corresponding LDAP entry is not in the Administrators group, demote the user to a normal account.
+- If the corresponding LDAP entry is not in the Administrators group, demote the user to a normal account, unless the account is suspended. Suspended administrators will not be demoted and will remain listed on the "Site admins" and "Enterprise owners" pages.
 - If an LDAP User field is defined for emails, synchronize the user's email settings with the LDAP entry. Set the first LDAP `mail` entry as the primary email.
-- If an LDAP User field is defined for SSH public keys, synchronize the user's public SSH keys with the LDAP entry.  
-- If an LDAP User field is defined for GPG keys, synchronize the user's GPG keys with the LDAP entry.  
+- If an LDAP User field is defined for SSH public keys, synchronize the user's public SSH keys with the LDAP entry.
+- If an LDAP User field is defined for GPG keys, synchronize the user's GPG keys with the LDAP entry.
 
 {% note %}
 
@@ -145,7 +145,13 @@ After you enable LDAP sync, a synchronization job will run at the specified time
 A synchronization job will also run at the specified time interval to perform the following operations on each team that has been mapped to an LDAP group:
 
 - If a team's corresponding LDAP group has been removed, remove all members from the team.
-- If LDAP member entries have been removed from the LDAP group, remove the corresponding users from the team. If the user is no longer a member of any team in the organization, remove the user from the organization. If the user loses access to any repositories as a result, delete any private forks the user has of those repositories.
+- If LDAP member entries have been removed from the LDAP group, remove the corresponding users from the team. If the user is no longer a member of any team in the organization and is not an owner of the organization, remove the user from the organization. If the user loses access to any repositories as a result, delete any private forks the user has of those repositories.
+
+  {% note %}
+
+  **Note:** LDAP Sync will not remove a user from an organization if the user is an owner of that organization. Another organization owner will need to manually remove the user instead.
+
+  {% endnote %}
 - If LDAP member entries have been added to the LDAP group, add the corresponding users to the team. If the user regains access to any repositories as a result, restore any private forks of the repositories that were deleted because the user lost access in the past 90 days.
 
 {% data reusables.enterprise_user_management.ldap-sync-nested-teams %}

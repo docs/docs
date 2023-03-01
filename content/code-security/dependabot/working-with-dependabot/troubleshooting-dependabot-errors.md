@@ -11,7 +11,7 @@ redirect_from:
 versions:
   fpt: '*'
   ghec: '*'
-  ghes: '>3.2'
+  ghes: '*'
 type: how_to
 topics:
   - Dependabot
@@ -33,6 +33,14 @@ topics:
 {% data reusables.dependabot.pull-request-introduction %}
 
 If anything prevents {% data variables.product.prodname_dependabot %} from raising a pull request, this is reported as an error.
+
+{% ifversion dependabot-updates-paused %}
+{% note %}
+
+**Note:** {% data variables.product.prodname_dependabot %} doesn't create pull requests for inactive repositories. For information about inactivity criteria, see "[About {% data variables.product.prodname_dependabot_security_updates %}](/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates#about-automatic-deactivation-of-dependabot-updates)" and "[About {% data variables.product.prodname_dependabot_version_updates %}](/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates#about-automatic-deactivation-of-dependabot-updates)," for security and version updates, respectively. 
+
+{% endnote %}
+{% endif %}
 
 ## Investigating errors with {% data variables.product.prodname_dependabot_security_updates %}
 

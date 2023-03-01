@@ -45,9 +45,26 @@ export async function getBodyParams(schema, topLevel = false) {
   const properties = schemaObject.properties || {}
   const required = schemaObject.required || []
 
-  for (const [paramKey, param] of Object.entries(properties)) {
-    const paramDecorated = {}
+  // Most operation requestBody schemas are objects. When the type is an array,
+  // there will not be properties on the `schema` object.
+  if (topLevel && schema.type === 'array') {
+    const childParamsGroups = []
+    const arrayType = schema.items.type
+    const paramType = [schema.type]
+    if (arrayType === 'object') {
+      childParamsGroups.push(...(await getBodyParams(schema.items, false)))
+    } else {
+      paramType.splice(paramType.indexOf('array'), 1, `array of ${arrayType}s`)
+    }
+    const paramDecorated = await getTransformedParam(schema, paramType, {
+      required,
+      topLevel,
+      childParamsGroups,
+    })
+    return [paramDecorated]
+  }
 
+  for (const [paramKey, param] of Object.entries(properties)) {
     // OpenAPI 3.0 only had a single value for `type`. OpenAPI 3.1
     // will either be a single value or an array of values.
     // This makes type an array regardless of how many values the array
@@ -120,35 +137,65 @@ export async function getBodyParams(schema, topLevel = false) {
       // is in the first child parameter.
       const oneOfDescriptions = descriptions.length ? descriptions[0].description : ''
       if (!param.description) param.description = oneOfDescriptions
+
+      // This is a workaround for an operation that incorrectly defines allOf for a
+      // body parameter. As a workaround, we will use the first object in the list of
+      // the allOf array. Otherwise, fallback to the first item in the array.
+      // This isn't ideal, and in the case of an actual allOf occurrence, we should
+      // handle it differently by merging all of the properties. There is currently
+      // only one occurrence for the operation id repos/update-information-about-pages-site
+      // See Ecosystem API issue number #3332 for future plans to fix this in the OpenAPI
+    } else if (param && param.anyOf && Object.keys(param).length === 1) {
+      const firstObject = Object.values(param.anyOf).find((item) => item.type === 'object')
+      if (firstObject) {
+        paramType.push('object')
+        param.description = firstObject.description
+        param.isRequired = firstObject.required
+        childParamsGroups.push(...(await getBodyParams(firstObject, false)))
+      } else {
+        paramType.push(param.anyOf[0].type)
+        param.description = param.anyOf[0].description
+        param.isRequired = param.anyOf[0].required
+      }
     }
 
-    // Supports backwards compatibility for OpenAPI 3.0
-    // In 3.1 a nullable type is part of the param.type array and
-    // the property param.nullable does not exist.
-    if (param.nullable) paramType.push('null')
-    paramDecorated.type = paramType.filter(Boolean).join(' or ')
-    paramDecorated.name = paramKey
-    if (topLevel) {
-      paramDecorated.in = 'body'
-    }
-    paramDecorated.description = await renderContent(param.description)
-    if (required.includes(paramKey)) {
-      paramDecorated.isRequired = true
-    }
-    if (childParamsGroups.length > 0) {
-      paramDecorated.childParamsGroups = childParamsGroups
-    }
-    if (param.enum) {
-      paramDecorated.enum = param.enum
-    }
-
-    // we also want to catch default values of `false` for booleans
-    if (param.default !== undefined) {
-      paramDecorated.default = param.default
-    }
-
+    const paramDecorated = await getTransformedParam(param, paramType, {
+      paramKey,
+      required,
+      childParamsGroups,
+      topLevel,
+    })
     bodyParametersParsed.push(paramDecorated)
   }
-
   return bodyParametersParsed
+}
+
+async function getTransformedParam(param, paramType, props) {
+  const { paramKey, required, childParamsGroups, topLevel } = props
+  const paramDecorated = {}
+  // Supports backwards compatibility for OpenAPI 3.0
+  // In 3.1 a nullable type is part of the param.type array and
+  // the property param.nullable does not exist.
+  if (param.nullable) paramType.push('null')
+  paramDecorated.type = paramType.filter(Boolean).join(' or ')
+  paramDecorated.name = paramKey
+  if (topLevel) {
+    paramDecorated.in = 'body'
+  }
+  paramDecorated.description = await renderContent(param.description)
+  if (required && required.includes(paramKey)) {
+    paramDecorated.isRequired = true
+  }
+  if (childParamsGroups && childParamsGroups.length > 0) {
+    paramDecorated.childParamsGroups = childParamsGroups
+  }
+  if (param.enum) {
+    paramDecorated.enum = param.enum
+  }
+
+  // we also want to catch default values of `false` for booleans
+  if (param.default !== undefined) {
+    paramDecorated.default = param.default
+  }
+  return paramDecorated
 }

@@ -36,7 +36,7 @@ By default only direct dependencies that are explicitly defined in a manifest ar
 
 ## Enabling {% data variables.product.prodname_dependabot_version_updates %}
 
-You enable {% data variables.product.prodname_dependabot_version_updates %} by commiting a *dependabot.yml* configuration file to your repository. 
+You enable {% data variables.product.prodname_dependabot_version_updates %} by committing a *dependabot.yml* configuration file to your repository. 
 {% ifversion dependabot-settings-update-37 %}If you enable the feature in your settings page, GitHub creates a basic file which you can edit, otherwise you can create the file using any file editor.
 
 {% data reusables.repositories.navigate-to-repo %}
@@ -92,11 +92,23 @@ If you want to enable version updates on forks, there's an extra step. Version u
 
 On a fork, you also need to explicitly enable {% data variables.product.prodname_dependabot %}.
 
+{% ifversion dependabot-version-updates-for-forks %}
+
+{% data reusables.repositories.navigate-to-repo %}
+{% data reusables.repositories.sidebar-settings %}
+{% data reusables.repositories.navigate-to-code-security-and-analysis %}
+1. Under "Code security and analysis", to the right of "{% data variables.product.prodname_dependabot_version_updates %}", click **Enable** to allow {% data variables.product.prodname_dependabot %} to initiate version updates.
+![Screenshot of {% data variables.product.prodname_dependabot_version_updates %} setting for a forked repository](/assets/images/help/dependabot/dependabot-version-update-forks.png)
+
+{% else %}
+
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.accessing-repository-graphs %}
 {% data reusables.repositories.click-dependency-graph %}
 {% data reusables.dependabot.click-dependabot-tab %}
 5. Under "Enable Dependabot", click **Enable Dependabot**.
+
+{% endif %}
 
 ## Checking the status of version updates
 

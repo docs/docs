@@ -33,11 +33,20 @@ When you create a pull request containing changes to dependencies that targets t
 
 ## Dependency graph availability
 
-{% ifversion fpt or ghec %}The dependency graph is available for every public repository that defines dependencies in a supported package ecosystem using a supported file format. Repository administrators can also set up the dependency graph for private repositories. {% endif %}For more information {% ifversion ghes %}about configuration of the dependency graph{% endif %}, see "[Configuring the dependency graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-graph)."
+{% ifversion fpt or ghec %}
+{% data reusables.dependency-graph.feature-availability %} For more information, see "[Managing security and analysis settings for your repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository)."
+
+Repository administrators can also set up the dependency graph for private repositories. For more information, see "[Configuring the dependency graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-graph)."
+
+{% endif %}
 
 {% data reusables.code-scanning.enterprise-enable-dependency-graph %}
 
 {% data reusables.dependabot.dependabot-alerts-dependency-graph-enterprise %}
+
+{% ifversion ghes %}
+For more information about configuration of the dependency graph, see "[Configuring the dependency graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-graph)."{% endif %}
+
 
 ## Dependencies included
 
@@ -79,11 +88,7 @@ The recommended formats explicitly define which versions are used for all direct
 {%- ifversion github-actions-in-dependency-graph %}
 | {% data variables.product.prodname_actions %} workflows<sup>[†]</sup> | YAML | `.yml`, `.yaml` | `.yml`, `.yaml` |
 {%- endif %}
-{%- ifversion fpt or ghec or ghes > 3.2 or ghae %}
 | Go modules | Go | `go.sum` | `go.mod`, `go.sum` |
-{%- elsif ghes = 3.2 %}
-| Go modules | Go | `go.mod` | `go.mod` |
-{%- endif %}
 | Maven | Java, Scala |  `pom.xml`  | `pom.xml`  |
 | npm | JavaScript |            `package-lock.json` | `package-lock.json`, `package.json`|
 | pip             | Python                    | `requirements.txt`, `pipfile.lock` | `requirements.txt`, `pipfile`, `pipfile.lock`, `setup.py`<sup>[‡]</sup> |

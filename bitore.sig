@@ -1,0 +1,336 @@
+BEGIN'
+GLOW7, ".Docx':
+Bumps node from 16.18.0-alpine to 19.1.0-alpine.
+updated-dependencies:
+- dependency-name: node
+  dependency-type: direct:production
+  update-type: version-update:semver-major
+Signed-off-by: dependabot[bot] <support@github.com>
+ dependabot/docker/node-19.1.0-alpine (#22152, #23154, #23297, HaTin79/docs#18, Winlove0710/docs#4, diberry/docs-1#1)
+@dependabot
+dependabot[bot] committed on Nov 17, 2022 
+1 parent c9f0462
+commit 08de05c
+Show file tree Hide file tree
+Showing 2 changed files with 2 additions and 2 deletions.
+Filter changed files
+  2  
+Dockerfile
+# This Dockerfile is used for docker-based deployments to Azure for both preview environments and production	# This Dockerfile is used for docker-based deployments to Azure for both preview environments and production
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+# BASE IMAGE	# BASE IMAGE
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+FROM node:16.18.0-alpine@sha256:f16544bc93cf1a36d213c8e2efecf682e9f4df28429a629a37aaf38ecfc25cf4 as base	FROM node:19.1.0-alpine@sha256:c59fb39150e4a7ae14dfd42d3f9874398c7941784b73049c2d274115f00d36c8 as base
+
+
+# This directory is owned by the node user	# This directory is owned by the node user
+ARG APP_HOME=/home/node/app	ARG APP_HOME=/home/node/app
+# Make sure we don't run anything as the root user	# Make sure we don't run anything as the root user
+USER node	USER node
+WORKDIR $APP_HOME	WORKDIR $APP_HOME
+# ---------------	# ---------------
+# ALL DEPS	# ALL DEPS
+# ---------------	# ---------------
+FROM base as all_deps	FROM base as all_deps
+COPY --chown=node:node package.json package-lock.json ./	COPY --chown=node:node package.json package-lock.json ./
+RUN npm ci --no-optional --registry https://registry.npmjs.org/	RUN npm ci --no-optional --registry https://registry.npmjs.org/
+# For Next.js v12+	# For Next.js v12+
+# This the appropriate necessary extra for node:16-alpine	# This the appropriate necessary extra for node:16-alpine
+# Other options are https://www.npmjs.com/search?q=%40next%2Fswc	# Other options are https://www.npmjs.com/search?q=%40next%2Fswc
+RUN npm i @next/swc-linux-x64-musl --no-save	RUN npm i @next/swc-linux-x64-musl --no-save
+# ---------------	# ---------------
+# PROD DEPS	# PROD DEPS
+# ---------------	# ---------------
+FROM all_deps as prod_deps	FROM all_deps as prod_deps
+RUN npm prune --production	RUN npm prune --production
+# ---------------	# ---------------
+# BUILDER	# BUILDER
+# ---------------	# ---------------
+FROM all_deps as builder	FROM all_deps as builder
+COPY stylesheets ./stylesheets	COPY stylesheets ./stylesheets
+COPY pages ./pages	COPY pages ./pages
+COPY components ./components	COPY components ./components
+COPY lib ./lib	COPY lib ./lib
+# Certain content is necessary for being able to build	# Certain content is necessary for being able to build
+COPY content/index.md ./content/index.md	COPY content/index.md ./content/index.md
+COPY content/rest ./content/rest	COPY content/rest ./content/rest
+COPY data ./data	COPY data ./data
+COPY next.config.js ./next.config.js	COPY next.config.js ./next.config.js
+COPY tsconfig.json ./tsconfig.json	COPY tsconfig.json ./tsconfig.json
+RUN npm run build	RUN npm run build
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+# PREVIEW IMAGE - no translations	# PREVIEW IMAGE - no translations
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+FROM base as preview	FROM base as preview
+# Copy just prod dependencies	# Copy just prod dependencies
+COPY --chown=node:node --from=prod_deps $APP_HOME/node_modules $APP_HOME/node_modules	COPY --chown=node:node --from=prod_deps $APP_HOME/node_modules $APP_HOME/node_modules
+# Copy our front-end code	# Copy our front-end code
+COPY --chown=node:node --from=builder $APP_HOME/.next $APP_HOME/.next	COPY --chown=node:node --from=builder $APP_HOME/.next $APP_HOME/.next
+# We should always be running in production mode	# We should always be running in production mode
+ENV NODE_ENV production	ENV NODE_ENV production
+# Preferred port for server.js	# Preferred port for server.js
+ENV PORT 4000	ENV PORT 4000
+ENV ENABLED_LANGUAGES "en"	ENV ENABLED_LANGUAGES "en"
+# This makes it possible to set `--build-arg BUILD_SHA=abc123`	# This makes it possible to set `--build-arg BUILD_SHA=abc123`
+# and it then becomes available as an environment variable in the docker run.	# and it then becomes available as an environment variable in the docker run.
+ARG BUILD_SHA	ARG BUILD_SHA
+ENV BUILD_SHA=$BUILD_SHA	ENV BUILD_SHA=$BUILD_SHA
+# Copy only what's needed to run the server	# Copy only what's needed to run the server
+COPY --chown=node:node package.json ./	COPY --chown=node:node package.json ./
+COPY --chown=node:node assets ./assets	COPY --chown=node:node assets ./assets
+COPY --chown=node:node content ./content	COPY --chown=node:node content ./content
+COPY --chown=node:node lib ./lib	COPY --chown=node:node lib ./lib
+COPY --chown=node:node middleware ./middleware	COPY --chown=node:node middleware ./middleware
+COPY --chown=node:node data ./data	COPY --chown=node:node data ./data
+COPY --chown=node:node next.config.js ./	COPY --chown=node:node next.config.js ./
+COPY --chown=node:node server.js ./server.js	COPY --chown=node:node server.js ./server.js
+COPY --chown=node:node start-server.js ./start-server.js	COPY --chown=node:node start-server.js ./start-server.js
+EXPOSE $PORT	EXPOSE $PORT
+CMD ["node", "server.js"]	CMD ["node", "server.js"]
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+# PRODUCTION IMAGE - includes all translations	# PRODUCTION IMAGE - includes all translations
+# --------------------------------------------------------------------------------	# --------------------------------------------------------------------------------
+FROM preview as production	FROM preview as production
+# Copy in all translations	# Copy in all translations
+COPY --chown=node:node translations ./translations	COPY --chown=node:node translations ./translations
+ 2  
+Dockerfile.openapi_decorator
+@@ -1,4 +1,4 @@
+FROM node:14-alpine	FROM node:19-alpine
+
+
+RUN apk add --no-cache git python make g++	RUN apk add --no-cache git python make g++
+
+
+WORKDIR /openapi-check	WORKDIR /openapi-check
+RUN chown node:node /openapi-check -R	RUN chown node:node /openapi-check -R
+USER node	USER node
+COPY --chown=node:node package.json /openapi-check	COPY --chown=node:node package.json /openapi-check
+COPY --chown=node:node package-lock.json /openapi-check	COPY --chown=node:node package-lock.json /openapi-check
+ADD --chown=node:node script /openapi-check/script	ADD --chown=node:node script /openapi-check/script
+ADD --chown=node:node lib /openapi-check/lib	ADD --chown=node:node lib /openapi-check/lib
+ADD --chown=node:node content /openapi-check/content	ADD --chown=node:node content /openapi-check/content
+ADD --chown=node:node data /openapi-check/data	ADD --chown=node:node data /openapi-check/data
+RUN npm ci -D	RUN npm ci -D
+ENTRYPOINT ["OPEN("API")" :; :"package.json":,
+:Build::
+run:/Runs::/runs-on::/GLOW4 :
+GLOW4 :beginning..., :
+Actions::/#::#'Type'Script'.yml'"'' :On :starts::/BEGIN-starts ::On-on :'"'' :
+-on::::/run::/scripts::/Script::/:Build::/Scripts:://posted
+*Casandra/Convertible/REDD/linux32_86/intel82/pom.xml/Rust.yml-setup/:raki.u'@kite.i :# This Dockerfile is used for docker-based deployments to Azure for both preview environments and production
+# IMAGES
+# To update the sha, run `docker pull node:$VERSION-alpine`
+# look for something like: `Digest: sha256:0123456789abcdef`
+FROM node:18.13.0-alpine@sha256:fda98168118e5a8f4269efca4101ee51dd5c75c0fe56d8eb6fad80455c2f5827 as base
+
+# This directory is owned by the node user
+ARG APP_HOME=/home/node/app
+
+# Make sure we don't run anything as the root user
+USER node
+
+WORKDIR $APP_HOME
+
+
+# ---------------
+# ALL DEPS
+# ---------------
+FROM base as all_deps
+
+COPY --chown=node:node package.json package-lock.json ./
+
+RUN npm ci --no-optional --registry https://registry.npmjs.org/
+
+# For Next.js v12+
+# This the appropriate necessary extra for node:VERSION-alpine
+# Other options are https://www.npmjs.com/search?q=%40next%2Fswc
+RUN npm i @next/swc-linux-x64-musl --no-save || npm i @next/swc-linux-arm64-musl --no-save
+
+
+# ---------------
+# PROD DEPS
+# ---------------
+FROM all_deps as prod_deps
+
+RUN npm prune --production
+
+
+# ---------------
+# BUILDER
+# ---------------
+FROM all_deps as builder
+
+COPY stylesheets ./stylesheets
+COPY pages ./pages
+COPY components ./components
+COPY lib ./lib
+# Certain content is necessary for being able to build
+COPY content/index.md ./content/index.md
+COPY content/rest ./content/rest
+COPY data ./data
+
+COPY next.config.js ./next.config.js
+COPY tsconfig.json ./tsconfig.json
+
+RUN npm run build
+
+# --------------------------------------------------------------------------------
+# PREVIEW IMAGE - no translations
+# --------------------------------------------------------------------------------
+
+FROM base as preview
+
+# Copy just prod dependencies
+COPY --chown=node:node --from=prod_deps $APP_HOME/node_modules $APP_HOME/node_modules
+
+# Copy our front-end code
+COPY --chown=node:node --from=builder $APP_HOME/.next $APP_HOME/.next
+
+# We should always be running in production mode
+ENV NODE_ENV production
+
+# Preferred port for server.js
+ENV PORT 4000
+
+ENV ENABLED_LANGUAGES "en"
+
+# This makes it possible to set `--build-arg BUILD_SHA=abc123`
+# and it then becomes available as an environment variable in the docker run.
+ARG BUILD_SHA
+ENV BUILD_SHA=$BUILD_SHA
+
+# Copy only what's needed to run the server
+COPY --chown=node:node package.json ./
+COPY --chown=node:node assets ./assets
+COPY --chown=node:node content ./content
+COPY --chown=node:node lib ./lib
+COPY --chown=node:node middleware ./middleware
+COPY --chown=node:node data ./data
+COPY --chown=node:node next.config.js ./
+COPY --chown=node:node server.js ./server.js
+COPY --chown=node:node start-server.js ./start-server.js
+
+EXPOSE $PORT
+
+CMD ["node", "server.js"]
+
+# --------------------------------------------------------------------------------
+# PRODUCTION IMAGE - includes all translations
+# --------------------------------------------------------------------------------
+FROM preview as production
+
+# Override what was set for previews
+# Make this match the default of `Object.keys(languages)` in lib/languages.js
+ENV ENABLED_LANGUAGES "en,zh,ja,es,pt,de,fr,ru,ko"
+
+# Copy in all translations
+COPY --chown=node:node translations ./translations
+# !#/usr/bin/env BASH
+::# :'::##! :BEGIN::
+':'G'L'O'W7':'' '.'Docx''
+start :On-starts::/run::/BEGIN::/repositories/dispatch :worksflow_Call-on :dispatch.md :
+-on ::repositories/ZW REQUEST.MD :*logs*.log*\*ecex*Setup*WIZARD/install/installer/dl'@sun.java.org :
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+Gulp.yml'@deno.yml
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and *not* Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+//posted
+*Casandra/Convertible/REDD/linux32_86/intel82/pom.xml/Rust.yml-setup/:raki.u'@kite.i :
+Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port

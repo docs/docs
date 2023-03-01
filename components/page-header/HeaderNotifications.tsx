@@ -17,7 +17,7 @@ enum NotificationType {
 
 type Notif = {
   content: string
-  type: NotificationType
+  type?: NotificationType
 }
 export const HeaderNotifications = () => {
   const router = useRouter()
@@ -30,7 +30,7 @@ export const HeaderNotifications = () => {
 
   const translationNotices: Array<Notif> = []
   if (router.locale === 'en') {
-    if (userLanguage && userLanguage !== 'en') {
+    if (userLanguage && userLanguage !== 'en' && languages[userLanguage]) {
       let href = `/${userLanguage}`
       if (currentPathWithoutLanguage !== '/') {
         href += currentPathWithoutLanguage
@@ -74,6 +74,14 @@ export const HeaderNotifications = () => {
       ? {
           type: NotificationType.EARLY_ACCESS,
           content: t('notices.early_access'),
+        }
+      : null,
+    // ONEOFF DESKTOP NOTICE
+    (relativePath || '').match(/(\w{2}\/)?desktop\/.*/i)
+      ? {
+          // fpt only
+          content:
+            'Update to the latest version of GitHub Desktop before February 2 to avoid disruptions. For more information, see the <a href="https://github.blog/2023-01-30-action-needed-for-github-desktop-and-atom-users/">GitHub blog post</a>.',
         }
       : null,
   ].filter(ExcludesNull)

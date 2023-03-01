@@ -237,7 +237,7 @@ ghe-motd
 
 ### ghe-nwo
 
-This utility returns a repository's name and owner based on the repository ID.  
+This utility returns a repository's name and owner based on the repository ID.
 
 ```shell
 ghe-nwo REPOSITORY_ID
@@ -282,7 +282,7 @@ ghe-org-admin-promote -a
 
 ### ghe-reactivate-admin-login
 
-Use this command to immediately unlock the {% data variables.enterprise.management_console %} after 10 failed login attempts in the span of 10 minutes.
+Use this command to immediately unlock the {% data variables.enterprise.management_console %} after {% ifversion enterprise-authentication-rate-limits %}an account lockout. To configure authentication policies for {% data variables.location.product_location %}, see "[Configuring authentication policy rate limits](/admin/configuration/configuring-your-enterprise/configuring-rate-limits#configuring-authentication-policy-rate-limits)".{% else %}10 failed login attempts in the span of 10 minutes.{% endif %}
 
 ```shell
 $ ghe-reactivate-admin-login
@@ -314,6 +314,60 @@ This utility lists all of the services that have been started or stopped (are ru
 
 ```shell
 $ ghe-service-list
+{% ifversion viewscreen-and-notebooks %}
+active
+  - alambic
+  - alive
+  - aqueduct-lite
+  - authzd
+  - babeld
+  - codeload
+  - consul, process 17114
+  - consul-template, process 19493
+  - driftwood
+  - elasticsearch
+  - enterprise-manage-unicorn, process 9359
+  - ghe-user-disk, process 2545
+  - git-daemon
+  - github-env
+  - github-gitauth
+  - github-resqued
+  - github-stream-processors
+  - github-timerd
+  - github-unicorn
+  - gitrpcd
+  - governor
+  - gpgverify
+  - grafana-server, process 19314
+  - graphite-web, process 20189
+  - hookshot-go
+  - kafka-lite
+  - kredz
+  - lfs-server
+  - mail-replies
+  - memcached
+  - minio
+  - mysql
+  - nginx
+  - nomad, process 19562
+  - pages
+  - postfix
+  - redis
+  - spokesd
+  - spokes-sweeper
+  - svnbridge
+  - token-scanning-api
+  - token-scanning-backfill-worker
+  - token-scanning-hydro-consumer
+  - token-scanning-incremental-worker
+  - token-scanning-udp-backfill-worker
+  - treelights
+  - turboscan
+  - viewscreen
+
+inactive
+  - wireguard
+{% else %}
 start/running
   - github-resqued, process 12711
   - github-unicorn, process 12726
@@ -330,9 +384,9 @@ start/running
   - ghe-storage, process 2012
   - enterprise-manage-unicorn, process 2024
   - enterprise-manage-resque, process 2053
-
 stop/waiting
   - ghe-replica-mode
+  {% endif %}
 ```
 
 ### ghe-set-password
@@ -457,7 +511,7 @@ ghe-ssl-ca-certificate-install -c CERTIFICATE_PATH
 
 ### ghe-ssl-certificate-setup
 
-This utility allows you to update an SSL certificate for {% data variables.location.product_location %}. 
+This utility allows you to update an SSL certificate for {% data variables.location.product_location %}.
 
 For more information about this command or for additional options, use the `-h` flag.
 
@@ -558,16 +612,6 @@ To send a bundle to {% data variables.contact.github_support %} and associate th
 ```shell
 $ ssh -p 122 admin@HOSTNAME -- 'ghe-cluster-support-bundle -t TICKET_ID'
 ```
-
-{% ifversion ghes %}
-### ghe-cluster-failover
-
-Fail over from active cluster nodes to passive cluster nodes. For more information, see "[Initiating a failover to your replica cluster](/enterprise/admin/enterprise-management/initiating-a-failover-to-your-replica-cluster)."
-
-```shell
-ghe-cluster-failover
-```
-{% endif %}
 
 ### ghe-dpages
 
@@ -840,6 +884,8 @@ ghe-upgrade UPGRADE-PACKAGE-FILENAME
 ### ghe-upgrade-scheduler
 
 This utility manages scheduled installation of upgrade packages. You can show, create new, or remove scheduled installations. You must create schedules using cron expressions. For more information, see the [Cron Wikipedia entry](https://en.wikipedia.org/wiki/Cron#Overview).
+
+The `ghe-upgrade-scheduler` utility is best suited for scheduling hotpatch upgrades, which do not require maintenance mode or a reboot in most cases. This utility is not practical for full package upgrades, which require an administrator to manually set maintenance mode, reboot the instance, and unset maintenance mode. For more information about the different types of upgrades, see "[Upgrading {% data variables.product.product_name %}](/admin/enterprise-management/upgrading-github-enterprise-server#upgrading-with-an-upgrade-package)"
 
 To schedule a new installation for a package:
 ```shell

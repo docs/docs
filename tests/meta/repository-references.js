@@ -29,8 +29,8 @@ const PUBLIC_REPOS = new Set([
   'codeql-cli-binaries',
   'codeql-go',
   'codeql',
-  'codeql',
   'codespaces-precache',
+  'codespaces-jupyter',
   'copilot.vim',
   'dependency-submission-toolkit',
   'dmca',
@@ -39,6 +39,7 @@ const PUBLIC_REPOS = new Set([
   'explore',
   'feedback',
   'gh-net',
+  'gh-actions-importer',
   'git-lfs',
   'git-sizer',
   'github-services',
@@ -83,6 +84,7 @@ const ALLOW_DOCS_PATHS = [
   'ownership.yaml',
   'script/README.md',
   'script/toggle-ghae-feature-flags.js',
+  'script/i18n/clone-translations.sh',
 ]
 
 // This regexp will capture the last segment of a GitHub repo name.

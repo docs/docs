@@ -1,6 +1,7 @@
 ---
 title: Configuring rate limits
 intro: 'You can set rate limits for {% data variables.product.prodname_ghe_server %} using the {% data variables.enterprise.management_console %}.'
+permissions: 'Site administrators can configure rate limits for a {% data variables.product.prodname_ghe_server %}  instance.'
 redirect_from:
   - /enterprise/admin/installation/configuring-rate-limits
   - /enterprise/admin/configuration/configuring-rate-limits
@@ -13,9 +14,18 @@ topics:
   - Infrastructure
   - Performance
 ---
+
+## About rate limits for  {% data variables.product.product_name %}
+
+To prevent excessive use of resources on {% data variables.location.product_location %} that could affect the instance's availability or performance for all users, you can configure rate limits. Rate limits are configurable for the {% data variables.product.prodname_enterprise_api %} and {% data variables.product.prodname_actions %}.
+
+Implement rate limits carefully and communicate frequently with your users as you tune the limits. To avoid interrupting your users' work, {% data variables.product.company_short %} recommends that you start with permissive rate limits, and gradually tune the limits to suit your environment.
+
+You can also configure rate limits for authentication attempts to the {% data variables.enterprise.management_console %}. For more information, see "[Accessing the management console](/admin/configuration/configuring-your-enterprise/accessing-the-management-console#configuring-rate-limits-for-authentication-to-the-management-console)."
+
 ## Enabling rate limits for the {% data variables.product.prodname_enterprise_api %}
 
-Enabling rate limits on the {% data variables.product.prodname_enterprise_api %} can prevent overuse of resources by individual or unauthenticated users. For more information, see "[Resources in the REST API](/rest/overview/resources-in-the-rest-api#rate-limiting)."
+Excessive numbers of requests to the {% data variables.product.prodname_enterprise_api %} can affect the availability and performance of your instance. For more information about how rate limits for the API affect your users, see "[Resources in the REST API](/rest/overview/resources-in-the-rest-api#rate-limiting)."
 
 {% ifversion ghes %}
 You can exempt a list of users from API rate limits using the `ghe-config` utility in the administrative shell. For more information, see "[Command-line utilities](/enterprise/admin/configuration/command-line-utilities#ghe-config)."

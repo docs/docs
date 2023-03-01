@@ -35,11 +35,11 @@ includeGuides:
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-alerts
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning-with-codeql
-  - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning
+  - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/customizing-code-scanning
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-the-codeql-workflow-for-compiled-languages
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/managing-code-scanning-alerts-for-your-repository
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/running-codeql-code-scanning-in-a-container
-  - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository
+  - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning-for-a-repository
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/triaging-code-scanning-alerts-in-pull-requests
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/troubleshooting-the-codeql-workflow
   - /code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/viewing-code-scanning-logs
@@ -53,8 +53,8 @@ includeGuides:
   - /code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/migrating-from-the-codeql-runner-to-codeql-cli
   - /code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/running-codeql-runner-in-your-ci-system
   - /code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/troubleshooting-codeql-runner-in-your-ci-system
-  - /code-security/repository-security-advisories/about-coordinated-disclosure-of-security-vulnerabilities
   - /code-security/repository-security-advisories/about-github-security-advisories-for-repositories
+  - /code-security/security-advisories/repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository
   - /code-security/repository-security-advisories/adding-a-collaborator-to-a-repository-security-advisory
   - /code-security/repository-security-advisories/collaborating-in-a-temporary-private-fork-to-resolve-a-repository-security-vulnerability
   - /code-security/repository-security-advisories/creating-a-repository-security-advisory
@@ -63,7 +63,10 @@ includeGuides:
   - /code-security/repository-security-advisories/publishing-a-repository-security-advisory
   - /code-security/repository-security-advisories/removing-a-collaborator-from-a-repository-security-advisory
   - /code-security/repository-security-advisories/withdrawing-a-repository-security-advisory
-  - /code-security/repository-security-advisories/best-practices-for-writing-repository-security-advisories
+  - /code-security/security-advisories/guidance-on-reporting-and-writing/about-coordinated-disclosure-of-security-vulnerabilities
+  - /code-security/security-advisories/guidance-on-reporting-and-writing/best-practices-for-writing-repository-security-advisories
+  - /code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability
+  - /code-security/security-advisories/guidance-on-reporting-and-writing/managing-privately-reported-security-vulnerabilities
   - /code-security/security-overview/about-the-security-overview
   - /code-security/security-overview/filtering-alerts-in-the-security-overview
   - /code-security/security-overview/viewing-the-security-overview
