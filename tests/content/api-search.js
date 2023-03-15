@@ -15,7 +15,6 @@ import { jest, test, expect } from '@jest/globals'
 
 import { describeIfElasticsearchURL } from '../helpers/conditional-runs.js'
 import { get } from '../helpers/e2etest.js'
-import { SURROGATE_ENUMS } from '../../middleware/set-fastly-surrogate-key.js'
 
 if (!process.env.ELASTICSEARCH_URL) {
   console.warn(
@@ -69,7 +68,7 @@ describeIfElasticsearchURL('search v1 middleware', () => {
     expect(res.headers['cache-control']).toMatch(/max-age=[1-9]/)
     expect(res.headers['surrogate-control']).toContain('public')
     expect(res.headers['surrogate-control']).toMatch(/max-age=[1-9]/)
-    expect(res.headers['surrogate-key']).toBe(SURROGATE_ENUMS.DEFAULT)
+    expect(res.headers['surrogate-key']).toBe('api-search:en')
   })
 
   test('debug search', async () => {
