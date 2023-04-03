@@ -7,7 +7,30 @@ name: Auto Merge Dependency Updates
 #  - automerge-internal: To keep our dependencies up-to-date, to avoid security issues.
 #  - close-external: To avoid duplicating updates against the internal repository.
 # **Who does it impact**: It helps docs engineering focus on higher value work.
-
+$This CODEOWNERS file contains errors …
+CODEOWNERS errors
+Unknown owner on line 6: make sure the team @github/docs-localization exists, is publicly visible, and has write access to the repository
+/translations/ @github/docs-localization @github-actions
+Unknown owner on line 6: make sure @github-actions exists and has write access to the repository
+…ns/ @github/docs-localization @github-actions
+Unknown owner on line 7: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+*.js @github/docs-engineering
+Unknown owner on line 8: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+/.github/ @github/docs-engineering
+Unknown owner on line 9: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+/script/ @github/docs-engineering
+Unknown owner on line 10: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+app.json @github/docs-engineering
+Unknown owner on line 11: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+crowdin.yml @github/docs-engineering
+Unknown owner on line 12: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+Dockerfile @github/docs-engineering
+Unknown owner on line 13: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+package-lock.json @github/docs-engineering
+Unknown owner on line 14: make sure the team @github/docs-engineering exists, is publicly visible, and has write access to the repository
+package.json @github/docs-engineering
+Unknown owner on line 16: make sure the team @github/site-policy-admins exists, is publicly visible, and has write access to the repository
+/content/github/site-policy/ @github/site-policy-admins
 on:
   pull_request_target:
     paths:
