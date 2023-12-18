@@ -1041,6 +1041,15 @@
       },
       {
         "category": "actions",
+        "slug": "force-cancel-a-workflow-run",
+        "subcategory": "workflow-runs",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "actions",
         "slug": "list-jobs-for-a-workflow-run",
         "subcategory": "workflow-jobs",
         "verb": "get",
@@ -1708,7 +1717,9 @@
         "subcategory": "forks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/forks",
-        "additional-permissions": [],
+        "additional-permissions": [
+          "contents"
+        ],
         "access": "write"
       },
       {
@@ -1851,15 +1862,6 @@
         "requestPath": "/user/repository_invitations",
         "additional-permissions": [],
         "access": "read"
-      },
-      {
-        "category": "collaborators",
-        "slug": "accept-a-repository-invitation",
-        "subcategory": "invitations",
-        "verb": "patch",
-        "requestPath": "/user/repository_invitations/{invitation_id}",
-        "additional-permissions": [],
-        "access": "write"
       },
       {
         "category": "collaborators",
@@ -2264,6 +2266,17 @@
         "access": "write"
       },
       {
+        "category": "repos",
+        "slug": "create-a-fork",
+        "subcategory": "forks",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/forks",
+        "additional-permissions": [
+          "administration"
+        ],
+        "access": "read"
+      },
+      {
         "category": "git",
         "slug": "create-a-blob",
         "subcategory": "blobs",
@@ -2437,7 +2450,9 @@
         "subcategory": "releases",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/releases",
-        "additional-permissions": [],
+        "additional-permissions": [
+          "workflows"
+        ],
         "access": "write"
       },
       {
@@ -2518,6 +2533,24 @@
         "subcategory": "assets",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-tar",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/tarball/{ref}",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-zip",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/zipball/{ref}",
         "additional-permissions": [],
         "access": "read"
       }
@@ -4517,108 +4550,108 @@
     "displayTitle": "Repository permissions for \"Webhooks\"",
     "permissions": [
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-repository-webhooks",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "create-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "delete-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "delete",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-deliveries-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "redeliver-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "ping-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "test-the-push-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
         "additional-permissions": [],
@@ -4647,6 +4680,17 @@
         "subcategory": "refs",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/git/refs/{ref}",
+        "additional-permissions": [
+          "contents"
+        ],
+        "access": "write"
+      },
+      {
+        "category": "releases",
+        "slug": "create-a-release",
+        "subcategory": "releases",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/releases",
         "additional-permissions": [
           "contents"
         ],

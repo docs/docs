@@ -192,7 +192,7 @@ If you belong to an organization, you can choose the email account you want noti
 
 ### Customizing email routes per organization
 
-If you are a member of more than one organization, you can configure each one to send notifications to any of{% ifversion fpt or ghec %} your verified email addresses{% else %} the email addresses for your account{% endif %}. {% ifversion fpt or ghec %} For more information, see "[AUTOTITLE](/get-started/signing-up-for-github/verifying-your-email-address)."{% endif %}
+If you are a member of more than one organization, you can configure each one to send notifications to any of{% ifversion fpt or ghec %} your verified email addresses{% else %} the email addresses for your account{% endif %}. {% ifversion fpt or ghec %} For more information, see "[AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/verifying-your-email-address)."{% endif %}
 
 {% data reusables.notifications.access_notifications %}
 {% data reusables.notifications-v2.manage-notifications %}
@@ -206,7 +206,7 @@ If you are a member of more than one organization, you can configure each one to
 1. Select the **Pick organization** dropdown, then click the organization you want to customize.
 1. Select one of your verified email addresses, then click **Save**.
 
-   ![Screenshot of the "Custom Routing" page. A dropdown menu, showing a user's available email addresses, is highlighed with an orange outline.](/assets/images/help/notifications/select-email-address-custom-routing-and-save.png)
+   ![Screenshot of the "Custom Routing" page. A dropdown menu, showing a user's available email addresses, is highlighted with an orange outline.](/assets/images/help/notifications/select-email-address-custom-routing-and-save.png)
 {% else %}
 1. Under "Custom routing," find your organization's name in the list.
 

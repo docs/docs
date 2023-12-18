@@ -16,11 +16,12 @@ topics:
   - Teams
 shortTitle: Roles in an organization
 ---
+
 ## About roles
 
 {% data reusables.organizations.about-roles %}
 
-Repository-level roles give organization members, outside collaborators and teams of people varying levels of access to repositories. For more information, see "[AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization)."
+Repository-level roles give organization members, outside collaborators and teams of people varying levels of access to repositories. For more information, see "[AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization)."
 
 Team-level roles are roles that give permissions to manage a team. You can give any individual member of a team the team maintainer role, which gives the member a number of administrative permissions over a team. For more information, see "[AUTOTITLE](/organizations/organizing-members-into-teams/assigning-the-team-maintainer-role-to-a-team-member)."
 
@@ -29,6 +30,10 @@ Organization-level roles are sets of permissions that can be assigned to individ
 ## About organization roles
 
 You can assign people to a variety of organization-level roles to control your members' access to your organization and its resources. For more details about the individual permissions included in each role, see "[Permissions for organization roles](#permissions-for-organization-roles)."
+
+{% ifversion custom-org-roles %}
+For more granular control of access to your organization's settings, you can create a custom organization role. For more information, see "[AUTOTITLE](/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles)."
+{% endif %}
 
 {% ifversion enterprise-owner-join-org %}
 If your organization is owned by an enterprise account, enterprise owners can choose to join your organization with any role. For more information, see "[AUTOTITLE](/admin/user-management/managing-organizations-in-your-enterprise/managing-your-role-in-an-organization-owned-by-your-enterprise)."
@@ -141,12 +146,13 @@ Some of the features listed below are limited to organizations using {% data var
 | Pull (read) _all repositories_ in the organization | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "check" aria-label="Yes" %} |
 | Push (write) and clone (copy) _all repositories_ in the organization | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
 | Convert organization members to [outside collaborators](#outside-collaborators) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
-| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% ifversion ghec %}
-| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
+| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% ifversion ghec %}
+| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
 | Manage the default branch name (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-the-default-branch-name-for-repositories-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
 | Manage default labels (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-default-labels-for-repositories-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% ifversion ghec %}
 | Enable team synchronization (see "[AUTOTITLE](/organizations/managing-saml-single-sign-on-for-your-organization/managing-team-synchronization-for-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
-| Manage pull request reviews in the organization (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
+| Manage pull request reviews in the organization (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% ifversion repo-rules-enterprise %}
+| Manage organization-level rulesets (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
 
 {% endrowheaders %}
 
@@ -192,8 +198,8 @@ Some of the features listed below are limited to organizations using {% data var
 | Pull (read) _all repositories_ in the organization | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "check" aria-label="Yes" %} |
 | Push (write) and clone (copy) _all repositories_ in the organization | {% octicon "check" aria-label="Yes" %} |{% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
 | Convert organization members to [outside collaborators](#outside-collaborators) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
-| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
-| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
+| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
+| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |
 | Manage default labels (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-default-labels-for-repositories-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% ifversion pull-request-approval-limit %}
 | Manage pull request reviews in the organization (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-pull-request-reviews-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
 {% ifversion ghae %}| Manage IP allow lists (see "[AUTOTITLE](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} | {% octicon "x" aria-label="No" %} |{% endif %}
@@ -238,8 +244,8 @@ Some of the features listed below are limited to organizations using {% data var
 | [Move teams in an organization's hierarchy](/organizations/organizing-members-into-teams/moving-a-team-in-your-organizations-hierarchy) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
 | Pull (read), push (write), and clone (copy) _all repositories_ in the organization | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
 | Convert organization members to [outside collaborators](#outside-collaborators) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
-| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
-| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
+| [View people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
+| [Export a list of people with access to an organization repository](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/viewing-people-with-access-to-your-repository#exporting-a-list-of-people-with-access-to-your-repository) | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
 | Manage default labels (see "[AUTOTITLE](/organizations/managing-organization-settings/managing-default-labels-for-repositories-in-your-organization)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |
 {% ifversion ghae %}| Manage IP allow lists (see "[AUTOTITLE](/admin/configuration/configuring-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list)") | {% octicon "check" aria-label="Yes" %} | {% octicon "x" aria-label="No" %} |{% endif %}
 
@@ -249,5 +255,5 @@ Some of the features listed below are limited to organizations using {% data var
 
 ## Further reading
 
-- "[AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization)"
+- "[AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization)"
 - "[AUTOTITLE](/organizations/managing-access-to-your-organizations-project-boards/project-board-permissions-for-an-organization)"

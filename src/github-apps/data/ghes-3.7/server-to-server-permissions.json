@@ -872,6 +872,45 @@
       }
     ]
   },
+  "organization_pre_receive_hooks": {
+    "title": "Pre-receive hooks",
+    "displayTitle": "Organization permissions for \"Pre-receive hooks\"",
+    "permissions": [
+      {
+        "category": "enterprise-admin",
+        "slug": "list-pre-receive-hooks-for-an-organization",
+        "subcategory": "org-pre-receive-hooks",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/pre-receive-hooks",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "enterprise-admin",
+        "slug": "get-a-pre-receive-hook-for-an-organization",
+        "subcategory": "org-pre-receive-hooks",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "enterprise-admin",
+        "slug": "remove-pre-receive-hook-enforcement-for-an-organization",
+        "subcategory": "org-pre-receive-hooks",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}",
+        "access": "write",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      }
+    ]
+  },
   "organization_projects": {
     "title": "Projects",
     "displayTitle": "Organization permissions for \"Projects\"",
@@ -1678,45 +1717,6 @@
         "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/orgs/{org}/hooks/{hook_id}/pings",
-        "access": "write",
-        "user-to-server": true,
-        "server-to-server": true,
-        "additional-permissions": []
-      }
-    ]
-  },
-  "organization_pre_receive_hooks": {
-    "title": "organization pre receive hooks",
-    "displayTitle": "Organization pre receive hooks permissions",
-    "permissions": [
-      {
-        "category": "enterprise-admin",
-        "slug": "list-pre-receive-hooks-for-an-organization",
-        "subcategory": "org-pre-receive-hooks",
-        "verb": "get",
-        "requestPath": "/orgs/{org}/pre-receive-hooks",
-        "access": "read",
-        "user-to-server": true,
-        "server-to-server": true,
-        "additional-permissions": []
-      },
-      {
-        "category": "enterprise-admin",
-        "slug": "get-a-pre-receive-hook-for-an-organization",
-        "subcategory": "org-pre-receive-hooks",
-        "verb": "get",
-        "requestPath": "/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}",
-        "access": "read",
-        "user-to-server": true,
-        "server-to-server": true,
-        "additional-permissions": []
-      },
-      {
-        "category": "enterprise-admin",
-        "slug": "remove-pre-receive-hook-enforcement-for-an-organization",
-        "subcategory": "org-pre-receive-hooks",
-        "verb": "delete",
-        "requestPath": "/orgs/{org}/pre-receive-hooks/{pre_receive_hook_id}",
         "access": "write",
         "user-to-server": true,
         "server-to-server": true,
@@ -2923,7 +2923,9 @@
         "access": "write",
         "user-to-server": true,
         "server-to-server": true,
-        "additional-permissions": []
+        "additional-permissions": [
+          "contents"
+        ]
       },
       {
         "category": "collaborators",
@@ -3687,6 +3689,19 @@
         "additional-permissions": []
       },
       {
+        "category": "repos",
+        "slug": "create-a-fork",
+        "subcategory": "forks",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/forks",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": [
+          "administration"
+        ]
+      },
+      {
         "category": "git",
         "slug": "create-a-blob",
         "subcategory": "blobs",
@@ -3899,7 +3914,9 @@
         "access": "write",
         "user-to-server": true,
         "server-to-server": true,
-        "additional-permissions": []
+        "additional-permissions": [
+          "workflows"
+        ]
       },
       {
         "category": "releases",
@@ -4006,6 +4023,28 @@
         "subcategory": "assets",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-tar",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/tarball/{ref}",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-zip",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/zipball/{ref}",
         "access": "read",
         "user-to-server": true,
         "server-to-server": true,
@@ -5468,6 +5507,45 @@
       }
     ]
   },
+  "repository_pre_receive_hooks": {
+    "title": "Pre-receive hooks",
+    "displayTitle": "Repository permissions for \"Pre-receive hooks\"",
+    "permissions": [
+      {
+        "category": "enterprise-admin",
+        "slug": "list-pre-receive-hooks-for-a-repository",
+        "subcategory": "repo-pre-receive-hooks",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "enterprise-admin",
+        "slug": "get-a-pre-receive-hook-for-a-repository",
+        "subcategory": "repo-pre-receive-hooks",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}",
+        "access": "read",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      },
+      {
+        "category": "enterprise-admin",
+        "slug": "remove-pre-receive-hook-enforcement-for-a-repository",
+        "subcategory": "repo-pre-receive-hooks",
+        "verb": "delete",
+        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}",
+        "access": "write",
+        "user-to-server": true,
+        "server-to-server": true,
+        "additional-permissions": []
+      }
+    ]
+  },
   "repository_projects": {
     "title": "Projects",
     "displayTitle": "Repository permissions for \"Projects\"",
@@ -6715,9 +6793,9 @@
     "displayTitle": "Repository permissions for \"Webhooks\"",
     "permissions": [
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-repository-webhooks",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "access": "read",
@@ -6726,9 +6804,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "create-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "access": "write",
@@ -6737,9 +6815,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "access": "read",
@@ -6748,9 +6826,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "access": "write",
@@ -6759,9 +6837,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "delete-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "delete",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "access": "write",
@@ -6770,9 +6848,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "access": "read",
@@ -6781,9 +6859,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "access": "write",
@@ -6792,9 +6870,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-deliveries-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
         "access": "read",
@@ -6803,9 +6881,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
         "access": "read",
@@ -6814,9 +6892,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "redeliver-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
         "access": "write",
@@ -6825,9 +6903,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "ping-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
         "access": "read",
@@ -6836,9 +6914,9 @@
         "additional-permissions": []
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "test-the-push-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
         "access": "read",
@@ -6877,45 +6955,19 @@
         "additional-permissions": [
           "contents"
         ]
-      }
-    ]
-  },
-  "repository_pre_receive_hooks": {
-    "title": "repository pre receive hooks",
-    "displayTitle": "Repository pre receive hooks permissions",
-    "permissions": [
-      {
-        "category": "enterprise-admin",
-        "slug": "list-pre-receive-hooks-for-a-repository",
-        "subcategory": "repo-pre-receive-hooks",
-        "verb": "get",
-        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks",
-        "access": "read",
-        "user-to-server": true,
-        "server-to-server": true,
-        "additional-permissions": []
       },
       {
-        "category": "enterprise-admin",
-        "slug": "get-a-pre-receive-hook-for-a-repository",
-        "subcategory": "repo-pre-receive-hooks",
-        "verb": "get",
-        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}",
-        "access": "read",
-        "user-to-server": true,
-        "server-to-server": true,
-        "additional-permissions": []
-      },
-      {
-        "category": "enterprise-admin",
-        "slug": "remove-pre-receive-hook-enforcement-for-a-repository",
-        "subcategory": "repo-pre-receive-hooks",
-        "verb": "delete",
-        "requestPath": "/repos/{owner}/{repo}/pre-receive-hooks/{pre_receive_hook_id}",
+        "category": "releases",
+        "slug": "create-a-release",
+        "subcategory": "releases",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/releases",
         "access": "write",
         "user-to-server": true,
         "server-to-server": true,
-        "additional-permissions": []
+        "additional-permissions": [
+          "contents"
+        ]
       }
     ]
   },

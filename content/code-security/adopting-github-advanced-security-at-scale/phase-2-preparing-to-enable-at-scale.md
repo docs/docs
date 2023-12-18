@@ -18,19 +18,26 @@ This article is part of a series on adopting {% data variables.product.prodname_
 
 ## Preparing to enable {% data variables.product.prodname_code_scanning %}
 
-{% data reusables.code-scanning.about-code-scanning %} For more information, see "[AUTOTITLE](/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)."
+{% data reusables.code-scanning.about-code-scanning %} For more information, see "[AUTOTITLE](/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning)."
 
-Rolling {% data variables.product.prodname_code_scanning %} out across hundreds of repositories can be difficult, especially when done inefficiently. Following these steps will ensure your rollout is both efficient and successful. As part of your preparation, you will work with your teams, use automation to collect data about your repositories, and enable {% data variables.product.prodname_code_scanning %}.
+Rolling {% data variables.product.prodname_code_scanning %} out across hundreds of repositories can be difficult, especially when done inefficiently. Following these steps will ensure your rollout is both efficient and successful.{% ifversion default-setup-ghas-enablement %}{% else %} As part of your preparation, you will work with your teams, use automation to collect data about your repositories, and enable {% data variables.product.prodname_code_scanning %}.{% endif %}
 
 {% ifversion ghec %}
 {% data variables.product.prodname_code_scanning_caps %} is also available for all public repositories on {% data variables.product.prodname_dotcom_the_website %} without a license for {% data variables.product.prodname_GH_advanced_security %}.{% endif %}
 
-
 ### Preparing teams for {% data variables.product.prodname_code_scanning %}
 
-First, prepare your teams to use {% data variables.product.prodname_code_scanning %}. The more teams that use {% data variables.product.prodname_code_scanning %}, the more data you'll have to drive remediation plans and monitor progress on your rollout. During this phase, focus on leveraging APIs and running internal enablement events.
+First, prepare your teams to use {% data variables.product.prodname_code_scanning %}. The more teams that use {% data variables.product.prodname_code_scanning %}, the more data you'll have to drive remediation plans and monitor progress on your rollout.{% ifversion default-setup-ghas-enablement %}
+
+For an introduction to {% data variables.product.prodname_code_scanning %}, see:
+- "[AUTOTITLE](/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning)"
+- "[AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts)"
+- "[AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/managing-code-scanning-alerts-for-your-repository)"
+{% else %} During this phase, you should focus on leveraging APIs and running internal enablement events.{% endif %}
 
 Your core focus should be preparing as many teams to use {% data variables.product.prodname_code_scanning %} as possible. You can also encourage teams to remediate appropriately, but we recommend prioritizing enablement and use of {% data variables.product.prodname_code_scanning %} over fixing issues during this phase.
+
+{% ifversion default-setup-ghas-enablement %}{% else %}
 
 ### Collecting information about your repositories
 
@@ -111,6 +118,7 @@ If you have repositories with multiple languages, you can format the GraphQL res
 
 An understanding of which repositories are using which languages will help you identify candidate repositories for pilot programs in phase 3, and prepares you to enable {% data variables.product.prodname_code_scanning %} across all repositories, one language at a time, in phase 5.
 
+{% endif %}
 {% ifversion ghes %}
 
 ### Enabling {% data variables.product.prodname_code_scanning %} for your appliance
@@ -137,12 +145,15 @@ If a project communicates with an external service, it might use a token or priv
 
 ### Considerations when enabling {% data variables.product.prodname_secret_scanning %}
 
-{% data variables.product.product_name %}’s {% data variables.product.prodname_secret_scanning %} capability is slightly different from {% data variables.product.prodname_code_scanning %} since it requires no specific configuration per programming language or per repository and less configuration overall to get started. This means enabling {% data variables.product.prodname_secret_scanning %} at the organizational level can be easy but clicking **Enable All** at the organization level and ticking the option **Automatically enable {% data variables.product.prodname_secret_scanning %} for every new repository** has some downstream effects that you should be aware of:
+{% ifversion default-setup-ghas-enablement %}Enabling{% else %}{% data variables.product.product_name %}’s {% data variables.product.prodname_secret_scanning %} capability is slightly different from {% data variables.product.prodname_code_scanning %} since it requires no specific configuration per programming language or per repository and less configuration overall to get started. This means enabling{% endif %} {% data variables.product.prodname_secret_scanning %} at the organizational level can be easy, but clicking **Enable All** at the organization level and selecting the option **Automatically enable {% data variables.product.prodname_secret_scanning %} for every new repository** has some downstream effects that you should be aware of:
 
-- **License consumption**
-  Enabling {% data variables.product.prodname_secret_scanning %} for all repositories will consume all your licenses, even if no one is using code scanning. This is fine unless you plan to increase the number of active developers in your organization. If the number of active developers is likely to increase in the coming months, you may exceed your license limit and then be unable to use {% data variables.product.prodname_GH_advanced_security %} on newly created repositories.
-- **Initial high volume of detected secrets**
-  If you are enabling {% data variables.product.prodname_secret_scanning %} on a large organization, be prepared to see a high number of secrets found. Sometimes this comes as a shock to organizations and the alarm is raised. If you would like to turn on {% data variables.product.prodname_secret_scanning %} across all repositories at once, plan for how you will respond to multiple alerts across the organization.
+#### License consumption
+
+Enabling {% data variables.product.prodname_secret_scanning %} for all repositories will consume all your licenses, even if no one is using code scanning. This is fine unless you plan to increase the number of active developers in your organization. If the number of active developers is likely to increase in the coming months, you may exceed your license limit and then be unable to use {% data variables.product.prodname_GH_advanced_security %} on newly created repositories.
+
+#### Initial high volume of detected secrets
+
+If you are enabling {% data variables.product.prodname_secret_scanning %} on a large organization, be prepared to see a high number of secrets found. Sometimes this comes as a shock to organizations and the alarm is raised. If you would like to turn on {% data variables.product.prodname_secret_scanning %} across all repositories at once, plan for how you will respond to multiple alerts across the organization.
 
 {% data variables.product.prodname_secret_scanning_caps %} can be enabled for individual repositories. For more information, see "[AUTOTITLE](/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories)." {% data variables.product.prodname_secret_scanning_caps %} can also be enabled for all repositories in your organization, as described above. For more information on enabling for all repositories, see "[AUTOTITLE](/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-security-and-analysis-settings-for-your-organization)."
 

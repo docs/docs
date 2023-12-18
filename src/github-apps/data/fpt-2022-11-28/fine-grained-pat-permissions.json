@@ -207,6 +207,24 @@
       },
       {
         "category": "orgs",
+        "slug": "list-organization-rule-suites",
+        "subcategory": "rule-suites",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/rulesets/rule-suites",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "get-an-organization-rule-suite",
+        "subcategory": "rule-suites",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/rulesets/rule-suites/{rule_suite_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
         "slug": "get-an-organization-repository-ruleset",
         "subcategory": "rules",
         "verb": "get",
@@ -339,6 +357,135 @@
       }
     ]
   },
+  "organization_custom_org_roles": {
+    "title": "Custom organization roles",
+    "displayTitle": "Organization permissions for \"Custom organization roles\"",
+    "permissions": [
+      {
+        "category": "orgs",
+        "slug": "list-organization-fine-grained-permissions-for-an-organization",
+        "subcategory": "organization-roles",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/organization-fine-grained-permissions",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "get-all-organization-roles-for-an-organization",
+        "subcategory": "organization-roles",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/organization-roles",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "create-a-custom-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "post",
+        "requestPath": "/orgs/{org}/organization-roles",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "get-an-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/organization-roles/{role_id}",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "update-a-custom-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "patch",
+        "requestPath": "/orgs/{org}/organization-roles/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "delete-a-custom-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/organization-roles/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      }
+    ]
+  },
+  "organization_custom_properties": {
+    "title": "Custom properties",
+    "displayTitle": "Organization permissions for \"Custom properties\"",
+    "permissions": [
+      {
+        "category": "orgs",
+        "slug": "get-all-custom-properties-for-an-organization",
+        "subcategory": "custom-properties",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/properties/schema",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "create-or-update-custom-properties-for-an-organization",
+        "subcategory": "custom-properties",
+        "verb": "patch",
+        "requestPath": "/orgs/{org}/properties/schema",
+        "additional-permissions": [],
+        "access": "admin"
+      },
+      {
+        "category": "orgs",
+        "slug": "get-a-custom-property-for-an-organization",
+        "subcategory": "custom-properties",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/properties/schema/{custom_property_name}",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "create-or-update-a-custom-property-for-an-organization",
+        "subcategory": "custom-properties",
+        "verb": "put",
+        "requestPath": "/orgs/{org}/properties/schema/{custom_property_name}",
+        "additional-permissions": [],
+        "access": "admin"
+      },
+      {
+        "category": "orgs",
+        "slug": "remove-a-custom-property-for-an-organization",
+        "subcategory": "custom-properties",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/properties/schema/{custom_property_name}",
+        "additional-permissions": [],
+        "access": "admin"
+      },
+      {
+        "category": "orgs",
+        "slug": "list-custom-property-values-for-organization-repositories",
+        "subcategory": "custom-properties",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/properties/values",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "create-or-update-custom-property-values-for-organization-repositories",
+        "subcategory": "custom-properties",
+        "verb": "patch",
+        "requestPath": "/orgs/{org}/properties/values",
+        "additional-permissions": [],
+        "access": "write"
+      }
+    ]
+  },
   "organization_events": {
     "title": "Events",
     "displayTitle": "Organization permissions for \"Events\"",
@@ -351,6 +498,39 @@
         "requestPath": "/users/{username}/events/orgs/{org}",
         "additional-permissions": [],
         "access": "read"
+      }
+    ]
+  },
+  "organization_copilot_seat_management": {
+    "title": "GitHub Copilot Business",
+    "displayTitle": "Organization permissions for \"GitHub Copilot Business\"",
+    "permissions": [
+      {
+        "category": "copilot",
+        "slug": "get-copilot-business-seat-information-and-settings-for-an-organization",
+        "subcategory": "copilot-business",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/copilot/billing",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "copilot",
+        "slug": "list-all-copilot-business-seat-assignments-for-an-organization",
+        "subcategory": "copilot-business",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/copilot/billing/seats",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "copilot",
+        "slug": "add-teams-to-the-copilot-business-subscription-for-an-organization",
+        "subcategory": "copilot-business",
+        "verb": "post",
+        "requestPath": "/orgs/{org}/copilot/billing/selected_teams",
+        "additional-permissions": [],
+        "access": "write"
       }
     ]
   },
@@ -456,6 +636,78 @@
         "requestPath": "/orgs/{org}/memberships/{username}",
         "additional-permissions": [],
         "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "remove-all-organization-roles-for-a-team",
+        "subcategory": "organization-roles",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/organization-roles/teams/{team_slug}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "assign-an-organization-role-to-a-team",
+        "subcategory": "organization-roles",
+        "verb": "put",
+        "requestPath": "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "remove-an-organization-role-from-a-team",
+        "subcategory": "organization-roles",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "remove-all-organization-roles-for-a-user",
+        "subcategory": "organization-roles",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/organization-roles/users/{username}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "assign-an-organization-role-to-a-user",
+        "subcategory": "organization-roles",
+        "verb": "put",
+        "requestPath": "/orgs/{org}/organization-roles/users/{username}/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "remove-an-organization-role-from-a-user",
+        "subcategory": "organization-roles",
+        "verb": "delete",
+        "requestPath": "/orgs/{org}/organization-roles/users/{username}/{role_id}",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "orgs",
+        "slug": "list-teams-that-are-assigned-to-an-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/organization-roles/{role_id}/teams",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "orgs",
+        "slug": "list-users-that-are-assigned-to-an-organization-role",
+        "subcategory": "organization-roles",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/organization-roles/{role_id}/users",
+        "additional-permissions": [],
+        "access": "read"
       },
       {
         "category": "orgs",
@@ -685,25 +937,25 @@
         "slug": "manage-access-control-for-organization-codespaces",
         "subcategory": "organizations",
         "verb": "put",
-        "requestPath": "/orgs/{org}/codespaces/billing",
+        "requestPath": "/orgs/{org}/codespaces/access",
         "additional-permissions": [],
         "access": "write"
       },
       {
         "category": "codespaces",
-        "slug": "add-users-to-codespaces-billing-for-an-organization",
+        "slug": "add-users-to-codespaces-access-for-an-organization",
         "subcategory": "organizations",
         "verb": "post",
-        "requestPath": "/orgs/{org}/codespaces/billing/selected_users",
+        "requestPath": "/orgs/{org}/codespaces/access/selected_users",
         "additional-permissions": [],
         "access": "write"
       },
       {
         "category": "codespaces",
-        "slug": "removes-users-from-codespaces-billing-for-an-organization",
+        "slug": "remove-users-from-codespaces-access-for-an-organization",
         "subcategory": "organizations",
         "verb": "delete",
-        "requestPath": "/orgs/{org}/codespaces/billing/selected_users",
+        "requestPath": "/orgs/{org}/codespaces/access/selected_users",
         "additional-permissions": [],
         "access": "write"
       }
@@ -1710,6 +1962,15 @@
       },
       {
         "category": "actions",
+        "slug": "force-cancel-a-workflow-run",
+        "subcategory": "workflow-runs",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "actions",
         "slug": "list-jobs-for-a-workflow-run",
         "subcategory": "workflow-jobs",
         "verb": "get",
@@ -2151,6 +2412,15 @@
       },
       {
         "category": "repos",
+        "slug": "check-if-automated-security-fixes-are-enabled-for-a-repository",
+        "subcategory": "repos",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/automated-security-fixes",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
         "slug": "enable-automated-security-fixes",
         "subcategory": "repos",
         "verb": "put",
@@ -2582,7 +2852,9 @@
         "subcategory": "forks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/forks",
-        "additional-permissions": [],
+        "additional-permissions": [
+          "contents"
+        ],
         "access": "write"
       },
       {
@@ -2721,10 +2993,46 @@
       },
       {
         "category": "repos",
+        "slug": "enable-private-vulnerability-reporting-for-a-repository",
+        "subcategory": "repos",
+        "verb": "put",
+        "requestPath": "/repos/{owner}/{repo}/private-vulnerability-reporting",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "repos",
+        "slug": "disable-private-vulnerability-reporting-for-a-repository",
+        "subcategory": "repos",
+        "verb": "delete",
+        "requestPath": "/repos/{owner}/{repo}/private-vulnerability-reporting",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "repos",
         "slug": "create-a-repository-ruleset",
         "subcategory": "rules",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/rulesets",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "repos",
+        "slug": "list-repository-rule-suites",
+        "subcategory": "rule-suites",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/rulesets/rule-suites",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "repos",
+        "slug": "get-a-repository-rule-suite",
+        "subcategory": "rule-suites",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}",
         "additional-permissions": [],
         "access": "write"
       },
@@ -2744,6 +3052,17 @@
         "verb": "delete",
         "requestPath": "/repos/{owner}/{repo}/rulesets/{ruleset_id}",
         "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "security-advisories",
+        "slug": "create-a-temporary-private-fork",
+        "subcategory": "repository-advisories",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks",
+        "additional-permissions": [
+          "repository_advisories"
+        ],
         "access": "write"
       },
       {
@@ -2880,15 +3199,6 @@
         "requestPath": "/user/repository_invitations",
         "additional-permissions": [],
         "access": "read"
-      },
-      {
-        "category": "collaborators",
-        "slug": "accept-a-repository-invitation",
-        "subcategory": "invitations",
-        "verb": "patch",
-        "requestPath": "/user/repository_invitations/{invitation_id}",
-        "additional-permissions": [],
-        "access": "write"
       },
       {
         "category": "collaborators",
@@ -3330,6 +3640,15 @@
       },
       {
         "category": "codespaces",
+        "slug": "check-if-permissions-defined-by-a-devcontainer-have-been-accepted-by-the-authenticated-user",
+        "subcategory": "codespaces",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/codespaces/permissions_check",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "codespaces",
         "slug": "create-a-codespace-from-a-pull-request",
         "subcategory": "codespaces",
         "verb": "post",
@@ -3430,6 +3749,15 @@
     "title": "Contents",
     "displayTitle": "Repository permissions for \"Contents\"",
     "permissions": [
+      {
+        "category": "repos",
+        "slug": "list-repository-activities",
+        "subcategory": "repos",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/activity",
+        "additional-permissions": [],
+        "access": "read"
+      },
       {
         "category": "branches",
         "slug": "list-branches",
@@ -3638,6 +3966,17 @@
         "requestPath": "/repos/{owner}/{repo}/dispatches",
         "additional-permissions": [],
         "access": "write"
+      },
+      {
+        "category": "repos",
+        "slug": "create-a-fork",
+        "subcategory": "forks",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/forks",
+        "additional-permissions": [
+          "administration"
+        ],
+        "access": "read"
       },
       {
         "category": "git",
@@ -3885,7 +4224,9 @@
         "subcategory": "releases",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/releases",
-        "additional-permissions": [],
+        "additional-permissions": [
+          "workflows"
+        ],
         "access": "write"
       },
       {
@@ -3975,6 +4316,24 @@
         "subcategory": "assets",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-tar",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/tarball/{ref}",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
+        "slug": "download-a-repository-archive-zip",
+        "subcategory": "contents",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/zipball/{ref}",
         "additional-permissions": [],
         "access": "read"
       }
@@ -5068,6 +5427,15 @@
       },
       {
         "category": "repos",
+        "slug": "get-all-custom-property-values-for-a-repository",
+        "subcategory": "custom-properties",
+        "verb": "get",
+        "requestPath": "/repos/{owner}/{repo}/properties/values",
+        "additional-permissions": [],
+        "access": "read"
+      },
+      {
+        "category": "repos",
         "slug": "get-rules-for-a-branch",
         "subcategory": "rules",
         "verb": "get",
@@ -5199,28 +5567,6 @@
         "verb": "get",
         "requestPath": "/search/labels",
         "additional-permissions": [],
-        "access": "read"
-      },
-      {
-        "category": "codespaces",
-        "slug": "list-selected-repositories-for-a-user-secret",
-        "subcategory": "secrets",
-        "verb": "get",
-        "requestPath": "/user/codespaces/secrets/{secret_name}/repositories",
-        "additional-permissions": [
-          "codespaces_user_secrets"
-        ],
-        "access": "read"
-      },
-      {
-        "category": "codespaces",
-        "slug": "set-selected-repositories-for-a-user-secret",
-        "subcategory": "secrets",
-        "verb": "put",
-        "requestPath": "/user/codespaces/secrets/{secret_name}/repositories",
-        "additional-permissions": [
-          "codespaces_user_secrets"
-        ],
         "access": "read"
       },
       {
@@ -6260,6 +6606,15 @@
     "permissions": [
       {
         "category": "security-advisories",
+        "slug": "list-repository-security-advisories-for-an-organization",
+        "subcategory": "repository-advisories",
+        "verb": "get",
+        "requestPath": "/orgs/{org}/security-advisories",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "security-advisories",
         "slug": "list-repository-security-advisories",
         "subcategory": "repository-advisories",
         "verb": "get",
@@ -6302,6 +6657,26 @@
         "requestPath": "/repos/{owner}/{repo}/security-advisories/{ghsa_id}",
         "additional-permissions": [],
         "access": "write"
+      },
+      {
+        "category": "security-advisories",
+        "slug": "request-a-cve-for-a-repository-security-advisory",
+        "subcategory": "repository-advisories",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve",
+        "additional-permissions": [],
+        "access": "write"
+      },
+      {
+        "category": "security-advisories",
+        "slug": "create-a-temporary-private-fork",
+        "subcategory": "repository-advisories",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks",
+        "additional-permissions": [
+          "administration"
+        ],
+        "access": "read"
       }
     ]
   },
@@ -6591,108 +6966,108 @@
     "displayTitle": "Repository permissions for \"Webhooks\"",
     "permissions": [
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-repository-webhooks",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "create-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "delete-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "delete",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "update-a-webhook-configuration-for-a-repository",
-        "subcategory": "repo-config",
+        "subcategory": "webhooks",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "list-deliveries-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "get-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "get",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "redeliver-a-delivery-for-a-repository-webhook",
-        "subcategory": "repo-deliveries",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
         "additional-permissions": [],
         "access": "write"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "ping-a-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
         "additional-permissions": [],
         "access": "read"
       },
       {
-        "category": "webhooks",
+        "category": "repos",
         "slug": "test-the-push-repository-webhook",
-        "subcategory": "repos",
+        "subcategory": "webhooks",
         "verb": "post",
         "requestPath": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
         "additional-permissions": [],
@@ -6721,6 +7096,17 @@
         "subcategory": "refs",
         "verb": "patch",
         "requestPath": "/repos/{owner}/{repo}/git/refs/{ref}",
+        "additional-permissions": [
+          "contents"
+        ],
+        "access": "write"
+      },
+      {
+        "category": "releases",
+        "slug": "create-a-release",
+        "subcategory": "releases",
+        "verb": "post",
+        "requestPath": "/repos/{owner}/{repo}/releases",
         "additional-permissions": [
           "contents"
         ],
@@ -6825,9 +7211,7 @@
         "subcategory": "secrets",
         "verb": "get",
         "requestPath": "/user/codespaces/secrets/{secret_name}/repositories",
-        "additional-permissions": [
-          "metadata"
-        ],
+        "additional-permissions": [],
         "access": "read"
       },
       {
@@ -6836,9 +7220,7 @@
         "subcategory": "secrets",
         "verb": "put",
         "requestPath": "/user/codespaces/secrets/{secret_name}/repositories",
-        "additional-permissions": [
-          "metadata"
-        ],
+        "additional-permissions": [],
         "access": "write"
       },
       {

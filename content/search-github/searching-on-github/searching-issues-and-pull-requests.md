@@ -72,15 +72,17 @@ You can filter issues and pull requests based on whether they're open or closed 
 | `is:open` | [**performance is:open is:issue**](https://github.com/search?q=performance+is%3Aopen+is%3Aissue&type=Issues) matches open issues with the word "performance."
 | `is:closed` | [**android is:closed**](https://github.com/search?utf8=%E2%9C%93&q=android+is%3Aclosed&type=) matches closed issues and pull requests with the word "android."
 
-## Search for pull requests in the merge queue
+{% ifversion merge-queue  %}
 
-{% data reusables.pull_requests.merge-queue-beta %}
+## Search for pull requests in the merge queue
 
 You can also use the `is` qualifier to find pull requests that are queued to merge.
 
 | Qualifier | Example |
 | --- | --- |
-| `is:queued` | [**is:queued**](https://github.com/search?q=is%3Aqueued&type=pullrequests) matches pull requests that are currently queued to merge. |
+| `is:queued` | [**is:queued**](https://github.com/search?q=is%3Aqueued&type=pullrequests) matches pull requests that are currently queued to merge.
+
+{% endif %}
 
 {% ifversion issue-close-reasons %}
 
@@ -157,6 +159,15 @@ You can use the `involves` qualifier to find issues that in some way involve a c
 | ------------- | -------------
 | <code>involves:<em>USERNAME</em></code> | **[involves:defunkt involves:jlord](https://github.com/search?q=involves%3Adefunkt+involves%3Ajlord&type=Issues)** matches issues either @defunkt or @jlord are involved in.
 | `in:body` <code>involves:<em>USERNAME</em></code> | [**NOT bootstrap in:body involves:mdo**](https://github.com/search?q=NOT+bootstrap+in%3Abody+involves%3Amdo&type=Issues) matches issues @mdo is involved in that do not contain the word "bootstrap" in the body.
+
+## Search for my issues and pull requests
+
+You can search for issues and pull requests you have created or have interacted with by following the desired qualifier with `@me`. Any qualifier that works with a username allows you to limit your search to issues and pull requests you created, are assigned, mentioned on, or are requested as a reviewer of.
+
+| Qualifier        | Example
+| ------------- | -------------
+| <code>author:<em>@me</em></code> | **[author:@me](https://github.com/search?q=author%3A%40me)** matches issues and pull requests you have authored.
+| <code>is:pr commenter:<em>@me</em></code> | **[is:pr commenter:@me](https://github.com/search?q=is%3Apr+commenter%3A%40me&type=pullrequests)** matches pull requests you have commented on.
 
 ## Search for linked issues and pull requests
 
@@ -249,7 +260,7 @@ You can filter issues and pull requests by the number of interactions with the `
 
 | Qualifier        | Example
 | ------------- | -------------
-| <code>interactions:<em>n</em></code> | [** interactions:&gt;2000**](https://github.com/search?q=interactions%3A%3E2000) matches pull requests or issues with more than 2000 interactions.
+| <code>interactions:<em>n</em></code> | [**interactions:&gt;2000**](https://github.com/search?q=interactions%3A%3E2000) matches pull requests or issues with more than 2000 interactions.
 | <code>interactions:<em>n..n</em></code> | [**interactions:500..1000**](https://github.com/search?q=interactions%3A500..1000) matches pull requests or issues with interactions ranging from 500 to 1,000.
 
 ## Search by number of reactions
@@ -258,7 +269,7 @@ You can filter issues and pull requests by the number of reactions using the `re
 
 | Qualifier        | Example
 | ------------- | -------------
-| <code>reactions:<em>n</em></code> | [** reactions:&gt;1000**](https://github.com/search?q=reactions%3A%3E1000&type=Issues) matches issues with more than 1000 reactions.
+| <code>reactions:<em>n</em></code> | [**reactions:&gt;1000**](https://github.com/search?q=reactions%3A%3E1000&type=Issues) matches issues with more than 1000 reactions.
 | <code>reactions:<em>n..n</em></code> | [**reactions:500..1000**](https://github.com/search?q=reactions%3A500..1000) matches issues with reactions ranging from 500 to 1,000.
 
 ## Search for draft pull requests
