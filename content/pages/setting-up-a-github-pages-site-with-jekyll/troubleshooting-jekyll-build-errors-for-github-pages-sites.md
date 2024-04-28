@@ -29,7 +29,6 @@ product: '{% data reusables.gated-features.pages %}'
 versions:
   fpt: '*'
   ghes: '*'
-  ghae: '*'
   ghec: '*'
 topics:
   - Pages
@@ -43,12 +42,12 @@ If Jekyll encounters an error building your {% data variables.product.prodname_p
 If you received a generic error message, check for common issues.
 - You're using unsupported plugins. For more information, see "[AUTOTITLE](/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins)."{% ifversion fpt or ghec %}
 - Your repository has exceeded our repository size limits. For more information, see "[AUTOTITLE](/repositories/working-with-files/managing-large-files/about-large-files-on-github)"{% endif %}
-- You changed the `source` setting in your __config.yml_ file. {% ifversion pages-custom-workflow %}If you publish your site from a branch, {% endif %}{% data variables.product.prodname_pages %} overrides this setting during the build process.
+- You changed the `source` setting in your __config.yml_ file. If you publish your site from a branch, {% data variables.product.prodname_pages %} overrides this setting during the build process.
 - A filename in your published files contains a colon (`:`) which is not supported.
 
 If you received a specific error message, review the troubleshooting information for the error message below.
 
-{% ifversion pages-custom-workflow %}After you've fixed any errors, trigger another build by pushing the changes to your site's source branch (if you are publishing from a branch) or by triggering your custom {% data variables.product.prodname_actions %} workflow (if you are publishing with {% data variables.product.prodname_actions %}).{% else %}After you've fixed any errors, push the changes to your site's publishing source to trigger another build on {% data variables.product.product_name %}.{% endif %}
+After you've fixed any errors, trigger another build by pushing the changes to your site's source branch (if you are publishing from a branch) or by triggering your custom {% data variables.product.prodname_actions %} workflow (if you are publishing with {% data variables.product.prodname_actions %}).
 
 ## Config file error
 
@@ -60,11 +59,7 @@ To troubleshoot, make sure that your __config.yml_ file follows these rules:
 
 {% data reusables.pages.yaml-linter %}
 
-{% ifversion pages-disable-symlinks-on-legacy-pages %}
-
 {% data reusables.pages.symlink-removal %}
-
-{% endif %}
 
 ## Date is not a valid datetime
 
@@ -77,15 +72,6 @@ To troubleshoot, search the file in the error message and the file's layouts for
 This error means that your code references a file that doesn't exist in your __includes_ directory.
 
 {% data reusables.pages.search-for-includes %} If any of the files you've referenced aren't in the __includes_ directory, copy or move the files into the __includes_ directory.
-
-{% ifversion ghes < 3.9 %}
-
-## File is a symlink
-
-This error means that your code references a symlinked file that does not exist in the published files for your site.
-
-{% data reusables.pages.search-for-includes %} If any of the files you've referenced are symlinked, copy or move the files into the __includes_ directory.
-{% endif %}
 
 ## File is not properly UTF-8 encoded
 
@@ -169,15 +155,6 @@ This errors means that you have relative permalinks, which are not supported by 
 Permalinks are permanent URLs that reference a particular page on your site. Absolute permalinks begin with the root of the site, while relative permalinks begin with the folder containing the referenced page. {% data variables.product.prodname_pages %} and Jekyll no longer support relative permalinks. For more information about permalinks, see "[Permalinks](https://jekyllrb.com/docs/permalinks/)" in the Jekyll documentation.
 
 To troubleshoot, remove the `relative_permalinks` line from your __config.yml_ file and reformat any relative permalinks in your site with absolute permalinks. For more information, see "[AUTOTITLE](/repositories/working-with-files/managing-files/editing-files)."
-
-{% ifversion ghes < 3.9 %}
-
-## Symlink does not exist within your site's repository
-
-This error means that your site includes a symbolic link (symlink) that does not exist in the published files for your site. For more information about symlinks, see "[Symbolic link](https://en.wikipedia.org/wiki/Symbolic_link)" on Wikipedia.
-
-To troubleshoot, determine if the file in the error message is used to build your site. If not, or if you don't want the file to be a symlink, delete the file. If the symlinked file is necessary to build your site, make sure the file or directory the symlink references is in the published files for your site. To include external assets, consider using {% ifversion fpt or ghec %}`git submodule` or {% endif %}a third-party package manager such as [Bower](https://bower.io/).{% ifversion fpt or ghec %} For more information, see "[AUTOTITLE](/pages/getting-started-with-github-pages/using-submodules-with-github-pages)."{% endif %}
-{% endif %}
 
 ## Syntax error in 'for' loop
 

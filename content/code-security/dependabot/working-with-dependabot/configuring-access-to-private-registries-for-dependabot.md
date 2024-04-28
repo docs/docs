@@ -20,8 +20,6 @@ topics:
 shortTitle: Configure access to private registries
 ---
 
-{% data reusables.dependabot.beta-security-and-version-updates %}
-
 ## About private registries
 
 {% data variables.product.prodname_dependabot_version_updates %} keeps your dependencies up-to-date. {% data variables.product.prodname_dependabot %} can access public registries. In addition, you can give {% data variables.product.prodname_dependabot_version_updates %} access to private package registries and private {% data variables.product.prodname_dotcom %} repositories so that you can keep your private and innersource dependencies as up-to-date as your public dependencies.
@@ -34,8 +32,10 @@ For specific ecosystems, you can configure {% data variables.product.prodname_de
 
 ## Configuring private registries
 
-You configure {% data variables.product.prodname_dependabot %}'s access to private registries in the _dependabot.yml_ file.
-The top-level `registries` key is optional and specifies authentication details. {% data reusables.dependabot.dependabot-updates-registries %}
+You configure {% data variables.product.prodname_dependabot %}'s access to private registries in the `dependabot.yml` file.
+The top-level `registries` key is optional and specifies authentication details.
+
+{% data reusables.dependabot.dependabot-updates-registries %}
 
 {% data reusables.dependabot.dependabot-updates-registries-options %}
 
@@ -52,7 +52,7 @@ When you add a secret at the organization level, you can specify which repositor
 
 {% data variables.product.prodname_dependabot %} secrets also include secrets that are used by {% data variables.product.prodname_actions %} workflows triggered by {% data variables.product.prodname_dependabot %} pull requests. {% data variables.product.prodname_dependabot %} itself may not use these secrets, but the workflows require them. For more information, see "[AUTOTITLE](/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions#accessing-secrets)."
 
-After you add a {% data variables.product.prodname_dependabot %} secret, you can reference it in the _dependabot.yml_ configuration file like this: {% raw %}`${{secrets.NAME}}`{% endraw %}, where "NAME" is the name you chose for the secret. For example:
+After you add a {% data variables.product.prodname_dependabot %} secret, you can reference it in the `dependabot.yml` configuration file like this: {% raw %}`${{secrets.NAME}}`{% endraw %}, where "NAME" is the name you chose for the secret. For example:
 
 {% raw %}
 
